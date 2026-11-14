@@ -16,11 +16,14 @@ hero:
       link: /course/schedule
 
 features:
-  - title: Lectures
+  - icon: { src: /icons/book-open.svg }
+    title: Lectures
     details: Notes for each chapter of the course.
-  - title: Tutorials
+  - icon: { src: /icons/graduation-cap.svg }
+    title: Tutorials
     details: Practice problems aligned to each chapter.
-  - title: Labs
+  - icon: { src: /icons/flask-conical.svg }
+    title: Labs
     details: Practical sessions and lab guides.
 
 ---

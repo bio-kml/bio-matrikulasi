@@ -1,5 +1,8 @@
 import DefaultTheme from 'vitepress/theme'
-import { h } from 'vue'
+import { h, onMounted, watch, nextTick } from 'vue'
+import { useRoute } from 'vitepress'
+import mediumZoom from 'medium-zoom'
+import '@fontsource-variable/plus-jakarta-sans'
 import './style.css'
 import StudyHighlighter from './components/StudyHighlighter.vue'
 import Checklist from './components/Checklist.vue'
@@ -16,5 +19,12 @@ export default {
   enhanceApp({ app }) {
     app.component('StudyHighlighter', StudyHighlighter)
     app.component('Checklist', Checklist)
+  },
+  setup() {
+    // Click-to-zoom for images in page content (useful for diagrams).
+    const route = useRoute()
+    const init = () => mediumZoom('.vp-doc img', { background: 'var(--vp-c-bg)' })
+    onMounted(init)
+    watch(() => route.path, () => nextTick(init))
   }
 }

@@ -6,5 +6,10 @@
   },
   "devDependencies": {
     "vitepress": "^1.6.4"
+  },
+  "dependencies": {
+    "@fontsource-variable/plus-jakarta-sans": "^5.3.0",
+    "lucide-static": "^1.73.0",
+    "medium-zoom": "^1.1.2"
   }
 }
