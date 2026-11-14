@@ -11,11 +11,11 @@ VitePress site (`docs/`). Pushing to `main` deploys to GitHub Pages: https://bio
 
 For **any** content request (add a PDF, a quiz, a page, a schedule, notes, answers, anything), build it with the existing components below, and on your own judgement add the ones that fit around it: buttons, callouts, cards, badges, timelines, checklists, etc. Do not ask first and do not fall back to plain markdown when a component fits. Use a component when it helps a student, not as decoration.
 
-Example: "add the Chapter 2 slides PDF" → a `<PdfViewer>` with Open/Download buttons, plus what suits the page around it, e.g. `<Badge>` tags, a `::: tip` on what to focus on, a `<Checklist>` of learning outcomes, `<LinkCard>`s to the matching tutorial/lab, a `<Quiz>` if the source has questions.
+Example: "add the Chapter 2 slides PDF" → the PDF iframe + Open Fullscreen button (below), plus what suits the page around it, e.g. `<Badge>` tags, a `::: tip` on what to focus on, a `<Checklist>` of learning outcomes, `<LinkCard>`s to the matching tutorial/lab, a `<Quiz>` if the source has questions.
 
 | Content | Component |
 |---|---|
-| A PDF file (slides, notes, past papers, lab sheet) | `<PdfViewer src title meta>`; put files in `docs/public/pdfs/<section>/` |
+| A PDF file (slides, notes, past papers, lab sheet) | `<iframe src="/bio-matrikulasi/<section>/<file>.pdf" width="100%" height="400" allowfullscreen></iframe>` then `<a href="…same path…" target="_blank" rel="noopener"><button class="open-pdf-btn">Open Fullscreen</button></a>`; files in `docs/public/<section>/` (same pattern as the user's other course sites, e.g. JSK-KML/Python-Programming-2) |
 | Process / sequence of stages | `<ScrollTimeline>` + `<ScrollStep>` (max one per page); else `<Timeline progress focus>` |
 | Dates, schedule, deadlines, history | `<Timeline>` / `<TimelineItem date done>` (`layout="alternate"` for schedules) |
 | Lab method / numbered procedure | `<Steps>` wrapping a markdown `1.` list |

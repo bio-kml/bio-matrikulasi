@@ -210,6 +210,33 @@
     padding: 6px 0;
 }
 
+/* PDF "Open Fullscreen" button (used under an embedded PDF iframe) */
+.open-pdf-btn {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: var(--vp-c-brand-1);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.open-pdf-btn:hover {
+    background-color: var(--vp-c-brand-2);
+}
+
+/* Links wrapping the button: no animated underline */
+.vp-doc a:has(> .open-pdf-btn) { background-image: none; }
+
+/* Embedded PDFs */
+.vp-doc iframe[src$=".pdf"] {
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 8px;
+}
+
 /* Home hero illustration: entrance + sizing */
 .VPHero .image-src {
     max-width: 320px;

@@ -334,16 +334,18 @@ Each section has its own colour, applied automatically to every page inside it (
 
 <Badge type="green" text="Lectures" /> <Badge type="blue" text="Tutorials" /> <Badge type="teal" text="Labs" /> <Badge type="yellow" text="Assessments" /> <Badge type="purple" text="Past Year Exams" /> <Badge type="red" text="Course Info" />
 
-## PDF viewer
+## PDF
 
-Shows a PDF with **Open** and **Download** buttons. On desktop it also shows an inline preview (loaded only when scrolled into view); on phones it shows just the buttons, since mobile browsers can't display embedded PDFs reliably.
+Embed the PDF and add an **Open Fullscreen** button under it. Put the file in `docs/public/<section>/` and use the full path including `/bio-matrikulasi/`.
 
 ```md
-<PdfViewer
-  src="/pdfs/lectures/chapter-01.pdf"
-  title="Chapter 1 — Introduction to Biology (slides)"
-  meta="32 pages · 4.2 MB"
-/>
-```
+<iframe src="/bio-matrikulasi/lectures/chapter-01.pdf" width="100%" height="400" allowfullscreen></iframe>
 
-Put PDF files in `docs/public/pdfs/<section>/`. Add `:preview="false"` for buttons only, or `:height="900"` for a taller preview.
+<br>
+
+<a href="/bio-matrikulasi/lectures/chapter-01.pdf" target="_blank" rel="noopener">
+  <button class="open-pdf-btn">
+    Open Fullscreen
+  </button>
+</a>
+```
