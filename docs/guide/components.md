@@ -333,3 +333,17 @@ Cards with a coloured icon. Add `link` to make the whole card clickable and `bad
 Each section has its own colour, applied automatically to every page inside it (links, sidebar, buttons and the label above the title):
 
 <Badge type="green" text="Lectures" /> <Badge type="blue" text="Tutorials" /> <Badge type="teal" text="Labs" /> <Badge type="yellow" text="Assessments" /> <Badge type="purple" text="Past Year Exams" /> <Badge type="red" text="Course Info" />
+
+## PDF viewer
+
+Shows a PDF with **Open** and **Download** buttons. On desktop it also shows an inline preview (loaded only when scrolled into view); on phones it shows just the buttons, since mobile browsers can't display embedded PDFs reliably.
+
+```md
+<PdfViewer
+  src="/pdfs/lectures/chapter-01.pdf"
+  title="Chapter 1 — Introduction to Biology (slides)"
+  meta="32 pages · 4.2 MB"
+/>
+```
+
+Put PDF files in `docs/public/pdfs/<section>/`. Add `:preview="false"` for buttons only, or `:height="900"` for a taller preview.

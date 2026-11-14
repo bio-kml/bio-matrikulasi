@@ -32,6 +32,7 @@ import InfoCard from './components/ui/InfoCard.vue'
 import CourseOverview from './components/CourseOverview.vue'
 import SectionLabel from './components/SectionLabel.vue'
 import { sectionOf } from './sections.js'
+import PdfViewer from './components/ui/PdfViewer.vue'
 import ReadingProgress from './components/ReadingProgress.vue'
 
 const prefersReducedMotion = () =>
@@ -73,7 +74,7 @@ export default {
     const ui = {
       Accordion, AccordionItem, Tabs, Tab, Term, Badge, CardGrid, LinkCard, Timeline, TimelineItem,
       Quiz, Flashcards, Steps, Figure, LabeledDiagram, ScrollTimeline, ScrollStep,
-      Icon, StatGrid, StatCard, InfoCard, CourseOverview
+      Icon, StatGrid, StatCard, InfoCard, CourseOverview, PdfViewer
     }
     for (const [name, comp] of Object.entries(ui)) app.component(name, comp)
   },

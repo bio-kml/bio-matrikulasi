@@ -7,36 +7,39 @@ VitePress site (`docs/`). Pushing to `main` deploys to GitHub Pages: https://bio
 - Work on `main` and push to `main` directly; do not create branches.
 - Run `npm run docs:build` before pushing, and check new pages in a browser (Playwright) in light, dark and at 390px width with no horizontal scroll.
 
-## Turning source material (PDF, notes, slides) into pages
+## Always build with the site's components
 
-When the user gives material to put on the site, choose and add components automatically; do not ask first. Use a component when it helps a student study, not to decorate. Plain prose and lists are still the default.
+For **any** content request (add a PDF, a quiz, a page, a schedule, notes, answers, anything), build it with the existing components below, and on your own judgement add the ones that fit around it: buttons, callouts, cards, badges, timelines, checklists, etc. Do not ask first and do not fall back to plain markdown when a component fits. Use a component when it helps a student, not as decoration.
 
-| Content in the source | Use |
+Example: "add the Chapter 2 slides PDF" → a `<PdfViewer>` with Open/Download buttons, plus what suits the page around it, e.g. `<Badge>` tags, a `::: tip` on what to focus on, a `<Checklist>` of learning outcomes, `<LinkCard>`s to the matching tutorial/lab, a `<Quiz>` if the source has questions.
+
+| Content | Component |
 |---|---|
-| Process / sequence of stages (mitosis, glycolysis, protein synthesis) | `<ScrollTimeline>` + `<ScrollStep>` (one per page at most); otherwise `<Timeline progress focus>` |
-| Dated schedule, deadlines, history | `<Timeline>` / `<TimelineItem date done>` (`layout="alternate"` for schedules) |
+| A PDF file (slides, notes, past papers, lab sheet) | `<PdfViewer src title meta>`; put files in `docs/public/pdfs/<section>/` |
+| Process / sequence of stages | `<ScrollTimeline>` + `<ScrollStep>` (max one per page); else `<Timeline progress focus>` |
+| Dates, schedule, deadlines, history | `<Timeline>` / `<TimelineItem date done>` (`layout="alternate"` for schedules) |
 | Lab method / numbered procedure | `<Steps>` wrapping a markdown `1.` list |
-| Comparison of 2–4 things (prokaryote vs eukaryote, mitosis vs meiosis) | markdown table, or `<Tabs>` + `<Tab label>` when each side has lists/paragraphs |
-| Key fact, definition to remember | `::: tip` |
-| Common mistake / misconception | `::: warning` |
+| Comparison of 2–4 things | markdown table, or `<Tabs>` + `<Tab label>` |
+| Key fact to remember | `::: tip` |
+| Common mistake | `::: warning` |
 | Lab safety | `::: danger` |
-| Extra / background info | `::: info` |
-| Worked answer, solution, marking scheme | `::: details` or `<Accordion>` + `<AccordionItem title>` (tutorials, past-year answers) |
-| Technical term used in running text | `<Term def="...">word</Term>` (first use only) |
-| Chemical / maths equation | `$...$` inline, `$$...$$` block (MathJax) |
-| Labelled diagram in the source | `<LabeledDiagram src :labels="[{x,y,label,text}]">` if parts are named; otherwise `<Figure src num caption>` |
-| Any image | `<Figure>`; save images under `docs/public/images/` |
-| End-of-section check / MCQs in source | `<Quiz question :options :answer explain>` |
-| Definitions / terms list for revision | `<Flashcards :cards="[{front, back}]">` at the end of a chapter |
-| Pre-lab or revision checklist | `<Checklist title color>` |
-| Overview / index of sub-pages | `<CardGrid>` + `<InfoCard title icon color link>` or `<LinkCard>` |
-| Key numbers (marks breakdown, counts) | `<StatGrid>` + `<StatCard value label icon color>` |
-| Status tags (due date, topic, optional) | `<Badge type text>` |
+| Background / extra info | `::: info` |
+| Answers, solutions, marking schemes | `::: details` or `<Accordion>` + `<AccordionItem title>` |
+| Technical term in running text | `<Term def="...">word</Term>` |
+| Equations | `$...$` inline, `$$...$$` block |
+| Diagram with named parts | `<LabeledDiagram src :labels>`; other images `<Figure src num caption>` (images in `docs/public/images/`) |
+| Questions / MCQs / self-check | `<Quiz question :options :answer explain>` |
+| Terms to revise | `<Flashcards :cards>` |
+| Checklist (pre-lab, revision, outcomes) | `<Checklist title color>` |
+| Links to other pages / overview | `<CardGrid>` + `<InfoCard>` or `<LinkCard>` |
+| Key numbers (marks, counts) | `<StatGrid>` + `<StatCard>` |
+| Status / category tags | `<Badge type text>` |
+| Inline icon | `<Icon name>` |
 
 Live examples and exact syntax for every component: `docs/guide/components.md`, `docs/guide/visuals.md`, `docs/guide/timeline.md`. Read those before writing.
 
 Content rules:
-- Keep the source's meaning; do not invent facts, marks, dates or answers. If the source has no answer, do not write one.
+- Do not invent facts, marks, dates or answers. Only use what the user or their material provides.
 - Section colours are automatic: lectures green, tutorials blue, labs teal, assessments yellow, exams purple, course red. Use the matching `color` on cards for that section.
 - New pages: add them to both `nav` and `sidebar` in `docs/.vitepress/config.mjs`; file names like `chapter-02.md`, `lab-02.md`, `tutorial-02.md`.
 - Add `highlighter: true` to the frontmatter of lecture and tutorial pages (enables the study highlighter).
