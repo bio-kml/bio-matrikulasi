@@ -8,6 +8,16 @@ import '@fontsource-variable/plus-jakarta-sans'
 import './style.css'
 import StudyHighlighter from './components/StudyHighlighter.vue'
 import Checklist from './components/Checklist.vue'
+import Accordion from './components/ui/Accordion.vue'
+import AccordionItem from './components/ui/AccordionItem.vue'
+import Tabs from './components/ui/Tabs.vue'
+import Tab from './components/ui/Tab.vue'
+import Term from './components/ui/Term.vue'
+import Badge from './components/ui/Badge.vue'
+import CardGrid from './components/ui/CardGrid.vue'
+import LinkCard from './components/ui/LinkCard.vue'
+import Timeline from './components/ui/Timeline.vue'
+import TimelineItem from './components/ui/TimelineItem.vue'
 
 const prefersReducedMotion = () =>
   typeof window !== 'undefined' &&
@@ -42,6 +52,9 @@ export default {
     app.use(autoAnimatePlugin)
     app.component('StudyHighlighter', StudyHighlighter)
     app.component('Checklist', Checklist)
+    // UI components (built on Reka UI), usable directly in markdown.
+    const ui = { Accordion, AccordionItem, Tabs, Tab, Term, Badge, CardGrid, LinkCard, Timeline, TimelineItem }
+    for (const [name, comp] of Object.entries(ui)) app.component(name, comp)
   },
   setup() {
     const route = useRoute()

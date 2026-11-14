@@ -58,6 +58,13 @@ export default defineConfig({
         ],
         activeMatch: '^/exams/'
       },
+      {
+        text: 'Guide',
+        items: [
+          { text: 'Components', link: '/guide/components' },
+        ],
+        activeMatch: '^/guide/'
+      },
     ],
 
     sidebar: {
@@ -83,6 +90,10 @@ export default defineConfig({
 
       '/exams/': [
         { text: 'Past Year Exams', link: '/exams/' },
+      ],
+
+      '/guide/': [
+        { text: 'Components', link: '/guide/components' },
       ]
     },
 
