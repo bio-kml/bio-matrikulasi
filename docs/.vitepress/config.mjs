@@ -68,6 +68,7 @@ export default defineConfig({
         items: [
           { text: 'Components', link: '/guide/components' },
           { text: 'Equations & formatting', link: '/guide/visuals' },
+          { text: 'Timeline styles', link: '/guide/timeline' },
         ],
         activeMatch: '^/guide/'
       },
@@ -101,6 +102,7 @@ export default defineConfig({
       '/guide/': [
         { text: 'Components', link: '/guide/components' },
         { text: 'Equations & formatting', link: '/guide/visuals' },
+        { text: 'Timeline styles', link: '/guide/timeline' },
       ]
     },
 
