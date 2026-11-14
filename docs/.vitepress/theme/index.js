@@ -25,6 +25,13 @@ import Figure from './components/ui/Figure.vue'
 import LabeledDiagram from './components/ui/LabeledDiagram.vue'
 import ScrollTimeline from './components/ui/ScrollTimeline.vue'
 import ScrollStep from './components/ui/ScrollStep.vue'
+import Icon from './components/ui/Icon.vue'
+import StatGrid from './components/ui/StatGrid.vue'
+import StatCard from './components/ui/StatCard.vue'
+import InfoCard from './components/ui/InfoCard.vue'
+import CourseOverview from './components/CourseOverview.vue'
+import SectionLabel from './components/SectionLabel.vue'
+import { sectionOf } from './sections.js'
 import ReadingProgress from './components/ReadingProgress.vue'
 
 const prefersReducedMotion = () =>
@@ -51,6 +58,7 @@ export default {
     // The component decides for itself whether to activate (frontmatter opt-in).
     return h(DefaultTheme.Layout, null, {
       'layout-top': () => h(ReadingProgress),
+      'doc-before': () => h(SectionLabel),
       'layout-bottom': () => h(StudyHighlighter)
     })
   },
@@ -64,7 +72,8 @@ export default {
     // UI components (built on Reka UI), usable directly in markdown.
     const ui = {
       Accordion, AccordionItem, Tabs, Tab, Term, Badge, CardGrid, LinkCard, Timeline, TimelineItem,
-      Quiz, Flashcards, Steps, Figure, LabeledDiagram, ScrollTimeline, ScrollStep
+      Quiz, Flashcards, Steps, Figure, LabeledDiagram, ScrollTimeline, ScrollStep,
+      Icon, StatGrid, StatCard, InfoCard, CourseOverview
     }
     for (const [name, comp] of Object.entries(ui)) app.component(name, comp)
   },
@@ -72,10 +81,20 @@ export default {
     const route = useRoute()
     // Click-to-zoom for images in page content (useful for diagrams).
     const initZoom = () => mediumZoom('.vp-doc img:not(.ui-ld__img)', { background: 'var(--vp-c-bg)' })
-    onMounted(initZoom)
+    // Tag <html> with the current section so its colour applies site-wide (see style.css).
+    const setSection = () => {
+      const s = sectionOf(route.path)
+      if (s) document.documentElement.dataset.section = s
+      else delete document.documentElement.dataset.section
+    }
+    onMounted(() => {
+      initZoom()
+      setSection()
+    })
     watch(
       () => route.path,
       () => nextTick(() => {
+        setSection()
         initZoom()
         animatePageIn()
       })

@@ -8,14 +8,14 @@ defineProps({
   type: {
     type: String,
     default: 'green',
-    validator: (v) => ['green', 'blue', 'yellow', 'red', 'gray'].includes(v)
+    validator: (v) => ['green', 'blue', 'yellow', 'red', 'purple', 'teal', 'gray'].includes(v)
   }
 })
 </script>
 
 <style scoped>
 .ui-badge {
-  --b: var(--vp-c-brand-1);
+  --b: var(--c-green);
   display: inline-flex;
   align-items: center;
   padding: 1px 9px;
@@ -29,8 +29,10 @@ defineProps({
   background: color-mix(in srgb, var(--b) 10%, transparent);
   border-radius: 999px;
 }
-.ui-badge--blue { --b: #3b82c4; }
-.ui-badge--yellow { --b: #b7870a; }
-.ui-badge--red { --b: #c2410c; }
+.ui-badge--blue { --b: var(--c-blue); }
+.ui-badge--yellow { --b: var(--c-yellow); }
+.ui-badge--red { --b: var(--c-red); }
+.ui-badge--purple { --b: var(--c-purple); }
+.ui-badge--teal { --b: var(--c-teal); }
 .ui-badge--gray { --b: var(--vp-c-text-2); }
 </style>

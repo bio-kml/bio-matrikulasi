@@ -44,10 +44,10 @@ defineProps({
   border-radius: 12px;
   background: var(--vp-c-bg-soft);
 }
-.checklist--yellow { --cl-accent: #e0a800; }
-.checklist--green { --cl-accent: var(--vp-c-brand-1); }
-.checklist--pink { --cl-accent: #e64980; }
-.checklist--blue { --cl-accent: #3b82c4; }
+.checklist--yellow { --cl-accent: var(--c-yellow); }
+.checklist--green { --cl-accent: var(--c-green); }
+.checklist--pink { --cl-accent: #d6336c; }
+.checklist--blue { --cl-accent: var(--c-blue); }
 
 .checklist__title {
   position: relative;

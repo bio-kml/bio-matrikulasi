@@ -268,3 +268,68 @@ Numbered markers on an image. Hover over a marker to see its name, or click a ma
   ]"
 />
 ```
+
+## Stat cards
+
+Big numbers with an icon. Numbers count up when they scroll into view; `progress` (0–100) adds a bar.
+
+<StatGrid>
+  <StatCard value="12" label="Chapters" icon="book-open" color="green" note="Semester 1" />
+  <StatCard value="8" label="Labs" icon="flask-conical" color="teal" :progress="25" note="2 of 8 done" />
+  <StatCard value="85" suffix="%" label="Pass mark target" icon="target" color="blue" />
+  <StatCard value="3" label="Quizzes" icon="clipboard-list" color="yellow" />
+</StatGrid>
+
+```md
+<StatGrid>
+  <StatCard value="12" label="Chapters" icon="book-open" color="green" note="Semester 1" />
+  <StatCard value="8" label="Labs" icon="flask-conical" color="teal" :progress="25" note="2 of 8 done" />
+</StatGrid>
+```
+
+## Info cards
+
+Cards with a coloured icon. Add `link` to make the whole card clickable and `badge` for a small pill next to the tag.
+
+<CardGrid>
+  <InfoCard title="Cell biology" tag="Chapter 2" icon="microscope" color="green" badge="5 topics" link="/lectures/chapter-01">
+
+  Cell structure, membranes and transport.
+
+  </InfoCard>
+  <InfoCard title="Genetics" tag="Chapter 5" icon="dna" color="purple" badge="4 topics">
+
+  Inheritance, DNA replication and protein synthesis.
+
+  </InfoCard>
+  <InfoCard title="Photosynthesis" tag="Chapter 7" icon="sun" color="yellow">
+
+  Light-dependent and light-independent reactions.
+
+  </InfoCard>
+</CardGrid>
+
+```md
+<CardGrid>
+  <InfoCard title="Cell biology" tag="Chapter 2" icon="microscope" color="green" badge="5 topics" link="/lectures/chapter-01">
+
+  Cell structure, membranes and transport.
+
+  </InfoCard>
+  <InfoCard title="Photosynthesis" tag="Chapter 7" icon="sun" color="yellow">
+
+  Light-dependent and light-independent reactions.
+
+  </InfoCard>
+</CardGrid>
+```
+
+**Colours:** `green`, `blue`, `teal`, `yellow`, `red`, `purple`.
+
+**Icons:** `book-open`, `graduation-cap`, `flask-conical`, `file-check`, `calendar`, `clipboard-list`, `microscope`, `dna`, `leaf`, `atom`, `brain`, `heart-pulse`, `sprout`, `bug`, `clock`, `target`, `trophy`, `users`, `layers`, `lightbulb`, `file-text`, `list-checks`, `sparkle`, `droplets`, `sun`, `zap`. You can also use them inline: <Icon name="dna" :size="16" />.
+
+## Section colours
+
+Each section has its own colour, applied automatically to every page inside it (links, sidebar, buttons and the label above the title):
+
+<Badge type="green" text="Lectures" /> <Badge type="blue" text="Tutorials" /> <Badge type="teal" text="Labs" /> <Badge type="yellow" text="Assessments" /> <Badge type="purple" text="Past Year Exams" /> <Badge type="red" text="Course Info" />

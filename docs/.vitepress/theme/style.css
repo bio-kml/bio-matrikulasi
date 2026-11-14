@@ -17,6 +17,14 @@
 
 /* ---- Flat green palette: no gradients, glows, or shadows ---- */
 :root {
+    /* Accent colours used by cards, badges and section colours */
+    --c-green: #1f7a4d;
+    --c-blue: #2f6fb0;
+    --c-yellow: #b7870a;
+    --c-red: #c2410c;
+    --c-purple: #7e4a9e;
+    --c-teal: #0f7f7f;
+
     --vp-c-brand-1: #1f7a4d;
     --vp-c-brand-2: #2a9060;
     --vp-c-brand-3: #2f8f5b;
@@ -34,6 +42,13 @@
 }
 
 .dark {
+    --c-green: #4aa876;
+    --c-blue: #5b9bd8;
+    --c-yellow: #d4a32a;
+    --c-red: #e0693a;
+    --c-purple: #a87cc6;
+    --c-teal: #3fb0ac;
+
     --vp-c-brand-1: #5bc08a;
     --vp-c-brand-2: #4aa876;
     --vp-c-brand-3: #2f8f5b;
@@ -194,3 +209,29 @@
     overflow-y: hidden;
     padding: 6px 0;
 }
+
+/* Home hero illustration: entrance + sizing */
+.VPHero .image-src {
+    max-width: 320px;
+    max-height: 240px;
+    animation: fade-up 0.6s cubic-bezier(0.2, 0, 0, 1) 0.2s both;
+}
+@media (min-width: 960px) {
+    .VPHero .image-src { max-width: 440px; max-height: 320px; }
+}
+
+/* ---- Section colours: pages in a section use its colour as the accent ---- */
+html[data-section] {
+    --vp-c-brand-1: var(--sec);
+    --vp-c-brand-2: color-mix(in srgb, var(--sec) 85%, var(--vp-c-text-1));
+    --vp-c-brand-3: var(--sec);
+    --vp-c-brand-soft: color-mix(in srgb, var(--sec) 12%, transparent);
+}
+html[data-section="lectures"],
+html[data-section="guide"] { --sec: var(--c-green); }
+html[data-section="tutorials"] { --sec: var(--c-blue); }
+html[data-section="labs"] { --sec: var(--c-teal); }
+html[data-section="assessments"] { --sec: var(--c-yellow); }
+html[data-section="exams"] { --sec: var(--c-purple); }
+html[data-section="course"] { --sec: var(--c-red); }
+
