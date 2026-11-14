@@ -148,7 +148,7 @@ function stateOf(i) {
   font-size: 14px;
   line-height: 1.6;
   border-radius: 10px;
-  border-left: 3px solid;
+  border: 1px solid;
 }
 .ui-quiz__explain { margin-left: 0.35em; }
 .ui-quiz__feedback.good { border-color: #2f8f5b; background: color-mix(in srgb, #2f8f5b 8%, transparent); }

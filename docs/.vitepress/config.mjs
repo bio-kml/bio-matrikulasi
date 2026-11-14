@@ -11,19 +11,7 @@ export default defineConfig({
 
   // Equations: $inline$ and $$block$$ (rendered with MathJax at build time).
   markdown: {
-    math: true,
-    config(md) {
-      // ```mermaid blocks become a <MermaidDiagram>, which loads Mermaid only on
-      // pages that actually contain a diagram. Colours come from style.css.
-      const fence = md.renderer.rules.fence
-      md.renderer.rules.fence = (tokens, idx, options, env, self) => {
-        const token = tokens[idx]
-        if (token.info.trim() === 'mermaid') {
-          return `<MermaidDiagram graph="${encodeURIComponent(token.content)}" />`
-        }
-        return fence(tokens, idx, options, env, self)
-      }
-    }
+    math: true
   },
 
   themeConfig: {
@@ -79,7 +67,7 @@ export default defineConfig({
         text: 'Guide',
         items: [
           { text: 'Components', link: '/guide/components' },
-          { text: 'Diagrams & equations', link: '/guide/visuals' },
+          { text: 'Equations & formatting', link: '/guide/visuals' },
         ],
         activeMatch: '^/guide/'
       },
@@ -112,7 +100,7 @@ export default defineConfig({
 
       '/guide/': [
         { text: 'Components', link: '/guide/components' },
-        { text: 'Diagrams & equations', link: '/guide/visuals' },
+        { text: 'Equations & formatting', link: '/guide/visuals' },
       ]
     },
 

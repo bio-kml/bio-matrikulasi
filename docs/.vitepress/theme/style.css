@@ -155,11 +155,10 @@
 }
 @media (max-width: 768px) { .vp-doc h2::before { display: none; } }
 
-/* Custom containers (::: tip, ::: warning, ...): flat card with coloured left edge */
+/* Custom containers (::: tip, ::: warning, ...): flat card, same border colour on all sides */
 .vp-doc .custom-block {
-    border: 1px solid var(--vp-c-divider);
-    border-left: 4px solid var(--cb, var(--vp-c-divider));
-    background: var(--vp-c-bg-soft);
+    border: 1px solid color-mix(in srgb, var(--cb, var(--vp-c-divider)) 45%, transparent);
+    background: color-mix(in srgb, var(--cb, var(--vp-c-divider)) 7%, var(--vp-c-bg));
     border-radius: 10px;
 }
 .vp-doc .custom-block.tip { --cb: var(--vp-c-brand-1); }
@@ -182,9 +181,9 @@
 
 /* Blockquotes */
 .vp-doc blockquote {
-    border-left: 4px solid var(--vp-c-brand-1);
+    border: 1px solid var(--vp-c-divider);
     background: var(--vp-c-bg-soft);
-    border-radius: 0 10px 10px 0;
+    border-radius: 10px;
     padding: 10px 16px;
 }
 .vp-doc blockquote > p { color: var(--vp-c-text-1); }
@@ -194,58 +193,4 @@
     overflow-x: auto;
     overflow-y: hidden;
     padding: 6px 0;
-}
-
-/* Mermaid diagrams: flat, theme-aware colours (override Mermaid's own theme) */
-.vp-doc .mermaid {
-    display: flex;
-    justify-content: center;
-    margin: 24px 0;
-    padding: 20px 12px;
-    border: 1px solid var(--vp-c-divider);
-    border-radius: 12px;
-    background: var(--vp-c-bg-soft);
-    overflow-x: auto;
-    animation: fade-up 0.4s cubic-bezier(0.2, 0, 0, 1) both;
-}
-.vp-doc .mermaid svg { max-width: 100%; height: auto; }
-.vp-doc .mermaid .node rect,
-.vp-doc .mermaid .node circle,
-.vp-doc .mermaid .node ellipse,
-.vp-doc .mermaid .node polygon,
-.vp-doc .mermaid .node path {
-    fill: var(--vp-c-bg) !important;
-    stroke: var(--vp-c-brand-1) !important;
-    stroke-width: 1.5px !important;
-}
-.vp-doc .mermaid .nodeLabel,
-.vp-doc .mermaid .label,
-.vp-doc .mermaid text,
-.vp-doc .mermaid span {
-    color: var(--vp-c-text-1) !important;
-    fill: var(--vp-c-text-1) !important;
-    font-family: var(--vp-font-family-base) !important;
-}
-.vp-doc .mermaid .flowchart-link,
-.vp-doc .mermaid .edgePath .path,
-.vp-doc .mermaid .relation,
-.vp-doc .mermaid .messageLine0,
-.vp-doc .mermaid .messageLine1 {
-    stroke: var(--vp-c-text-3) !important;
-}
-.vp-doc .mermaid .arrowheadPath,
-.vp-doc .mermaid marker path {
-    fill: var(--vp-c-text-3) !important;
-    stroke: var(--vp-c-text-3) !important;
-}
-.vp-doc .mermaid .edgeLabel,
-.vp-doc .mermaid .edgeLabel rect,
-.vp-doc .mermaid .labelBkg {
-    background: var(--vp-c-bg-soft) !important;
-    fill: var(--vp-c-bg-soft) !important;
-    color: var(--vp-c-text-2) !important;
-}
-.vp-doc .mermaid .cluster rect {
-    fill: var(--vp-c-brand-soft) !important;
-    stroke: var(--vp-c-divider) !important;
 }

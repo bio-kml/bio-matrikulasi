@@ -1,41 +1,6 @@
-# Diagrams & equations
+# Equations & formatting
 
-Built-in ways to add visuals to a page using plain markdown. No images needed.
-
-## Flowcharts and process diagrams
-
-Write a ` ```mermaid ` code block and it becomes a diagram ([Mermaid syntax](https://mermaid.js.org/intro/)). Colours follow the site theme, including dark mode.
-
-```mermaid
-flowchart LR
-  G[Glucose] --> P[Glycolysis]
-  P --> Py[Pyruvate]
-  Py -->|O₂ present| K[Krebs cycle]
-  Py -->|No O₂| F[Fermentation]
-  K --> E[Electron transport chain]
-  E --> A[ATP]
-```
-
-````md
-```mermaid
-flowchart LR
-  G[Glucose] --> P[Glycolysis]
-  P --> Py[Pyruvate]
-  Py -->|O₂ present| K[Krebs cycle]
-  Py -->|No O₂| F[Fermentation]
-```
-````
-
-Top-to-bottom works too. Use `flowchart TD`:
-
-```mermaid
-flowchart TD
-  I[Interphase] --> Pr[Prophase]
-  Pr --> M[Metaphase]
-  M --> A[Anaphase]
-  A --> T[Telophase]
-  T --> C[Cytokinesis]
-```
+Built-in ways to format a page using plain markdown.
 
 ## Equations
 
