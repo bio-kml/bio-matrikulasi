@@ -33,7 +33,6 @@ temp/
 # Agent and Claude files
 agent.md
 claude.md
-CLAUDE.md
 CLAUDE.local.md
 claude_local.md
 .claude/
