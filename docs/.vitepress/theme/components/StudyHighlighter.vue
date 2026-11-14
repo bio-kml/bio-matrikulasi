@@ -430,7 +430,6 @@ watch(enabled, (on) => {
   border-radius: 10px;
   background: var(--vp-c-bg-elv);
   border: 1px solid var(--vp-c-divider);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
 }
 .sh-swatch {
   width: 22px;
@@ -461,10 +460,9 @@ watch(enabled, (on) => {
   cursor: pointer;
   color: #fff;
   background: var(--vp-c-brand-1);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition: background 0.15s ease;
 }
-.sh-fab:hover { transform: translateY(-2px); }
+.sh-fab:hover { background: var(--vp-c-brand-2); }
 .sh-fab__icon { width: 22px; height: 22px; }
 .sh-fab__count {
   position: absolute;
@@ -474,10 +472,12 @@ watch(enabled, (on) => {
   height: 20px;
   padding: 0 5px;
   border-radius: 10px;
-  background: var(--vp-c-danger-1, #e11d48);
-  color: #fff;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-brand-1);
+  border: 1px solid var(--vp-c-brand-1);
   font-size: 11px;
-  line-height: 20px;
+  line-height: 18px;
+  box-sizing: border-box;
   text-align: center;
 }
 
@@ -494,7 +494,6 @@ watch(enabled, (on) => {
   flex-direction: column;
   background: var(--vp-c-bg-elv);
   border-left: 1px solid var(--vp-c-divider);
-  box-shadow: -6px 0 24px rgba(0, 0, 0, 0.12);
   transform: translateX(100%);
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }

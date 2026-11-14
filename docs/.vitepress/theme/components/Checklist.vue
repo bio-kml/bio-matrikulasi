@@ -29,12 +29,11 @@ defineProps({
   border: 1px solid var(--vp-c-divider);
   border-radius: 12px;
   background: var(--vp-c-bg-soft);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 .checklist--yellow { --cl-accent: #e0a800; }
-.checklist--green { --cl-accent: #2f9e44; }
+.checklist--green { --cl-accent: var(--vp-c-brand-1); }
 .checklist--pink { --cl-accent: #e64980; }
-.checklist--blue { --cl-accent: var(--vp-c-brand-1); }
+.checklist--blue { --cl-accent: #3b82c4; }
 
 .checklist__title {
   position: relative;
