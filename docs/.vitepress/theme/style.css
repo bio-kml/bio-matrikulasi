@@ -16,20 +16,3 @@
 .VPHero .image-container {
     background: transparent !important;
 }
-
-.open-pdf-btn {
-    display: inline-block;
-    padding: 0.6rem 1.4rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #ffffff;
-    background-color: var(--vp-c-brand-1);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.open-pdf-btn:hover {
-    background-color: var(--vp-c-brand-2);
-}
