@@ -68,7 +68,6 @@
 .vp-doc .custom-block { border-radius: 8px; }
 .vp-doc h2 { border-top: 1px solid var(--vp-c-divider); }
 .vp-doc a { text-decoration: none; font-weight: 600; }
-.vp-doc a:hover { text-decoration: underline; }
 
 .VPButton.brand { box-shadow: none; }
 .VPNavBar, .VPNav, .VPSidebar, .VPLocalNav { box-shadow: none; }
@@ -76,3 +75,63 @@
 /* medium-zoom overlay: plain, no shadow */
 .medium-zoom-overlay { background: var(--vp-c-bg) !important; }
 .medium-zoom-image--opened { box-shadow: none !important; }
+
+/* ---- Motion: calm fades and slides only (no pulsing, glowing, or shimmer) ---- */
+@keyframes fade-up {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Home hero: staggered entrance */
+.VPHero .name,
+.VPHero .text,
+.VPHero .tagline,
+.VPHero .actions,
+.VPFeatures .item {
+    animation: fade-up 0.5s cubic-bezier(0.2, 0, 0, 1) both;
+}
+.VPHero .text { animation-delay: 0.06s; }
+.VPHero .tagline { animation-delay: 0.12s; }
+.VPHero .actions { animation-delay: 0.18s; }
+.VPFeatures .item:nth-child(1) { animation-delay: 0.26s; }
+.VPFeatures .item:nth-child(2) { animation-delay: 0.32s; }
+.VPFeatures .item:nth-child(3) { animation-delay: 0.38s; }
+.VPFeatures .item:nth-child(n+4) { animation-delay: 0.44s; }
+
+/* Feature cards: small lift + icon nudge on hover */
+.VPFeature {
+    transition: border-color 0.2s ease, transform 0.2s cubic-bezier(0.2, 0, 0, 1);
+}
+.VPFeature:hover { transform: translateY(-3px); }
+.VPFeature .icon { transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1); }
+.VPFeature:hover .icon { transform: translateX(3px); }
+
+/* Buttons: quick press feedback */
+.VPButton { transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease; }
+.VPButton:active { transform: scale(0.97); }
+
+/* Sidebar: active/hovered link slides in slightly */
+.VPSidebarItem .link .text { transition: color 0.15s ease, transform 0.18s cubic-bezier(0.2, 0, 0, 1); }
+.VPSidebarItem .link:hover .text,
+.VPSidebarItem.is-active > .item .link .text { transform: translateX(3px); }
+
+/* Content links: underline grows from left */
+.vp-doc a:not(.header-anchor) {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease;
+}
+.vp-doc a:not(.header-anchor):hover {
+    text-decoration: none;
+    background-size: 100% 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0s !important;
+        transition-duration: 0.01ms !important;
+    }
+}

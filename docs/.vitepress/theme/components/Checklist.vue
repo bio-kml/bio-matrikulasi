@@ -1,11 +1,25 @@
 <template>
-  <div class="checklist" :class="`checklist--${color}`">
+  <div
+    v-motion
+    class="checklist"
+    :class="`checklist--${color}`"
+    :initial="reduced ? undefined : { opacity: 0, y: 16 }"
+    :visible-once="reduced ? undefined : { opacity: 1, y: 0, transition: { duration: 420, ease: [0.2, 0, 0, 1] } }"
+  >
     <div v-if="title" class="checklist__title">{{ title }}</div>
     <slot />
   </div>
 </template>
 
 <script setup>
+import { ref, onBeforeMount } from 'vue'
+
+// Skip the scroll-in animation for users who ask for reduced motion.
+const reduced = ref(false)
+onBeforeMount(() => {
+  reduced.value = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+})
+
 defineProps({
   // Accent color for the card.
   color: {
@@ -73,6 +87,10 @@ defineProps({
   padding: 11px 4px;
   line-height: 1.6;
   border-bottom: 1px solid var(--vp-c-divider);
+  transition: padding-left 0.18s cubic-bezier(0.2, 0, 0, 1);
+}
+.checklist :deep(li:hover) {
+  padding-left: 10px;
 }
 .checklist :deep(li:last-child) {
   border-bottom: none;

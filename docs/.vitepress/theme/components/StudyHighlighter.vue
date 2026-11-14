@@ -1,6 +1,7 @@
 <template>
   <div v-if="enabled" class="study-highlighter">
     <!-- Color picker popover shown after a text selection -->
+    <Transition name="sh-pop">
     <div
       v-if="popover.visible"
       class="sh-popover"
@@ -16,6 +17,7 @@
         @click="createHighlight(c.id)"
       ></button>
     </div>
+    </Transition>
 
     <!-- Floating toggle button (always visible when enabled) -->
     <button
@@ -57,7 +59,7 @@
         Select any text on this page, then pick a color to add a numbered highlight here.
       </p>
 
-      <ol v-else class="sh-board__list">
+      <ol v-else v-auto-animate="{ duration: 220 }" class="sh-board__list">
         <li
           v-for="(h, i) in highlights"
           :key="h.id"
@@ -440,6 +442,17 @@ watch(enabled, (on) => {
   transition: transform 0.15s ease;
 }
 .sh-swatch:hover { transform: scale(1.15); }
+.sh-swatch:active { transform: scale(0.92); }
+
+.sh-pop-enter-active,
+.sh-pop-leave-active {
+  transition: opacity 0.15s ease, transform 0.15s cubic-bezier(0.2, 0, 0, 1);
+}
+.sh-pop-enter-from,
+.sh-pop-leave-to {
+  opacity: 0;
+  transform: translateY(4px) scale(0.96);
+}
 .sh-swatch--yellow { background: #ffd84d; }
 .sh-swatch--green { background: #7ee08a; }
 .sh-swatch--pink { background: #ff8fc4; }
@@ -463,7 +476,17 @@ watch(enabled, (on) => {
   transition: background 0.15s ease;
 }
 .sh-fab:hover { background: var(--vp-c-brand-2); }
-.sh-fab__icon { width: 22px; height: 22px; }
+.sh-fab:active { transform: scale(0.94); }
+.sh-fab { transition: background 0.15s ease, transform 0.1s ease; }
+.sh-fab__icon {
+  width: 22px;
+  height: 22px;
+  animation: sh-icon-in 0.2s cubic-bezier(0.2, 0, 0, 1);
+}
+@keyframes sh-icon-in {
+  from { opacity: 0; transform: rotate(-45deg) scale(0.8); }
+  to { opacity: 1; transform: none; }
+}
 .sh-fab__count {
   position: absolute;
   top: -4px;
