@@ -152,3 +152,119 @@ Lecture: Chapter 1
 ```
 
 Colors: `green`, `blue`, `yellow`, `pink`.
+
+## Quiz
+
+A self-check multiple-choice question. `answer` is the index of the correct option, starting from 0.
+
+<Quiz
+  question="Which organelle is the main site of aerobic respiration?"
+  :options="['Ribosome', 'Mitochondrion', 'Golgi apparatus', 'Lysosome']"
+  :answer="1"
+  explain="The Krebs cycle and oxidative phosphorylation take place in the mitochondrion."
+/>
+
+```md
+<Quiz
+  question="Which organelle is the main site of aerobic respiration?"
+  :options="['Ribosome', 'Mitochondrion', 'Golgi apparatus', 'Lysosome']"
+  :answer="1"
+  explain="The Krebs cycle and oxidative phosphorylation take place in the mitochondrion."
+/>
+```
+
+## Flashcards
+
+Click a card (or press Space) to flip it. Use the arrows or ← → keys to move between cards.
+
+<Flashcards :cards="[
+  { front: 'What is osmosis?', back: 'Net movement of water molecules across a partially permeable membrane, from a region of higher water potential to lower water potential.' },
+  { front: 'Name the monomer of proteins.', back: 'Amino acids' },
+  { front: 'Where does the light-dependent reaction occur?', back: 'Thylakoid membranes of the chloroplast' }
+]" />
+
+```md
+<Flashcards :cards="[
+  { front: 'What is osmosis?', back: 'Net movement of water ...' },
+  { front: 'Name the monomer of proteins.', back: 'Amino acids' }
+]" />
+```
+
+## Steps
+
+Turns a numbered list into a procedure. Good for lab methods.
+
+<Steps>
+
+1. **Prepare the slide**
+
+   Place a drop of water in the centre of a clean slide.
+
+2. **Add the specimen**
+
+   Peel a thin layer of onion epidermis and lay it flat in the water.
+
+3. **Stain and cover**
+
+   Add a drop of iodine, then lower a cover slip at an angle to avoid air bubbles.
+
+4. **Observe**
+
+   Start with the low-power objective, then switch to high power.
+
+</Steps>
+
+```md
+<Steps>
+
+1. **Prepare the slide**
+
+   Place a drop of water in the centre of a clean slide.
+
+2. **Add the specimen**
+
+   Peel a thin layer of onion epidermis ...
+
+</Steps>
+```
+
+## Figure
+
+An image with a caption and number. Click the image to zoom in.
+
+<Figure src="/images/animal-cell.svg" num="1.1" caption="A simplified animal cell." />
+
+```md
+<Figure src="/images/animal-cell.svg" num="1.1" caption="A simplified animal cell." />
+```
+
+Put images in `docs/public/images/`.
+
+## Labeled diagram
+
+Numbered markers on an image. Hover over a marker to see its name, or click a marker or list item to show its description. `x` and `y` are percentages of the image width and height.
+
+<LabeledDiagram
+  src="/images/animal-cell.svg"
+  alt="Animal cell"
+  :labels="[
+    { x: 43.5, y: 59, label: 'Nucleus', text: 'Contains the genetic material (DNA) and controls cell activities.' },
+    { x: 52, y: 49.5, label: 'Nucleolus', text: 'Site of ribosomal RNA synthesis and ribosome assembly.' },
+    { x: 75.8, y: 35, label: 'Mitochondrion', text: 'Site of aerobic respiration; produces ATP.' },
+    { x: 41.7, y: 30, label: 'Rough ER', text: 'Studded with ribosomes; synthesises and transports proteins.' },
+    { x: 72.5, y: 62, label: 'Golgi apparatus', text: 'Modifies, packages and secretes proteins in vesicles.' },
+    { x: 66.7, y: 80, label: 'Lysosome', text: 'Contains hydrolytic enzymes that digest worn-out organelles.' },
+    { x: 64, y: 27.5, label: 'Centrioles', text: 'Organise spindle fibres during cell division.' },
+    { x: 5, y: 50, label: 'Plasma membrane', text: 'Partially permeable; controls what enters and leaves the cell.' }
+  ]"
+/>
+
+```md
+<LabeledDiagram
+  src="/images/animal-cell.svg"
+  :labels="[
+    { x: 43.5, y: 59, label: 'Nucleus', text: 'Contains the genetic material.' },
+    { x: 75.8, y: 35, label: 'Mitochondrion', text: 'Site of aerobic respiration.' }
+  ]"
+/>
+```

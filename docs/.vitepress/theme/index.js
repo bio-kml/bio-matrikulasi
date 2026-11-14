@@ -18,6 +18,13 @@ import CardGrid from './components/ui/CardGrid.vue'
 import LinkCard from './components/ui/LinkCard.vue'
 import Timeline from './components/ui/Timeline.vue'
 import TimelineItem from './components/ui/TimelineItem.vue'
+import Quiz from './components/ui/Quiz.vue'
+import Flashcards from './components/ui/Flashcards.vue'
+import Steps from './components/ui/Steps.vue'
+import Figure from './components/ui/Figure.vue'
+import LabeledDiagram from './components/ui/LabeledDiagram.vue'
+import MermaidDiagram from './components/ui/MermaidDiagram.vue'
+import ReadingProgress from './components/ReadingProgress.vue'
 
 const prefersReducedMotion = () =>
   typeof window !== 'undefined' &&
@@ -42,6 +49,7 @@ export default {
     // Render the default layout, then mount the highlighter alongside it.
     // The component decides for itself whether to activate (frontmatter opt-in).
     return h(DefaultTheme.Layout, null, {
+      'layout-top': () => h(ReadingProgress),
       'layout-bottom': () => h(StudyHighlighter)
     })
   },
@@ -53,13 +61,16 @@ export default {
     app.component('StudyHighlighter', StudyHighlighter)
     app.component('Checklist', Checklist)
     // UI components (built on Reka UI), usable directly in markdown.
-    const ui = { Accordion, AccordionItem, Tabs, Tab, Term, Badge, CardGrid, LinkCard, Timeline, TimelineItem }
+    const ui = {
+      Accordion, AccordionItem, Tabs, Tab, Term, Badge, CardGrid, LinkCard, Timeline, TimelineItem,
+      Quiz, Flashcards, Steps, Figure, LabeledDiagram, MermaidDiagram
+    }
     for (const [name, comp] of Object.entries(ui)) app.component(name, comp)
   },
   setup() {
     const route = useRoute()
     // Click-to-zoom for images in page content (useful for diagrams).
-    const initZoom = () => mediumZoom('.vp-doc img', { background: 'var(--vp-c-bg)' })
+    const initZoom = () => mediumZoom('.vp-doc img:not(.ui-ld__img)', { background: 'var(--vp-c-bg)' })
     onMounted(initZoom)
     watch(
       () => route.path,
