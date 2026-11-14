@@ -23,6 +23,8 @@ import Flashcards from './components/ui/Flashcards.vue'
 import Steps from './components/ui/Steps.vue'
 import Figure from './components/ui/Figure.vue'
 import LabeledDiagram from './components/ui/LabeledDiagram.vue'
+import ScrollTimeline from './components/ui/ScrollTimeline.vue'
+import ScrollStep from './components/ui/ScrollStep.vue'
 import ReadingProgress from './components/ReadingProgress.vue'
 
 const prefersReducedMotion = () =>
@@ -62,7 +64,7 @@ export default {
     // UI components (built on Reka UI), usable directly in markdown.
     const ui = {
       Accordion, AccordionItem, Tabs, Tab, Term, Badge, CardGrid, LinkCard, Timeline, TimelineItem,
-      Quiz, Flashcards, Steps, Figure, LabeledDiagram
+      Quiz, Flashcards, Steps, Figure, LabeledDiagram, ScrollTimeline, ScrollStep
     }
     for (const [name, comp] of Object.entries(ui)) app.component(name, comp)
   },

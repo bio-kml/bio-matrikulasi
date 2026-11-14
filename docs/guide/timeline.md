@@ -1,6 +1,60 @@
 # Timeline styles
 
-Four ways to show a timeline. Scroll through each one, then copy the markdown for the style you like. All of them work on phones; the alternating style turns into a single column on small screens.
+Ways to show a timeline. Scroll through each one, then copy the markdown for the style you like.
+
+## Pinned timeline
+
+The timeline **stays still on screen** while you scroll. Only the step changes: the line fills, the next dot lights up and the content swaps in place. When you reach the last step, the page continues scrolling normally. Click any step to jump to it.
+
+<ScrollTimeline>
+<ScrollStep date="Stage 1" title="Interphase">
+
+The cell grows, makes more organelles and **replicates its DNA**. Each chromosome now consists of two identical sister chromatids joined at the centromere.
+
+</ScrollStep>
+<ScrollStep date="Stage 2" title="Prophase">
+
+Chromosomes **condense** and become visible. The nuclear envelope breaks down, the nucleolus disappears and spindle fibres start to form from the centrioles.
+
+</ScrollStep>
+<ScrollStep date="Stage 3" title="Metaphase">
+
+Chromosomes line up along the **equator** (metaphase plate). Spindle fibres attach to each centromere.
+
+</ScrollStep>
+<ScrollStep date="Stage 4" title="Anaphase">
+
+Centromeres divide and spindle fibres shorten, pulling **sister chromatids to opposite poles** of the cell.
+
+</ScrollStep>
+<ScrollStep date="Stage 5" title="Telophase">
+
+Chromatids reach the poles and uncoil. A **nuclear envelope re-forms** around each set and nucleoli reappear.
+
+</ScrollStep>
+<ScrollStep date="Stage 6" title="Cytokinesis">
+
+The cytoplasm divides, producing **two genetically identical daughter cells**.
+
+</ScrollStep>
+</ScrollTimeline>
+
+```md
+<ScrollTimeline>
+<ScrollStep date="Stage 1" title="Interphase">
+
+The cell grows and **replicates its DNA**.
+
+</ScrollStep>
+<ScrollStep date="Stage 2" title="Prophase">
+
+Chromosomes **condense** and become visible.
+
+</ScrollStep>
+</ScrollTimeline>
+```
+
+The other styles below scroll along with the page instead of staying still.
 
 ## 1. Basic
 
