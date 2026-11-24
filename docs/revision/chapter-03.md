@@ -367,10 +367,25 @@ A change in allele frequencies in a population **due to chance**, not natural se
 
 | | Founder effect | Bottleneck effect |
 |---|---|---|
-| Definition | Drift when **a few individuals become isolated** and form a new population whose gene pool does not reflect the original | Drift when **population size is suddenly reduced** by a natural disaster or human action |
-| Who is left | The small group that moved away | The random survivors |
+| Definition | Genetic drift that happens when **a few individuals** become isolated from the **original large population** and form a **new population** | Genetic drift that happens when the **original large population** is **suddenly reduced** to a **small population** by a natural disaster or human action |
+| Who is left | The **small group (founders)** that moved away | The **random survivors** |
+| What happens to the gene pool | **By chance**, the founders carry only some of the alleles, so the new gene pool **does not reflect** the original large population | **By chance**, the survivors carry only some of the alleles, so the gene pool **does not reflect** the original large population |
+| Result | some alleles become **more common**, **less common** or are **lost**; genetic variation is reduced | some alleles become **more common**, **less common** or are **lost**; genetic variation is reduced |
 
-In both, by chance, some alleles become more common, less common or lost.
+<Tabs label="Founder and bottleneck in steps">
+<Tab label="Founder effect">
+
+<Flow :steps="['Original large population', 'A few individuals become isolated and start a new population', 'By chance, the founders carry only some of the alleles of the original population', 'Allele frequencies in the new population differ from the original large population']" />
+
+</Tab>
+<Tab label="Bottleneck effect">
+
+<Flow :steps="['Original large population', 'Natural disaster or human action suddenly reduces it to a small population', 'By chance, the survivors carry only some of the alleles of the original population', 'Allele frequencies differ from the original large population; genetic variation is reduced']" />
+
+</Tab>
+</Tabs>
+
+**Examples:**
 
 <Tabs label="Founder and bottleneck examples">
 <Tab label="Founder: Tristan da Cunha">
@@ -453,13 +468,16 @@ Click a card to flip it; use the arrows to move on.
 <Flashcards :cards="[
   { front: 'Natural selection', back: 'A process in which individuals that have certain heritable traits survive and reproduce at a higher rate than other individuals because of those traits.' },
   { front: 'Artificial selection', back: 'The selective breeding of domesticated plants and animals to encourage the occurrence of desirable traits.' },
-  { front: 'Stabilizing / directional / disruptive', back: 'Favours intermediate / one extreme / both extremes.' },
+  { front: 'Stabilizing selection', back: 'Favours intermediate phenotypes and acts against both extremes; the curve becomes narrower, e.g. human birth weight.' },
+  { front: 'Directional selection', back: 'Favours one extreme phenotype; the whole curve shifts toward it, e.g. the peppered moth.' },
+  { front: 'Disruptive selection', back: 'Favours both extremes and acts against the intermediate; the curve splits into two peaks, e.g. the seedcracker finch.' },
   { front: 'Inbreeding vs outbreeding', back: 'Inbreeding: closely related organisms (homozygosity increases). Outbreeding: unrelated individuals, producing hybrids (heterozygosity increases).' },
   { front: 'Species (biological species concept)', back: 'A population or group of populations whose members can interbreed in nature and produce viable, fertile offspring.' },
   { front: 'Speciation', back: 'The process of forming new species from pre-existing species through evolution.' },
   { front: 'Sympatric vs allopatric', back: 'Sympatric: same geographical area, no barrier. Allopatric: populations split by a geographical barrier.' },
   { front: 'Genetic drift', back: 'A change in allele frequencies in a population due to chance, not natural selection.' },
-  { front: 'Founder vs bottleneck effect', back: 'Founder: a few individuals start a new population. Bottleneck: population suddenly reduced by a disaster or human action.' },
+  { front: 'Founder effect', back: 'A few individuals isolated from the original large population start a new population; by chance its gene pool does not reflect the original.' },
+  { front: 'Bottleneck effect', back: 'The original large population is suddenly reduced to a small population; by chance the gene pool of the survivors does not reflect the original.' },
   { front: 'Adaptive radiation', back: 'Many new species form from one ancestor, each adapted to a different ecological role.' }
 ]" />
 
