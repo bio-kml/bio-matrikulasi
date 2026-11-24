@@ -7,6 +7,7 @@ export const sectionMeta = {
   assessments: { label: 'Assessments', icon: 'clipboard-list', color: 'yellow' },
   exams: { label: 'Past Year Exams', icon: 'file-check', color: 'purple' },
   course: { label: 'Course Info', icon: 'calendar', color: 'red' },
+  revision: { label: 'SB025 Revision Notes', icon: 'layers', color: 'green' },
   guide: { label: 'Guide', icon: 'lightbulb', color: 'green' }
 }
 

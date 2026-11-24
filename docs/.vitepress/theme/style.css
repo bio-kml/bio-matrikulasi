@@ -255,6 +255,7 @@ html[data-section] {
     --vp-c-brand-soft: color-mix(in srgb, var(--sec) 12%, transparent);
 }
 html[data-section="lectures"],
+html[data-section="revision"],
 html[data-section="guide"] { --sec: var(--c-green); }
 html[data-section="tutorials"] { --sec: var(--c-blue); }
 html[data-section="labs"] { --sec: var(--c-teal); }

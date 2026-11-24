@@ -22,6 +22,14 @@ export default defineConfig({
         link: '/'
       },
       {
+        text: 'Revision Notes',
+        items: [
+          { text: 'SB025 Biology Revision Notes', link: '/revision/' },
+          { text: 'Chapter 1: Biodiversity', link: '/revision/chapter-01' },
+        ],
+        activeMatch: '^/revision/'
+      },
+      {
         text: 'Course Informations',
         items: [
           { text: 'Schedule', link: '/course/schedule' },
@@ -75,6 +83,16 @@ export default defineConfig({
     ],
 
     sidebar: {
+      '/revision/': [
+        {
+          text: 'SB025 Biology Revision Notes',
+          link: '/revision/',
+          items: [
+            { text: 'Chapter 1: Biodiversity', link: '/revision/chapter-01' },
+          ]
+        }
+      ],
+
       '/assessments/': [
         { text: 'Assessments', link: '/assessments/course' },
       ],
