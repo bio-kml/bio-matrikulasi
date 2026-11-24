@@ -8,11 +8,13 @@ highlighter: true
 
 Revision notes. Tick off each learning outcome once you can answer it without looking.
 
-<Badge text="1.1 Classification" /> <Badge type="teal" text="1.2 Bacteria & Archaea" /> <Badge type="green" text="1.4 Protista" /> <Badge type="yellow" text="1.5 Fungi" /> <Badge type="green" text="1.6 Plantae" /> <Badge type="purple" text="1.7 Animalia" />
+<Badge type="blue" text="1.1 Classification" /> <Badge type="teal" text="1.2 Bacteria & Archaea" /> <Badge type="olive" text="1.4 Protista" /> <Badge type="yellow" text="1.5 Fungi" /> <Badge type="green" text="1.6 Plantae" /> <Badge type="purple" text="1.7 Animalia" />
+
+<Topic color="blue">
 
 ## 1.1 Biodiversity and classification
 
-<Checklist title="Learning outcomes" color="green">
+<Checklist title="Learning outcomes">
 
 - (a) State types of biodiversity: genetic, species and ecosystem. <Badge type="gray" text="C1" />
 - (b) State hierarchical classification. <Badge type="gray" text="C1" />
@@ -20,7 +22,7 @@ Revision notes. Tick off each learning outcome once you can answer it without lo
 
 </Checklist>
 
-Biodiversity is the variety of living things, their genes, and the ecosystems they live in.
+<Definition term="Biodiversity">the variety of living things, their genes, and the ecosystems they live in.</Definition>
 
 ### Types of biodiversity
 
@@ -73,13 +75,19 @@ Proposed by **Carl Woese in 1977**. Organisms are grouped by their **ribosomal R
 | Archaea | Prokaryote | Mostly unicellular, microscopic |
 | Eukarya | Eukaryote | Unicellular (mostly Protista) and multicellular (Fungi, Plantae, Animalia) |
 
-::: info Fun fact
+<StickyNote>
+
 Malaysia is one of only 17 countries officially called "megadiverse". Together these countries hold most of the world's species.
-:::
+
+</StickyNote>
+
+</Topic>
+
+<Topic color="teal">
 
 ## 1.2 Domain Bacteria and Domain Archaea
 
-<Checklist title="Learning outcomes" color="green">
+<Checklist title="Learning outcomes">
 
 - (a) State the two domains of prokaryotes: Bacteria (e.g. *E. coli*) and Archaea (e.g. *Sulfolobus* sp.). <Badge type="gray" text="C1" />
 - (b) Differentiate between Bacteria and Archaea based on cell wall structure, association of histone to DNA, and structure of membrane lipids. <Badge type="gray" text="C3" />
@@ -159,13 +167,19 @@ Gram staining tells bacteria apart by their cell wall.
   </InfoCard>
 </CardGrid>
 
-::: info Fun fact
+<StickyNote>
+
 *Sulfolobus*, the archaea example in the syllabus, lives in volcanic hot springs at about 80 °C and pH 2 to 3. Most bacteria would die there.
-:::
+
+</StickyNote>
+
+</Topic>
+
+<Topic color="olive">
 
 ## 1.4 Kingdom Protista
 
-<Checklist title="Learning outcomes" color="green">
+<Checklist title="Learning outcomes">
 
 - (a) State the unique characteristics of Protista. <Badge type="gray" text="C1" />
 - (b) State the classification of Protista: two major phyla of algae by photosynthetic pigment (Chlorophyta, *Chlamydomonas* sp.; Phaeophyta, *Fucus* sp.) and four major phyla of protozoa by locomotion (Euglenophyta, Rhizopoda, Ciliophora, Apicomplexa). <Badge type="gray" text="C1" />
@@ -235,13 +249,19 @@ Unicellular. Mostly reproduce by **binary fission**. Many are zooplankton.
   </InfoCard>
 </CardGrid>
 
-::: info Fun fact
+<StickyNote>
+
 The slides ask which alga is used for sushi wrap. It is **nori**, made from a red alga (*Pyropia*, formerly *Porphyra*), pressed and dried into sheets.
-:::
+
+</StickyNote>
+
+</Topic>
+
+<Topic color="yellow">
 
 ## 1.5 Kingdom Fungi
 
-<Checklist title="Learning outcomes" color="green">
+<Checklist title="Learning outcomes">
 
 - (a) State the unique characteristics of Fungi. <Badge type="gray" text="C1" />
 - (b) State the classification of Fungi phyla based on the spore-bearing structure: Zygomycota (*Rhizopus* sp.), Ascomycota (*Penicillium* sp.), Basidiomycota (*Agaricus* sp.). <Badge type="gray" text="C1" />
@@ -295,13 +315,19 @@ The slides ask which alga is used for sushi wrap. It is **nori**, made from a re
   </InfoCard>
 </CardGrid>
 
-::: info Fun fact
+<StickyNote>
+
 Fungi are more closely related to animals than to plants. That is why both store glycogen, and why chitin turns up again in the exoskeleton of insects in 1.7.
-:::
+
+</StickyNote>
+
+</Topic>
+
+<Topic color="green">
 
 ## 1.6 Kingdom Plantae
 
-<Checklist title="Learning outcomes" color="green">
+<Checklist title="Learning outcomes">
 
 - 1.6 (a) Describe alternation of generation as the unique characteristic of Plantae. <Badge type="gray" text="C2" />
 - 1.6 (b) State the classification of Plantae into four groups: bryophytes, pteridophytes, gymnosperms, angiosperms. <Badge type="gray" text="C1" />
@@ -421,13 +447,19 @@ Reproduce with **flowers**. **Double fertilisation** forms a triploid **endosper
 The sporophyte grows bigger and takes over, the gametophyte shrinks, water stops being needed for fertilisation, vascular tissue gets more complex, and the embryo gets better protected.
 :::
 
-::: info Fun fact
+<StickyNote>
+
 *Rafflesia*, the genus with the world's largest single flower, grows wild in Sabah. It is an angiosperm with no leaves, stem or roots of its own; it lives as a parasite on a vine.
-:::
+
+</StickyNote>
+
+</Topic>
+
+<Topic color="purple">
 
 ## 1.7 Kingdom Animalia
 
-<Checklist title="Learning outcomes" color="green">
+<Checklist title="Learning outcomes">
 
 - (a) Describe the unique characteristics of Kingdom Animalia. <Badge type="gray" text="C2" />
 - (b) State the classification of Animalia into nine phyla: Porifera, Cnidaria, Platyhelminthes, Nematoda, Annelida, Arthropoda, Mollusca, Echinodermata, Chordata. <Badge type="gray" text="C1" />
@@ -542,9 +574,15 @@ Repeated body units let each segment move on its own, so movement is more precis
 | Echinodermata | Eumetazoa | Triplo | Radial (adult) | Coelomate, deuterostome | No |
 | Chordata | Eumetazoa | Triplo | Bilateral | Coelomate, deuterostome | Yes, with tagmata |
 
-::: info Fun fact
+<StickyNote>
+
 Arthropods make up more than three out of every four known animal species. Insects alone outnumber every other animal group combined.
-:::
+
+</StickyNote>
+
+</Topic>
+
+<Topic color="blue">
 
 ## Quick revision: key terms
 
@@ -616,3 +654,5 @@ Choose the best answer.
    - (a) Predict whether penicillin would work against Archaea such as *Sulfolobus*. Explain.
    - (b) Suggest why penicillin is usually more effective against Gram-positive than Gram-negative bacteria.
    - (c) *Penicillium* is a fungus. Explain why penicillin does not harm the fungus that produces it.
+
+</Topic>

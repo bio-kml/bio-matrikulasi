@@ -20,7 +20,11 @@ Example: "add the Chapter 2 slides PDF" → the PDF iframe + Open Fullscreen but
 | Dates, schedule, deadlines, history | `<Timeline>` / `<TimelineItem date done>` (`layout="alternate"` for schedules) |
 | Lab method / numbered procedure | `<Steps>` wrapping a markdown `1.` list |
 | Comparison of 2–4 things | markdown table, or `<Tabs>` + `<Tab label>` |
-| Key fact to remember | `::: tip` |
+| Definition of a term | `<Definition term>` |
+| Key fact / quick reminder | `::: tip Quick reminder: …` |
+| Fun fact / aside | `<StickyNote>` |
+| Cause → effect chain | `<Flow :steps>` |
+| A subtopic (3.1, 3.2 …) | wrap in `<Topic color>` |
 | Common mistake | `::: warning` |
 | Lab safety | `::: danger` |
 | Background / extra info | `::: info` |
@@ -46,8 +50,15 @@ Content rules:
 
 ## Design rules (user preferences — do not break)
 
-- Flat only: no gradients, glow, shine, pulsing/beating animations.
-- Boxes are neutral: plain background + thin grey border. No tinted/pastel box fills, no full-colour cards, no one-sided coloured borders. Colour only on small details (icons, numbers, labels, text).
-- Motion is calm (fade/slide/scale), and must respect `prefers-reduced-motion`.
+The site uses a **notebook / note-tablet look**, matching the user's own slides (e.g. the SB025 Chapter 3 Selection and Speciation slides): grid-paper background, Kalam handwriting for headings, Patrick Hand for body text, dark ink-outlined boxes, yellow marker highlights, one colour per subtopic. It must not look generic or "AI-made".
+
+- **Subtopic colour:** wrap each subtopic (e.g. `## 3.1 …`) in `<Topic color="…">`. Its h2 gets a thick coloured bar; h3s, table headers, `::: tip` bubbles and learning-outcome boxes take that colour. Colours: green, blue, teal, olive, yellow, red, purple.
+- **Learning outcomes:** `<Checklist title="Learning outcomes">` with each outcome as a `-` item ending in `<Badge text="C1" />` (renders as tick boxes with the C-level on the right).
+- **Definitions:** `<Definition term="…">…</Definition>` (highlighted). **Bold** text renders as a yellow marker highlight, so bold only key words.
+- **Quick reminders / key terms:** `::: tip Quick reminder: …` (speech bubble). **Fun facts:** `<StickyNote>` (pink note), never `::: info`.
+- **Cause → effect chains / short sequences:** `<Flow :steps="[…]">`.
+- **Tables:** plain markdown tables (ink grid, tinted header, handwritten first column are automatic).
+- Boxes: 2px ink outline, white "paper box" background, small radius. No gradients-as-decoration, glow, shine or pulsing animations.
+- Motion is calm (fade/slide/scale) and respects `prefers-reduced-motion`.
 - No Mermaid.
-- Components live in `docs/.vitepress/theme/components/` (UI kit in `ui/`, built on Reka UI) and are registered globally in `docs/.vitepress/theme/index.js`.
+- Components live in `docs/.vitepress/theme/components/` (UI kit in `ui/`, built on Reka UI) and are registered globally in `docs/.vitepress/theme/index.js`. Theme styles are in `docs/.vitepress/theme/style.css`.

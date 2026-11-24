@@ -6,6 +6,7 @@ export const accents = {
   yellow: 'var(--c-yellow)',
   red: 'var(--c-red)',
   purple: 'var(--c-purple)',
-  teal: 'var(--c-teal)'
+  teal: 'var(--c-teal)',
+  olive: 'var(--c-olive)'
 }
 export const accentNames = Object.keys(accents)

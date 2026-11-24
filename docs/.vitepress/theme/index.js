@@ -4,7 +4,9 @@ import { useRoute } from 'vitepress'
 import mediumZoom from 'medium-zoom'
 import { MotionPlugin } from '@vueuse/motion'
 import { autoAnimatePlugin } from '@formkit/auto-animate/vue'
-import '@fontsource-variable/plus-jakarta-sans'
+import '@fontsource/kalam/400.css'
+import '@fontsource/kalam/700.css'
+import '@fontsource/patrick-hand/400.css'
 import './style.css'
 import StudyHighlighter from './components/StudyHighlighter.vue'
 import Checklist from './components/Checklist.vue'
@@ -32,6 +34,10 @@ import InfoCard from './components/ui/InfoCard.vue'
 import CourseOverview from './components/CourseOverview.vue'
 import SectionLabel from './components/SectionLabel.vue'
 import { sectionOf } from './sections.js'
+import Topic from './components/ui/Topic.vue'
+import StickyNote from './components/ui/StickyNote.vue'
+import Definition from './components/ui/Definition.vue'
+import Flow from './components/ui/Flow.vue'
 import ReadingProgress from './components/ReadingProgress.vue'
 
 const prefersReducedMotion = () =>
@@ -73,7 +79,8 @@ export default {
     const ui = {
       Accordion, AccordionItem, Tabs, Tab, Term, Badge, CardGrid, LinkCard, Timeline, TimelineItem,
       Quiz, Flashcards, Steps, Figure, LabeledDiagram, ScrollTimeline, ScrollStep,
-      Icon, StatGrid, StatCard, InfoCard, CourseOverview
+      Icon, StatGrid, StatCard, InfoCard, CourseOverview,
+      Topic, StickyNote, Definition, Flow
     }
     for (const [name, comp] of Object.entries(ui)) app.component(name, comp)
   },

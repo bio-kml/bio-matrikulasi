@@ -349,3 +349,84 @@ Embed the PDF and add an **Open Fullscreen** button under it. Put the file in `d
   </button>
 </a>
 ```
+
+
+## Notebook pieces
+
+These give pages the notebook look of the slides.
+
+### Topic colour
+
+Wrap each subtopic so its heading bar, sub-headings, table headers, callouts and learning outcomes all share one colour.
+
+<Topic color="blue">
+
+#### Inside a blue topic
+
+| | Sympatric | Allopatric |
+|---|---|---|
+| Barrier | No geographical barrier | Geographical barrier present |
+
+::: tip Quick reminder: gene flow
+The transfer of alleles from one population to another.
+:::
+
+</Topic>
+
+```md
+<Topic color="blue">
+
+## 3.2 Speciation
+
+...everything for this subtopic...
+
+</Topic>
+```
+
+Colours: `green`, `blue`, `teal`, `olive`, `yellow`, `red`, `purple`.
+
+### Definition
+
+<Definition term="Speciation">the process of forming new species from pre-existing species through evolution.</Definition>
+
+```md
+<Definition term="Speciation">the process of forming new species from pre-existing species through evolution.</Definition>
+```
+
+### Flow
+
+Boxes joined by arrows, for cause → effect chains. Add `row` to run left to right.
+
+<Flow :steps="['One population linked by gene flow', 'Barrier stops gene flow', 'Allele frequencies change; groups diverge', 'Reproductive isolation', 'New species']" />
+
+```md
+<Flow :steps="['One population linked by gene flow', 'Barrier stops gene flow', 'New species']" />
+```
+
+### Sticky note
+
+<StickyNote>
+
+A pink sticky note for fun facts and asides.
+
+</StickyNote>
+
+```md
+<StickyNote>
+
+The fun fact goes here.
+
+</StickyNote>
+```
+
+Use `title="..."` to change the heading and `source="..."` for a small source line.
+
+### Quick reminder (callout)
+
+`::: tip` boxes are drawn as speech bubbles in the topic colour; use them for "Quick reminder" key terms.
+
+```md
+::: tip Quick reminder: key terms
+**Heritable trait:** passed from parents to offspring through genes.
+:::
+```

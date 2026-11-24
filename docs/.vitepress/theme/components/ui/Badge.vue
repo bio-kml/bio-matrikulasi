@@ -8,7 +8,7 @@ defineProps({
   type: {
     type: String,
     default: 'green',
-    validator: (v) => ['green', 'blue', 'yellow', 'red', 'purple', 'teal', 'gray'].includes(v)
+    validator: (v) => ['green', 'blue', 'yellow', 'red', 'purple', 'teal', 'olive', 'gray'].includes(v)
   }
 })
 </script>
@@ -34,5 +34,6 @@ defineProps({
 .ui-badge--red { --b: var(--c-red); }
 .ui-badge--purple { --b: var(--c-purple); }
 .ui-badge--teal { --b: var(--c-teal); }
+.ui-badge--olive { --b: var(--c-olive); }
 .ui-badge--gray { --b: var(--vp-c-text-2); }
 </style>

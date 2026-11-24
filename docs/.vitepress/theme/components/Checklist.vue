@@ -1,82 +1,61 @@
 <template>
-  <div
-    v-motion
-    class="checklist"
-    :class="`checklist--${color}`"
-    :initial="reduced ? undefined : { opacity: 0, y: 16 }"
-    :visible-once="reduced ? undefined : { opacity: 1, y: 0, transition: { duration: 420, ease: [0.2, 0, 0, 1] } }"
-  >
+  <div class="checklist" :style="color ? { '--cl-accent': accent } : null">
     <div v-if="title" class="checklist__title">{{ title }}</div>
     <slot />
   </div>
 </template>
 
 <script setup>
-import { ref, onBeforeMount } from 'vue'
+import { computed } from 'vue'
+import { accents } from './ui/accent.js'
 
-// Skip the scroll-in animation for users who ask for reduced motion.
-const reduced = ref(false)
-onBeforeMount(() => {
-  reduced.value = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-})
-
-defineProps({
-  // Accent color for the card.
-  color: {
-    type: String,
-    default: 'blue',
-    validator: (v) => ['yellow', 'green', 'pink', 'blue'].includes(v)
-  },
+const props = defineProps({
+  // Accent colour. Leave empty to use the surrounding topic/section colour.
+  color: { type: String, default: '' },
   // Optional heading shown at the top of the card.
-  title: {
-    type: String,
-    default: ''
-  }
+  title: { type: String, default: '' }
 })
+const extra = { pink: '#d6336c' }
+const accent = computed(() => accents[props.color] || extra[props.color] || props.color)
 </script>
 
 <style scoped>
 .checklist {
-  --cl-accent: var(--vp-c-brand-1);
+  --cl-accent: var(--c, var(--vp-c-brand-1));
   margin: 20px 0;
-  padding: 6px 20px 14px;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 12px;
-  background: var(--vp-c-bg-soft);
+  padding: 8px 20px 14px;
+  border: var(--line);
+  border-radius: 10px;
+  background: var(--box);
 }
-.checklist--yellow { --cl-accent: var(--c-yellow); }
-.checklist--green { --cl-accent: var(--c-green); }
-.checklist--pink { --cl-accent: #d6336c; }
-.checklist--blue { --cl-accent: var(--c-blue); }
-
 .checklist__title {
-  position: relative;
-  margin: 10px 0 10px;
-  padding-left: 13px;
-  font-size: 17px;
+  margin: 8px 0 6px;
+  font-family: var(--font-hand);
+  font-size: 1.3rem;
   font-weight: 700;
-  color: var(--vp-c-text-1);
-}
-.checklist__title::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 2px;
-  bottom: 2px;
-  width: 3px;
-  border-radius: 3px;
-  background: var(--cl-accent);
+  color: var(--cl-accent);
 }
 
-/* Style the markdown list the author writes inside the slot. */
-/* Bullet lists (-): no marker. Ordered lists (1. 2. 3.): keep normal numbers. */
+/* Bullet lists become tick boxes; ordered lists keep their numbers. */
 .checklist :deep(ul) {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.checklist :deep(ul) > li::marker {
-  content: none;
+.checklist :deep(ul) > li::marker { content: none; }
+.checklist :deep(ul) > li {
+  position: relative;
+  padding-left: 30px;
+}
+.checklist :deep(ul) > li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.42em;
+  width: 15px;
+  height: 15px;
+  border: var(--line);
+  border-radius: 2px;
 }
 .checklist :deep(ol) {
   margin: 0;
@@ -84,15 +63,20 @@ defineProps({
 }
 .checklist :deep(li) {
   margin: 0;
-  padding: 11px 4px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   line-height: 1.6;
-  border-bottom: 1px solid var(--vp-c-divider);
-  transition: padding-left 0.18s cubic-bezier(0.2, 0, 0, 1);
 }
-.checklist :deep(li:hover) {
-  padding-left: 10px;
-}
-.checklist :deep(li:last-child) {
-  border-bottom: none;
+/* Cognitive-level tags (C1, C2…) sit at the right in handwriting. */
+.checklist :deep(.ui-badge) {
+  float: right;
+  margin: 0 0 0 12px;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: var(--font-hand);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--cl-accent);
 }
 </style>
