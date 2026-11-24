@@ -44,6 +44,11 @@ import SymmetryDiagram from './components/diagrams/SymmetryDiagram.vue'
 import GramWallDiagram from './components/diagrams/GramWallDiagram.vue'
 import BacteriaShapes from './components/diagrams/BacteriaShapes.vue'
 import LifeCycleDiagram from './components/diagrams/LifeCycleDiagram.vue'
+import SelectionCurvesDiagram from './components/diagrams/SelectionCurvesDiagram.vue'
+import LakeZonesDiagram from './components/diagrams/LakeZonesDiagram.vue'
+import EnergyPyramid from './components/diagrams/EnergyPyramid.vue'
+import PopulationGrowthDiagram from './components/diagrams/PopulationGrowthDiagram.vue'
+import RainforestLayers from './components/diagrams/RainforestLayers.vue'
 import ReadingProgress from './components/ReadingProgress.vue'
 
 const prefersReducedMotion = () =>
@@ -87,7 +92,8 @@ export default {
       Quiz, Flashcards, Steps, Figure, LabeledDiagram, ScrollTimeline, ScrollStep,
       Icon, StatGrid, StatCard, InfoCard, CourseOverview,
       Topic, StickyNote, Definition, Flow, PriorKnowledge,
-      BodyPlanDiagram, SymmetryDiagram, GramWallDiagram, BacteriaShapes, LifeCycleDiagram
+      BodyPlanDiagram, SymmetryDiagram, GramWallDiagram, BacteriaShapes, LifeCycleDiagram,
+      SelectionCurvesDiagram, LakeZonesDiagram, EnergyPyramid, PopulationGrowthDiagram, RainforestLayers
     }
     for (const [name, comp] of Object.entries(ui)) app.component(name, comp)
   },

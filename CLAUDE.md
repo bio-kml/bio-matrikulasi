@@ -26,13 +26,14 @@ Example: "add the Chapter 2 slides PDF" → the PDF iframe + Open Fullscreen but
 | Cause → effect chain | `<Flow :steps>` |
 | A subtopic (3.1, 3.2 …) | wrap in `<Topic color>` |
 | Prior knowledge a subtopic builds on | `<PriorKnowledge :items>` right after its learning outcomes (always include one per subtopic in revision notes) |
-| Hard-to-picture concept | an interactive diagram: existing ones are `<BodyPlanDiagram>`, `<SymmetryDiagram>`, `<GramWallDiagram>`, `<BacteriaShapes>`, `<LifeCycleDiagram>` (in `components/diagrams/`, using `DiagramFrame`); build a new one in the same style when a topic needs it |
+| Hard-to-picture concept | an interactive diagram: existing ones are `<BodyPlanDiagram>`, `<SymmetryDiagram>`, `<GramWallDiagram>`, `<BacteriaShapes>`, `<LifeCycleDiagram>`, `<SelectionCurvesDiagram>`, `<LakeZonesDiagram>`, `<EnergyPyramid>`, `<PopulationGrowthDiagram>`, `<RainforestLayers>` (in `components/diagrams/`, using `DiagramFrame`); build a new one in the same style when a topic needs it |
 | Common mistake | `::: warning` |
 | Lab safety | `::: danger` |
 | Background / extra info | `::: info` |
 | Answers, solutions, marking schemes | `::: details` or `<Accordion>` + `<AccordionItem title>` |
 | Technical term in running text | `<Term def="...">word</Term>` |
 | Equations | `$...$` inline, `$$...$$` block |
+| Photos from the user's slides | extract with `pdfimages`, compress to JPEG (≤900 px) in `docs/public/images/ch<N>/`, show with `<Figure>` (pairs in `<div class="fig-row">`) next to the text they illustrate |
 | Diagram with named parts | `<LabeledDiagram src :labels>`; other images `<Figure src num caption>` (images in `docs/public/images/`) |
 | Questions / MCQs / self-check | `<Quiz question :options :answer explain>` |
 | Terms to revise | `<Flashcards :cards>` |

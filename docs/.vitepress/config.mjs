@@ -26,6 +26,8 @@ export default defineConfig({
         items: [
           { text: 'SB025 Biology Revision Notes', link: '/revision/' },
           { text: 'Chapter 1: Biodiversity', link: '/revision/chapter-01' },
+          { text: 'Chapter 2: Ecology', link: '/revision/chapter-02' },
+          { text: 'Chapter 3: Selection and Speciation', link: '/revision/chapter-03' },
         ],
         activeMatch: '^/revision/'
       },
@@ -89,6 +91,8 @@ export default defineConfig({
           link: '/revision/',
           items: [
             { text: 'Chapter 1: Biodiversity', link: '/revision/chapter-01' },
+            { text: 'Chapter 2: Ecology', link: '/revision/chapter-02' },
+            { text: 'Chapter 3: Selection and Speciation', link: '/revision/chapter-03' },
           ]
         }
       ],

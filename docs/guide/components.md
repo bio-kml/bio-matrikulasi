@@ -470,5 +470,12 @@ Ready-made diagrams for ideas that are hard to picture. Drop them in where the t
 | `<GramWallDiagram />` | Gram-positive vs Gram-negative cell wall layers |
 | `<BacteriaShapes />` | Coccus, bacillus, spirillum, vibrio and cocci arrangements |
 | `<LifeCycleDiagram />` | Alternation of generations (haploid / diploid halves) |
+| `<SelectionCurvesDiagram />` | Stabilizing, directional, disruptive selection graphs (predict, then apply) |
+| `<LakeZonesDiagram />` | Littoral, limnetic, aphotic/profundal and benthic zones, compensation point |
+| `<EnergyPyramid />` | Pyramid of energy, 10% rule |
+| `<PopulationGrowthDiagram />` | Exponential (J) and logistic (S) growth with phases and K |
+| `<RainforestLayers />` | Tropical rainforest stratification |
+
+Photos side by side: wrap `<Figure>`s in `<div class="fig-row">`. Put chapter images in `docs/public/images/ch<N>/`.
 
 <BodyPlanDiagram />

@@ -12,6 +12,16 @@ Revision notes for each chapter. Tick off each learning outcome once you can ans
   Classification, Bacteria and Archaea, Protista, Fungi, Plantae and Animalia.
 
   </InfoCard>
+  <InfoCard title="Ecology" tag="Chapter 2" icon="sprout" color="teal" link="/revision/chapter-02">
+
+  Ecosystems, energy flow, biogeochemical cycles, conservation and population ecology.
+
+  </InfoCard>
+  <InfoCard title="Selection and Speciation" tag="Chapter 3" icon="dna" color="blue" link="/revision/chapter-03">
+
+  Natural and artificial selection, the species concept, and how new species form.
+
+  </InfoCard>
 </CardGrid>
 
 ::: tip How to use these notes

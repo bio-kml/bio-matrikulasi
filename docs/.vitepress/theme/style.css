@@ -261,6 +261,11 @@ body .ui-tl-body.ui-tl-body, body .ui-ld__desc.ui-ld__desc { font-size: 15px; }
 body .ui-st__card-body.ui-st__card-body { font-size: 17px; }
 .co__pages li { font-size: 15px !important; }
 
+/* Photos side by side */
+.vp-doc .fig-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 20px 0; align-items: start; }
+.vp-doc .fig-row .ui-figure { margin: 0; }
+.vp-doc .ui-figure__frame img { max-width: 100%; }
+
 /* ---- Home hero ---- */
 .VPHero .name .clip {
     background: none;
