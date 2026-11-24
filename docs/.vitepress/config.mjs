@@ -28,6 +28,7 @@ export default defineConfig({
           { text: 'Chapter 1: Biodiversity', link: '/revision/chapter-01' },
           { text: 'Chapter 2: Ecology', link: '/revision/chapter-02' },
           { text: 'Chapter 3: Selection and Speciation', link: '/revision/chapter-03' },
+          { text: 'Chapter 4: Biocatalysis', link: '/revision/chapter-04' },
         ],
         activeMatch: '^/revision/'
       },
@@ -93,6 +94,7 @@ export default defineConfig({
             { text: 'Chapter 1: Biodiversity', link: '/revision/chapter-01' },
             { text: 'Chapter 2: Ecology', link: '/revision/chapter-02' },
             { text: 'Chapter 3: Selection and Speciation', link: '/revision/chapter-03' },
+            { text: 'Chapter 4: Biocatalysis', link: '/revision/chapter-04' },
           ]
         }
       ],

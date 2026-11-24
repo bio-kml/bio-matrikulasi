@@ -26,7 +26,7 @@ Example: "add the Chapter 2 slides PDF" → the PDF iframe + Open Fullscreen but
 | Cause → effect chain | `<Flow :steps>` |
 | A subtopic (3.1, 3.2 …) | wrap in `<Topic color>` |
 | Prior knowledge a subtopic builds on | `<PriorKnowledge :items>` right after its learning outcomes (always include one per subtopic in revision notes) |
-| Hard-to-picture concept | an interactive diagram: existing ones are `<BodyPlanDiagram>`, `<SymmetryDiagram>`, `<GramWallDiagram>`, `<BacteriaShapes>`, `<LifeCycleDiagram>`, `<SelectionCurvesDiagram>`, `<LakeZonesDiagram>`, `<EnergyPyramid>`, `<PopulationGrowthDiagram>`, `<RainforestLayers>` (in `components/diagrams/`, using `DiagramFrame`); build a new one in the same style when a topic needs it |
+| Hard-to-picture concept | an interactive diagram: existing ones are `<BodyPlanDiagram>`, `<SymmetryDiagram>`, `<GramWallDiagram>`, `<BacteriaShapes>`, `<LifeCycleDiagram>`, `<SelectionCurvesDiagram>`, `<LakeZonesDiagram>`, `<EnergyPyramid>`, `<PopulationGrowthDiagram>`, `<RainforestLayers>`, `<ActivationEnergyDiagram>`, `<InducedFitDiagram>`, `<EnzymeFactorsDiagram>`, `<InhibitionDiagram>` (in `components/diagrams/`, using `DiagramFrame`); build a new one in the same style when a topic needs it |
 | Common mistake | `::: warning` |
 | Lab safety | `::: danger` |
 | Background / extra info | `::: info` |
@@ -48,7 +48,7 @@ Live examples and exact syntax for every component: `docs/guide/components.md`, 
 Content rules:
 - Do not invent facts, marks, dates or answers. Only use what the user or their material provides.
 - Section colours are automatic: lectures green, tutorials blue, labs teal, assessments yellow, exams purple, course red. Use the matching `color` on cards for that section.
-- New pages: add them to both `nav` and `sidebar` in `docs/.vitepress/config.mjs`; file names like `chapter-02.md`, `lab-02.md`, `tutorial-02.md`.
+- New pages: add them to both `nav` and `sidebar` in `docs/.vitepress/config.mjs`; file names like `chapter-02.md`, `lab-02.md`, `tutorial-02.md`. New revision chapters also go on `docs/revision/index.md` (an `<InfoCard>`).
 - Add `highlighter: true` to the frontmatter of lecture and tutorial pages (enables the study highlighter).
 
 ## Design rules (user preferences — do not break)

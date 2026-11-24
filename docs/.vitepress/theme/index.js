@@ -49,6 +49,10 @@ import LakeZonesDiagram from './components/diagrams/LakeZonesDiagram.vue'
 import EnergyPyramid from './components/diagrams/EnergyPyramid.vue'
 import PopulationGrowthDiagram from './components/diagrams/PopulationGrowthDiagram.vue'
 import RainforestLayers from './components/diagrams/RainforestLayers.vue'
+import ActivationEnergyDiagram from './components/diagrams/ActivationEnergyDiagram.vue'
+import InducedFitDiagram from './components/diagrams/InducedFitDiagram.vue'
+import EnzymeFactorsDiagram from './components/diagrams/EnzymeFactorsDiagram.vue'
+import InhibitionDiagram from './components/diagrams/InhibitionDiagram.vue'
 import ReadingProgress from './components/ReadingProgress.vue'
 
 const prefersReducedMotion = () =>
@@ -93,7 +97,8 @@ export default {
       Icon, StatGrid, StatCard, InfoCard, CourseOverview,
       Topic, StickyNote, Definition, Flow, PriorKnowledge,
       BodyPlanDiagram, SymmetryDiagram, GramWallDiagram, BacteriaShapes, LifeCycleDiagram,
-      SelectionCurvesDiagram, LakeZonesDiagram, EnergyPyramid, PopulationGrowthDiagram, RainforestLayers
+      SelectionCurvesDiagram, LakeZonesDiagram, EnergyPyramid, PopulationGrowthDiagram, RainforestLayers,
+      ActivationEnergyDiagram, InducedFitDiagram, EnzymeFactorsDiagram, InhibitionDiagram
     }
     for (const [name, comp] of Object.entries(ui)) app.component(name, comp)
   },

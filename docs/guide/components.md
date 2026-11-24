@@ -475,6 +475,10 @@ Ready-made diagrams for ideas that are hard to picture. Drop them in where the t
 | `<EnergyPyramid />` | Pyramid of energy, 10% rule |
 | `<PopulationGrowthDiagram />` | Exponential (J) and logistic (S) growth with phases and K |
 | `<RainforestLayers />` | Tropical rainforest stratification |
+| `<ActivationEnergyDiagram />` | Energy profile with and without an enzyme |
+| `<InducedFitDiagram />` | Induced fit model, 3 steps |
+| `<EnzymeFactorsDiagram />` | Rate vs substrate concentration, pH, temperature, enzyme concentration |
+| `<InhibitionDiagram />` | Competitive vs non-competitive inhibition, with rate graph |
 
 Photos side by side: wrap `<Figure>`s in `<div class="fig-row">`. Put chapter images in `docs/public/images/ch<N>/`.
 

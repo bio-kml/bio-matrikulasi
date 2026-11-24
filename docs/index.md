@@ -12,6 +12,9 @@ hero:
     alt: Illustration of an animal cell
   actions:
     - theme: brand
+      text: Revision Notes
+      link: /revision/
+    - theme: alt
       text: Get Started
       link: /lectures/chapter-01
     - theme: alt

@@ -22,6 +22,11 @@ Revision notes for each chapter. Tick off each learning outcome once you can ans
   Natural and artificial selection, the species concept, and how new species form.
 
   </InfoCard>
+  <InfoCard title="Biocatalysis" tag="Chapter 4" icon="flask-conical" color="red" link="/revision/chapter-04">
+
+  Enzymes and how they work, cofactors, and inhibitors.
+
+  </InfoCard>
 </CardGrid>
 
 ::: tip How to use these notes
