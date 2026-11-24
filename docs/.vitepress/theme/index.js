@@ -38,6 +38,12 @@ import Topic from './components/ui/Topic.vue'
 import StickyNote from './components/ui/StickyNote.vue'
 import Definition from './components/ui/Definition.vue'
 import Flow from './components/ui/Flow.vue'
+import PriorKnowledge from './components/ui/PriorKnowledge.vue'
+import BodyPlanDiagram from './components/diagrams/BodyPlanDiagram.vue'
+import SymmetryDiagram from './components/diagrams/SymmetryDiagram.vue'
+import GramWallDiagram from './components/diagrams/GramWallDiagram.vue'
+import BacteriaShapes from './components/diagrams/BacteriaShapes.vue'
+import LifeCycleDiagram from './components/diagrams/LifeCycleDiagram.vue'
 import ReadingProgress from './components/ReadingProgress.vue'
 
 const prefersReducedMotion = () =>
@@ -80,7 +86,8 @@ export default {
       Accordion, AccordionItem, Tabs, Tab, Term, Badge, CardGrid, LinkCard, Timeline, TimelineItem,
       Quiz, Flashcards, Steps, Figure, LabeledDiagram, ScrollTimeline, ScrollStep,
       Icon, StatGrid, StatCard, InfoCard, CourseOverview,
-      Topic, StickyNote, Definition, Flow
+      Topic, StickyNote, Definition, Flow, PriorKnowledge,
+      BodyPlanDiagram, SymmetryDiagram, GramWallDiagram, BacteriaShapes, LifeCycleDiagram
     }
     for (const [name, comp] of Object.entries(ui)) app.component(name, comp)
   },

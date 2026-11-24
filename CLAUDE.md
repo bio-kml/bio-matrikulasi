@@ -25,6 +25,8 @@ Example: "add the Chapter 2 slides PDF" → the PDF iframe + Open Fullscreen but
 | Fun fact / aside | `<StickyNote>` |
 | Cause → effect chain | `<Flow :steps>` |
 | A subtopic (3.1, 3.2 …) | wrap in `<Topic color>` |
+| Prior knowledge a subtopic builds on | `<PriorKnowledge :items>` right after its learning outcomes (always include one per subtopic in revision notes) |
+| Hard-to-picture concept | an interactive diagram: existing ones are `<BodyPlanDiagram>`, `<SymmetryDiagram>`, `<GramWallDiagram>`, `<BacteriaShapes>`, `<LifeCycleDiagram>` (in `components/diagrams/`, using `DiagramFrame`); build a new one in the same style when a topic needs it |
 | Common mistake | `::: warning` |
 | Lab safety | `::: danger` |
 | Background / extra info | `::: info` |
@@ -53,7 +55,8 @@ Content rules:
 The site uses a **notebook / note-tablet look**, matching the user's own slides (e.g. the SB025 Chapter 3 Selection and Speciation slides): grid-paper background, Kalam handwriting for headings, Patrick Hand for body text, dark ink-outlined boxes, yellow marker highlights, one colour per subtopic. It must not look generic or "AI-made".
 
 - **Subtopic colour:** wrap each subtopic (e.g. `## 3.1 …`) in `<Topic color="…">`. Its h2 gets a thick coloured bar; h3s, table headers, `::: tip` bubbles and learning-outcome boxes take that colour. Colours: green, blue, teal, olive, yellow, red, purple.
-- **Learning outcomes:** `<Checklist title="Learning outcomes">` with each outcome as a `-` item ending in `<Badge text="C1" />` (renders as tick boxes with the C-level on the right).
+- **Learning outcomes:** `<Checklist title="Learning outcomes">` with each outcome as a `-` item ending in `<Badge text="C1" />` (clickable tick boxes saved per student, with a progress count and the C-level on the right).
+- **Revision notes should be interactive:** per subtopic include learning outcomes, a `<PriorKnowledge>` box, diagrams for hard concepts, `<Flow>` chains for cause → effect, and a `### Quick check` of `<Quiz>` MCQs at the end of the subtopic (only questions/answers supported by the source).
 - **Definitions:** `<Definition term="…">…</Definition>` (highlighted). **Bold** text renders as a yellow marker highlight, so bold only key words.
 - **Quick reminders / key terms:** `::: tip Quick reminder: …` (speech bubble). **Fun facts:** `<StickyNote>` (pink note), never `::: info`.
 - **Cause → effect chains / short sequences:** `<Flow :steps="[…]">`.

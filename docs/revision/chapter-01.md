@@ -22,6 +22,13 @@ Revision notes. Tick off each learning outcome once you can answer it without lo
 
 </Checklist>
 
+<PriorKnowledge :items="[
+  { term: 'Prokaryotic vs eukaryotic cells', note: 'Prokaryotic cells have <b>no nucleus</b> and no membrane-bound organelles; their DNA lies free in the cytoplasm. Eukaryotic cells have a <b>nucleus</b> and membrane-bound organelles such as mitochondria.' },
+  { term: 'Ribosomes and rRNA', note: 'Ribosomes make proteins. They are built from <b>ribosomal RNA (rRNA)</b> and protein. Every living cell has ribosomes, so comparing rRNA base sequences lets us compare all organisms.' },
+  { term: 'What a species is', note: 'A group of organisms that can <b>interbreed</b> in nature and produce <b>fertile offspring</b>.' },
+  { term: 'Unicellular vs multicellular', note: 'A unicellular organism is a single cell; a multicellular organism is made of many cells.' }
+]" />
+
 <Definition term="Biodiversity">the variety of living things, their genes, and the ecosystems they live in.</Definition>
 
 ### Types of biodiversity
@@ -75,6 +82,12 @@ Proposed by **Carl Woese in 1977**. Organisms are grouped by their **ribosomal R
 | Archaea | Prokaryote | Mostly unicellular, microscopic |
 | Eukarya | Eukaryote | Unicellular (mostly Protista) and multicellular (Fungi, Plantae, Animalia) |
 
+### Quick check
+
+<Quiz question="Which level of classification comes directly above Genus?" :options="['Order', 'Family', 'Class', 'Species']" :answer="1" explain="Domain, Kingdom, Phylum, Class, Order, Family, Genus, Species." />
+
+<Quiz question="Carl Woese's three-domain system groups organisms based on their" :options="['cell wall composition', 'mode of nutrition', 'rRNA base sequence', 'number of cells']" :answer="2" explain="Organisms are grouped by their ribosomal RNA (rRNA) base sequence." />
+
 <StickyNote>
 
 Malaysia is one of only 17 countries officially called "megadiverse". Together these countries hold most of the world's species.
@@ -95,6 +108,13 @@ Malaysia is one of only 17 countries officially called "megadiverse". Together t
 - (d) Explain the roles of bacteria: recycling of chemical elements (nitrogen fixation, *Rhizobium* sp.), symbiotic (*E. coli* in human intestine), pathogenic (*Salmonella* sp.), research and technology (bacterial plasmid). <Badge type="gray" text="C3" />
 
 </Checklist>
+
+<PriorKnowledge :items="[
+  { term: 'Cell wall vs plasma membrane', note: 'The <b>plasma membrane</b> controls what enters and leaves the cell. The <b>cell wall</b> lies outside it and gives shape and protection.' },
+  { term: 'Phospholipids in membranes', note: 'Membranes are made of <b>phospholipids</b>: a water-loving head with hydrocarbon (fatty-acid) tails. How the tails are joined to the head (<b>ester</b> or <b>ether</b> linkage) is one way Bacteria and Archaea differ.' },
+  { term: 'DNA and histones', note: 'In eukaryotes, DNA wraps around proteins called <b>histones</b>, which pack it into chromosomes.' },
+  { term: 'Why plants need nitrogen', note: 'Plants need nitrogen to make <b>amino acids</b> (for proteins) and <b>nucleic acids</b> (DNA, RNA), but they cannot use N₂ gas from the air directly.' }
+]" />
 
 The two prokaryote domains are **Bacteria (*E. coli*)** and **Archaea (*Sulfolobus* sp.)**. Both are unicellular, with a single circular DNA in the **nucleoid** region. Some also carry extra circular DNA called <Term def="Extra circular DNA carried by some prokaryotes, separate from the main circular DNA in the nucleoid.">plasmids</Term>.
 
@@ -119,6 +139,8 @@ Archaea were first found in extreme places. The three main types are **methanoge
 
 Cocci can be single, in pairs, in chains or in clusters.
 
+<BacteriaShapes />
+
 ### Diversity of bacteria: Gram stain
 
 Gram staining tells bacteria apart by their cell wall.
@@ -141,6 +163,8 @@ Gram staining tells bacteria apart by their cell wall.
 
 </Tab>
 </Tabs>
+
+<GramWallDiagram />
 
 ### Roles of bacteria
 
@@ -167,6 +191,14 @@ Gram staining tells bacteria apart by their cell wall.
   </InfoCard>
 </CardGrid>
 
+<Flow title="Nitrogen fixation, step by step" :steps="['N₂ in the air', '<i>Rhizobium</i> fixes N₂ → NH₃', 'Plants use it to make amino acids and nucleic acids']" />
+
+### Quick check
+
+<Quiz question="Which feature is found in Archaea but not in Bacteria?" :options="['Peptidoglycan in the cell wall', 'Ester-linked membrane lipids', 'DNA associated with histones', 'Unbranched hydrocarbon chains']" :answer="2" explain="Archaea DNA is associated with histones; Bacteria DNA is not." />
+
+<Quiz question="A Gram-negative bacterium appears pink after Gram staining because" :options="['its thick peptidoglycan traps crystal violet', 'crystal violet is washed out and safranin is taken up', 'it has no cell wall', 'its cell wall contains chitin']" :answer="1" explain="Gram-negative: crystal violet washed out, safranin taken up, so it stains pink." />
+
 <StickyNote>
 
 *Sulfolobus*, the archaea example in the syllabus, lives in volcanic hot springs at about 80 °C and pH 2 to 3. Most bacteria would die there.
@@ -186,6 +218,13 @@ Gram staining tells bacteria apart by their cell wall.
 - (d) Explain the roles of Protista in the ecological community: CO₂ fixation, food source, eutrophication, red tide, human health, sewage treatment. <Badge type="gray" text="C3" />
 
 </Checklist>
+
+<PriorKnowledge :items="[
+  { term: 'Autotroph vs heterotroph', note: '<b>Autotrophs</b> make their own food, e.g. by photosynthesis. <b>Heterotrophs</b> get food from other organisms.' },
+  { term: 'Photosynthetic pigments', note: 'Pigments such as <b>chlorophyll</b> absorb light energy for photosynthesis. Different pigments absorb different colours of light, which is why algae can be grouped by pigment.' },
+  { term: 'Binary fission', note: 'Asexual reproduction in which one cell divides into <b>two identical cells</b>.' },
+  { term: 'Food chains', note: 'Producers (e.g. algae) are eaten by consumers (e.g. zooplankton), passing energy along the chain.' }
+]" />
 
 ### Unique characteristics
 
@@ -249,6 +288,14 @@ Unicellular. Mostly reproduce by **binary fission**. Many are zooplankton.
   </InfoCard>
 </CardGrid>
 
+<Flow title="Eutrophication, step by step" :steps="['Extra nitrate and phosphate', 'Green algae bloom', 'Oxygen drops', 'Aquatic life dies']" />
+
+### Quick check
+
+<Quiz question="Which protozoan moves using cilia?" :options="['Euglena', 'Amoeba', 'Paramecium', 'Plasmodium']" :answer="2" explain="Paramecium (Ciliophora) uses cilia, also for feeding." />
+
+<Quiz question="Fucoxanthin is a pigment found in" :options="['Chlorophyta', 'Phaeophyta', 'Rhizopoda', 'Ascomycota']" :answer="1" explain="Phaeophyta pigments: chlorophyll a, c and fucoxanthin." />
+
 <StickyNote>
 
 The slides ask which alga is used for sushi wrap. It is **nori**, made from a red alga (*Pyropia*, formerly *Porphyra*), pressed and dried into sheets.
@@ -268,6 +315,13 @@ The slides ask which alga is used for sushi wrap. It is **nori**, made from a re
 - (c) Explain the roles of fungi: decomposers, symbionts, pathogens, food production (yeast), pharmaceutical (*Penicillium*). <Badge type="gray" text="C3" />
 
 </Checklist>
+
+<PriorKnowledge :items="[
+  { term: 'Storage carbohydrates', note: '<b>Starch</b> is the storage carbohydrate of plants; <b>glycogen</b> is the storage carbohydrate of animals. Both are made of glucose.' },
+  { term: 'Sexual vs asexual reproduction', note: '<b>Asexual</b>: one parent, offspring genetically identical. <b>Sexual</b>: gametes from two parents fuse, so offspring vary.' },
+  { term: 'Digestive enzymes', note: 'Enzymes break large food molecules into small ones that can be absorbed. Fungi release them <b>outside</b> their body, then absorb the products.' },
+  { term: 'Symbiosis', note: 'Two different species living closely together. In <b>mutualism</b> both benefit; in <b>parasitism</b> one benefits and the host is harmed.' }
+]" />
 
 ### Unique characteristics
 
@@ -315,6 +369,10 @@ The slides ask which alga is used for sushi wrap. It is **nori**, made from a re
   </InfoCard>
 </CardGrid>
 
+### Quick check
+
+<Quiz question="Ascospores are produced in a" :options="['sporangium', 'basidium', 'ascus', 'zygosporangium']" :answer="2" explain="Ascomycota: ascospore, made in the ascus." />
+
 <StickyNote>
 
 Fungi are more closely related to animals than to plants. That is why both store glycogen, and why chitin turns up again in the exoskeleton of insects in 1.7.
@@ -339,6 +397,13 @@ Fungi are more closely related to animals than to plants. That is why both store
 
 </Checklist>
 
+<PriorKnowledge :items="[
+  { term: 'Haploid (n) vs diploid (2n)', note: 'A <b>haploid</b> cell has one set of chromosomes (n); a <b>diploid</b> cell has two sets (2n).' },
+  { term: 'Mitosis vs meiosis', note: '<b>Mitosis</b> keeps the chromosome number the same (n → n, 2n → 2n). <b>Meiosis</b> halves it (2n → n).' },
+  { term: 'Fertilisation', note: 'A male and a female gamete fuse (n + n) to form a <b>diploid zygote</b> (2n).' },
+  { term: 'Xylem and phloem', note: 'Vascular tissue. <b>Xylem</b> carries water and minerals; <b>phloem</b> carries sugars made in photosynthesis.' }
+]" />
+
 ### Unique characteristics
 
 Multicellular eukaryotes that photosynthesise with chlorophyll, store **starch**, and have a **cellulose** cell wall. Their life cycle shows **alternation of generations**.
@@ -350,7 +415,9 @@ The life cycle switches between two multicellular stages that look different fro
 - **Gametophyte (n, haploid)** makes gametes by **mitosis**.
 - **Sporophyte (2n, diploid)** makes spores by **meiosis**.
 
-Scroll through the cycle one stage at a time:
+<LifeCycleDiagram />
+
+Now scroll through the cycle one stage at a time:
 
 <ScrollTimeline>
 <ScrollStep date="Stage 1 · 2n" title="Sporophyte">
@@ -447,6 +514,12 @@ Reproduce with **flowers**. **Double fertilisation** forms a triploid **endosper
 The sporophyte grows bigger and takes over, the gametophyte shrinks, water stops being needed for fertilisation, vascular tissue gets more complex, and the embryo gets better protected.
 :::
 
+### Quick check
+
+<Quiz question="In which plant group is the gametophyte the dominant generation?" :options="['Bryophytes', 'Pteridophytes', 'Gymnosperms', 'Angiosperms']" :answer="0" explain="In bryophytes the gametophyte is dominant; in the other groups the sporophyte is." />
+
+<Quiz question="Which of the following is a terrestrial adaptation of bryophytes?" :options="['Xylem vessels', 'Double fertilisation', 'Spores with a sporopollenin wall', 'Seeds enclosed in an ovary']" :answer="2" explain="Walled spores in a sporangium: sporopollenin makes the wall tough so spores survive drying out." />
+
 <StickyNote>
 
 *Rafflesia*, the genus with the world's largest single flower, grows wild in Sabah. It is an angiosperm with no leaves, stem or roots of its own; it lives as a parasite on a vine.
@@ -467,6 +540,13 @@ The sporophyte grows bigger and takes over, the gametophyte shrinks, water stops
 - (d) Explain the evolutionary relationships of animals based on level of organisation, germ layers, body symmetry, body coelom and segmentation. <Badge type="gray" text="C3" />
 
 </Checklist>
+
+<PriorKnowledge :items="[
+  { term: 'Cells, tissues and organs', note: 'A <b>tissue</b> is a group of similar cells doing one job; tissues work together as <b>organs</b>.' },
+  { term: 'The early embryo', note: 'A fertilised egg divides into a ball of cells. These cells form <b>germ layers</b>, which later become all the body tissues. The first opening that forms in the embryo becomes either the mouth or the anus.' },
+  { term: 'Open vs closed circulation', note: '<b>Closed</b>: blood stays inside vessels. <b>Open</b>: blood leaves the vessels and bathes the organs directly.' },
+  { term: 'Hydrostatic skeleton', note: 'A fluid-filled cavity that muscles squeeze against, giving the body support and shape, like a water balloon.' }
+]" />
 
 ### Unique characteristics
 
@@ -526,6 +606,10 @@ The sporophyte grows bigger and takes over, the gametophyte shrinks, water stops
 
 ### Evolutionary relationships
 
+Switch between the body plans below, then tap a layer to pick it out:
+
+<BodyPlanDiagram />
+
 <Tabs label="Evolutionary relationships">
 <Tab label="Organisation">
 
@@ -540,6 +624,8 @@ The sporophyte grows bigger and takes over, the gametophyte shrinks, water stops
 <Tab label="Symmetry">
 
 **Radial**: many planes cut the body into equal halves. **Bilateral**: only one plane, with a top and bottom, front and back, and usually **cephalisation** (a head with sense organs).
+
+<SymmetryDiagram />
 
 </Tab>
 <Tab label="Coelom">
@@ -574,6 +660,14 @@ Repeated body units let each segment move on its own, so movement is more precis
 | Echinodermata | Eumetazoa | Triplo | Radial (adult) | Coelomate, deuterostome | No |
 | Chordata | Eumetazoa | Triplo | Bilateral | Coelomate, deuterostome | Yes, with tagmata |
 
+### Quick check
+
+<Quiz question="An animal has a pseudocoelom and only longitudinal muscles. It belongs to phylum" :options="['Platyhelminthes', 'Nematoda', 'Annelida', 'Mollusca']" :answer="1" explain="Nematoda: pseudocoelomate, longitudinal muscles only." />
+
+<Quiz question="Stinging cells called cnidocytes are found in" :options="['Leucosolenia', 'Obelia', 'Taenia', 'Asterias']" :answer="1" explain="Obelia (Cnidaria) has cnidocytes with nematocysts." />
+
+<Quiz question="Which is not a unique characteristic of Chordata?" :options="['Notochord', 'Pharyngeal slits', 'Ventral solid nerve cord', 'Post-anal tail']" :answer="2" explain="Chordates have a dorsal hollow nerve cord, not a ventral solid one." />
+
 <StickyNote>
 
 Arthropods make up more than three out of every four known animal species. Insects alone outnumber every other animal group combined.
@@ -602,35 +696,7 @@ Click a card to flip it; use the arrows to move on.
 
 ## Practice questions
 
-Try these without looking at the notes first.
-
-### Part A: Objective questions
-
-Choose the best answer.
-
-<Quiz question="1. Which level of classification comes directly above Genus?" :options="['Order', 'Family', 'Class', 'Species']" :answer="1" explain="Domain, Kingdom, Phylum, Class, Order, Family, Genus, Species." />
-
-<Quiz question="2. Carl Woese's three-domain system groups organisms based on their" :options="['cell wall composition', 'mode of nutrition', 'rRNA base sequence', 'number of cells']" :answer="2" explain="Organisms are grouped by their ribosomal RNA (rRNA) base sequence." />
-
-<Quiz question="3. Which feature is found in Archaea but not in Bacteria?" :options="['Peptidoglycan in the cell wall', 'Ester-linked membrane lipids', 'DNA associated with histones', 'Unbranched hydrocarbon chains']" :answer="2" explain="Archaea DNA is associated with histones; Bacteria DNA is not." />
-
-<Quiz question="4. A Gram-negative bacterium appears pink after Gram staining because" :options="['its thick peptidoglycan traps crystal violet', 'crystal violet is washed out and safranin is taken up', 'it has no cell wall', 'its cell wall contains chitin']" :answer="1" explain="Gram-negative: crystal violet washed out, safranin taken up, so it stains pink." />
-
-<Quiz question="5. Which protozoan moves using cilia?" :options="['Euglena', 'Amoeba', 'Paramecium', 'Plasmodium']" :answer="2" explain="Paramecium (Ciliophora) uses cilia, also for feeding." />
-
-<Quiz question="6. Fucoxanthin is a pigment found in" :options="['Chlorophyta', 'Phaeophyta', 'Rhizopoda', 'Ascomycota']" :answer="1" explain="Phaeophyta pigments: chlorophyll a, c and fucoxanthin." />
-
-<Quiz question="7. Ascospores are produced in a" :options="['sporangium', 'basidium', 'ascus', 'zygosporangium']" :answer="2" explain="Ascomycota: ascospore, made in the ascus." />
-
-<Quiz question="8. In which plant group is the gametophyte the dominant generation?" :options="['Bryophytes', 'Pteridophytes', 'Gymnosperms', 'Angiosperms']" :answer="0" explain="In bryophytes the gametophyte is dominant; in the other groups the sporophyte is." />
-
-<Quiz question="9. Which of the following is a terrestrial adaptation of bryophytes?" :options="['Xylem vessels', 'Double fertilisation', 'Spores with a sporopollenin wall', 'Seeds enclosed in an ovary']" :answer="2" explain="Walled spores in a sporangium: sporopollenin makes the wall tough so spores survive drying out." />
-
-<Quiz question="10. An animal has a pseudocoelom and only longitudinal muscles. It belongs to phylum" :options="['Platyhelminthes', 'Nematoda', 'Annelida', 'Mollusca']" :answer="1" explain="Nematoda: pseudocoelomate, longitudinal muscles only." />
-
-<Quiz question="11. Stinging cells called cnidocytes are found in" :options="['Leucosolenia', 'Obelia', 'Taenia', 'Asterias']" :answer="1" explain="Obelia (Cnidaria) has cnidocytes with nematocysts." />
-
-<Quiz question="12. Which is not a unique characteristic of Chordata?" :options="['Notochord', 'Pharyngeal slits', 'Ventral solid nerve cord', 'Post-anal tail']" :answer="2" explain="Chordates have a dorsal hollow nerve cord, not a ventral solid one." />
+Try these without looking at the notes first. (The objective questions are in the **Quick check** at the end of each subtopic.)
 
 ### Part B: Short answer questions
 

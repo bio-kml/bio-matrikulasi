@@ -430,3 +430,45 @@ Use `title="..."` to change the heading and `source="..."` for a small source li
 **Heritable trait:** passed from parents to offspring through genes.
 :::
 ```
+
+## Before you start (prior knowledge)
+
+Put after a subtopic's learning outcomes: the ideas from earlier that the topic builds on. Students tap a term to reveal a short reminder.
+
+<PriorKnowledge :items="[
+  { term: 'Haploid (n) vs diploid (2n)', note: 'A <b>haploid</b> cell has one set of chromosomes (n); a <b>diploid</b> cell has two sets (2n).' },
+  { term: 'Mitosis vs meiosis', note: '<b>Mitosis</b> keeps the chromosome number the same. <b>Meiosis</b> halves it (2n → n).' }
+]" />
+
+```md
+<PriorKnowledge :items="[
+  { term: 'Haploid (n) vs diploid (2n)', note: 'A <b>haploid</b> cell has one set of chromosomes (n)...' }
+]" />
+```
+
+Avoid apostrophes inside the `term`/`note` text (they end the string).
+
+## Learning outcomes you can tick
+
+`<Checklist>` bullet items are tick boxes. Ticks are saved in the student's browser and a counter shows progress.
+
+<Checklist title="Learning outcomes">
+
+- (a) State the types of selection. <Badge text="C1" />
+- (b) Define natural selection. <Badge text="C1" />
+
+</Checklist>
+
+## Interactive diagrams
+
+Ready-made diagrams for ideas that are hard to picture. Drop them in where the topic is taught.
+
+| Component | Shows |
+|---|---|
+| `<BodyPlanDiagram />` | Diploblastic vs triploblastic; acoelomate, pseudocoelomate, coelomate cross-sections |
+| `<SymmetryDiagram />` | Radial vs bilateral symmetry, with cutting planes |
+| `<GramWallDiagram />` | Gram-positive vs Gram-negative cell wall layers |
+| `<BacteriaShapes />` | Coccus, bacillus, spirillum, vibrio and cocci arrangements |
+| `<LifeCycleDiagram />` | Alternation of generations (haploid / diploid halves) |
+
+<BodyPlanDiagram />
