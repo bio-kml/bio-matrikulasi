@@ -479,6 +479,36 @@ Ready-made diagrams for ideas that are hard to picture. Drop them in where the t
 | `<InducedFitDiagram />` | Induced fit model, 3 steps |
 | `<EnzymeFactorsDiagram />` | Rate vs substrate concentration, pH, temperature, enzyme concentration |
 | `<InhibitionDiagram />` | Competitive vs non-competitive inhibition, with rate graph |
+| `<CellRespirationMap />` | Cell with mitochondrion: where each stage of respiration happens |
+| `<ATPDiagram />` | ATP structure and hydrolysis |
+| `<KrebsCycleDiagram />` | Krebs cycle, 8 steps with enzymes and products |
+| `<ETCDiagram />` | Electron transport chain and chemiosmosis, step by step |
+
+## Molecules and reactions
+
+Draw an intermediate as a carbon skeleton: green circles are carbons, orange tags are phosphates.
+
+<Reaction enzyme="hexokinase" :ins="['ATP']" :outs="['ADP']">
+<template #from><Molecule c="6" name="Glucose" small /></template>
+<template #to><Molecule c="6" :p="[6]" name="Glucose 6-phosphate" small /></template>
+</Reaction>
+
+```md
+<Reaction enzyme="hexokinase" :ins="['ATP']" :outs="['ADP']">
+<template #from><Molecule c="6" name="Glucose" small /></template>
+<template #to><Molecule c="6" :p="[6]" name="Glucose 6-phosphate" small /></template>
+</Reaction>
+```
+
+`<Molecule>` props: `c` (number of carbons), `p` (carbons carrying a phosphate), `name`, `coa` (adds CoA), `small`.
+
+## Order challenge
+
+<OrderChallenge title="Stages of aerobic respiration" :items="['Glycolysis', 'Pyruvate oxidation', 'Krebs cycle', 'Oxidative phosphorylation']" />
+
+```md
+<OrderChallenge title="Stages of aerobic respiration" :items="['Glycolysis', 'Pyruvate oxidation', 'Krebs cycle', 'Oxidative phosphorylation']" />
+```
 
 Photos side by side: wrap `<Figure>`s in `<div class="fig-row">`. Put chapter images in `docs/public/images/ch<N>/`.
 

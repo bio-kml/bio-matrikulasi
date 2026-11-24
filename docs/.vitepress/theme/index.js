@@ -53,6 +53,14 @@ import ActivationEnergyDiagram from './components/diagrams/ActivationEnergyDiagr
 import InducedFitDiagram from './components/diagrams/InducedFitDiagram.vue'
 import EnzymeFactorsDiagram from './components/diagrams/EnzymeFactorsDiagram.vue'
 import InhibitionDiagram from './components/diagrams/InhibitionDiagram.vue'
+import Molecule from './components/ui/Molecule.vue'
+import Reaction from './components/ui/Reaction.vue'
+import CellRespirationMap from './components/diagrams/CellRespirationMap.vue'
+import ATPDiagram from './components/diagrams/ATPDiagram.vue'
+import KrebsCycleDiagram from './components/diagrams/KrebsCycleDiagram.vue'
+import ETCDiagram from './components/diagrams/ETCDiagram.vue'
+import GlycolysisLab from './components/activities/GlycolysisLab.vue'
+import OrderChallenge from './components/activities/OrderChallenge.vue'
 import ReadingProgress from './components/ReadingProgress.vue'
 
 const prefersReducedMotion = () =>
@@ -98,7 +106,9 @@ export default {
       Topic, StickyNote, Definition, Flow, PriorKnowledge,
       BodyPlanDiagram, SymmetryDiagram, GramWallDiagram, BacteriaShapes, LifeCycleDiagram,
       SelectionCurvesDiagram, LakeZonesDiagram, EnergyPyramid, PopulationGrowthDiagram, RainforestLayers,
-      ActivationEnergyDiagram, InducedFitDiagram, EnzymeFactorsDiagram, InhibitionDiagram
+      ActivationEnergyDiagram, InducedFitDiagram, EnzymeFactorsDiagram, InhibitionDiagram,
+      Molecule, Reaction, CellRespirationMap, ATPDiagram, KrebsCycleDiagram, ETCDiagram,
+      GlycolysisLab, OrderChallenge
     }
     for (const [name, comp] of Object.entries(ui)) app.component(name, comp)
   },

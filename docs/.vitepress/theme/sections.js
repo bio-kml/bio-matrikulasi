@@ -8,6 +8,7 @@ export const sectionMeta = {
   exams: { label: 'Past Year Exams', icon: 'file-check', color: 'purple' },
   course: { label: 'Course Info', icon: 'calendar', color: 'red' },
   revision: { label: 'SB025 Revision Notes', icon: 'layers', color: 'green' },
+  activities: { label: 'Activities', icon: 'target', color: 'yellow' },
   guide: { label: 'Guide', icon: 'lightbulb', color: 'green' }
 }
 

@@ -27,6 +27,11 @@ Revision notes for each chapter. Tick off each learning outcome once you can ans
   Enzymes and how they work, cofactors, and inhibitors.
 
   </InfoCard>
+  <InfoCard title="Cellular Respiration and Fermentation" tag="Chapter 5" icon="zap" color="purple" link="/revision/chapter-05">
+
+  Glycolysis, pyruvate oxidation, the Krebs cycle, oxidative phosphorylation and fermentation.
+
+  </InfoCard>
 </CardGrid>
 
 ::: tip How to use these notes

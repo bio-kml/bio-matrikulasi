@@ -29,8 +29,17 @@ export default defineConfig({
           { text: 'Chapter 2: Ecology', link: '/revision/chapter-02' },
           { text: 'Chapter 3: Selection and Speciation', link: '/revision/chapter-03' },
           { text: 'Chapter 4: Biocatalysis', link: '/revision/chapter-04' },
+          { text: 'Chapter 5: Cellular Respiration', link: '/revision/chapter-05' },
         ],
         activeMatch: '^/revision/'
+      },
+      {
+        text: 'Activities',
+        items: [
+          { text: 'All activities', link: '/activities/' },
+          { text: 'Discover Glycolysis', link: '/activities/glycolysis' },
+        ],
+        activeMatch: '^/activities/'
       },
       {
         text: 'Course Informations',
@@ -95,6 +104,17 @@ export default defineConfig({
             { text: 'Chapter 2: Ecology', link: '/revision/chapter-02' },
             { text: 'Chapter 3: Selection and Speciation', link: '/revision/chapter-03' },
             { text: 'Chapter 4: Biocatalysis', link: '/revision/chapter-04' },
+            { text: 'Chapter 5: Cellular Respiration', link: '/revision/chapter-05' },
+          ]
+        }
+      ],
+
+      '/activities/': [
+        {
+          text: 'Activities',
+          link: '/activities/',
+          items: [
+            { text: 'Discover Glycolysis', link: '/activities/glycolysis' },
           ]
         }
       ],

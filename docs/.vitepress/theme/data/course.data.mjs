@@ -4,6 +4,7 @@ import { createContentLoader } from 'vitepress'
 // markdown files at build time, so they update automatically as pages are added.
 const sections = [
   { key: 'revision', title: 'SB025 Revision Notes', icon: 'layers', color: 'green', desc: 'Revision notes and practice questions for each chapter.' },
+  { key: 'activities', title: 'Activities', icon: 'target', color: 'yellow', desc: 'Hands-on, explore-and-discover activities.' },
   { key: 'lectures', title: 'Lectures', icon: 'book-open', color: 'green', desc: 'Notes for each chapter of the course.' },
   { key: 'tutorials', title: 'Tutorials', icon: 'graduation-cap', color: 'blue', desc: 'Practice problems aligned to each chapter.' },
   { key: 'labs', title: 'Labs', icon: 'flask-conical', color: 'teal', desc: 'Practical sessions and lab guides.' },
