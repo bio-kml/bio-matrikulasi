@@ -4,7 +4,7 @@
     :benches="benches"
     :steps="steps"
     :counters="counters"
-    :dividers="{ 4: '↓ pay-off phase (everything × 2)' }"
+    :phases="phases"
     finished-label="Glycolysis complete"
   >
     <template #end>
@@ -48,6 +48,11 @@ const benches = [
   { mols: [{ c: 3, p: [], name: 'Pyruvate' }], x2: true }
 ]
 
+const phases = [
+  { name: 'Phase 1: Energy investment', note: 'steps 1 to 5: spends 2 ATP to split glucose into two 3C sugars', from: 0, to: 4 },
+  { name: 'Phase 2: Energy pay-off', note: 'steps 6 to 10, each happens twice: makes 4 ATP and 2 NADH + 2H⁺', from: 5, to: 9 }
+]
+
 const steps = [
   { phase: 'Phase 1: energy investment', answer: 'addP', options: ['split', 'addP', 'giveP'], type: 'Phosphorylation', enzyme: 'hexokinase', q: 'Glucose is quite stable. What does the cell do first?',
     why: 'ATP is <b>spent</b> as activation energy, making glucose more chemically reactive.', hint: 'Glucose has no phosphate to hand out yet, and it is too stable to split. In the investment phase the cell spends ATP first.', ledger: { used: 1 } },
@@ -57,7 +62,7 @@ const steps = [
     why: 'A <b>second ATP is spent</b>: now there is a phosphate on <b>both ends</b> (carbons 1 and 6).', hint: 'Each half will need its own phosphate, but there is only one on the molecule. Spend another ATP.', ledger: { used: 1 } },
   { phase: 'Phase 1: energy investment', answer: 'split', options: ['oxidise', 'addP', 'split'], type: 'Splitting of sugar', enzyme: 'aldolase', q: 'Six carbons with a phosphate on each end. What now?',
     why: 'The 6C sugar <b>splits</b> into two 3C sugars: DHAP and glyceraldehyde 3-phosphate.', hint: 'The goal of the investment phase is to turn one 6C sugar into two 3C sugars. The molecule is ready.' },
-  { phase: 'Phase 1: energy investment', answer: 'rearrange', options: ['giveP', 'rearrange', 'split'], type: 'Isomerization', enzyme: 'triose phosphate isomerase', q: 'Only glyceraldehyde 3-phosphate can carry on. What happens to DHAP?',
+  { phase: 'Phase 1: energy investment', answer: 'rearrange', options: ['giveP', 'rearrange', 'split'], type: 'Isomerization', enzyme: 'triose phosphate isomerase', sub: 'DHAP', prod: 'Glyceraldehyde 3-phosphate', q: 'Only glyceraldehyde 3-phosphate can carry on. What happens to DHAP?',
     why: 'DHAP is isomerized to glyceraldehyde 3-phosphate. Now there are <b>2 molecules</b>, so from here every step happens <b>twice</b>.', hint: 'DHAP and glyceraldehyde 3-phosphate have the same atoms. Change one into the other; nothing is added or removed.' },
   { phase: 'Phase 2: energy pay-off', answer: 'oxidise', options: ['water', 'giveP', 'oxidise'], type: 'Oxidation and phosphorylation', enzyme: 'glyceraldehyde 3-phosphate dehydrogenase', q: 'The pay-off phase begins. How does the cell start collecting energy?',
     why: 'G3P is <b>oxidised</b>: its electrons go to NAD⁺, which is <b>reduced to NADH + H⁺</b>. Energy from this redox reaction attaches an <b>inorganic phosphate</b>, forming 1,3-bisphosphoglycerate.', hint: 'Look for the step where the 3C sugar loses electrons and picks up a phosphate from the cytosol.', ledger: { nadh: 2 } },

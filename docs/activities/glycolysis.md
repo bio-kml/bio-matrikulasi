@@ -29,13 +29,64 @@ You are a cell with one glucose molecule and a little ATP to spend. Your job: tu
 Green circles are **carbons**. Orange tags are **phosphates (P)** stuck to a carbon. Keep an eye on how many carbons there are and where the phosphates sit; they are your clues.
 :::
 
+## Two phases, ten steps
+
+Glycolysis has **two phases**. Watch which one you are in: the track above the bench lights up.
+
+<CardGrid>
+  <InfoCard title="Phase 1: Energy investment" tag="Steps 1 to 5" icon="arrow-down" color="red">
+
+  The cell **spends 2 ATP** to make glucose reactive, then splits it into two 3C sugars.
+
+  </InfoCard>
+  <InfoCard title="Phase 2: Energy pay-off" tag="Steps 6 to 10, each × 2" icon="arrow-up" color="green">
+
+  Each 3C sugar goes through every step, so everything happens **twice**: **4 ATP** and **2 NADH + 2H⁺** are made.
+
+  </InfoCard>
+</CardGrid>
+
 ## Part 1: Be the cell
 
-Choose an action card. A wrong choice is crossed out and you get a clue; after two wrong tries the right card is marked with a dashed outline. Your lab notebook on the right fills in as you discover each step.
+Choose an action card. A wrong choice is crossed out and you get a clue; after two wrong tries the right card is marked with a dashed outline. Your lab notebook fills in as you go: **substrate → product**, the **process**, then the **enzyme**. Enzymes of steps that **use or make ATP** are highlighted.
 
 <GlycolysisLab />
 
-## Part 2: Spot the pattern
+## Part 2: Mix and match
+
+Fill in the pathway from memory: intermediates, enzymes, processes and numbers. Keywords are colour-coded: <Badge type="yellow" text="intermediate" /> <Badge type="blue" text="enzyme" /> <Badge type="purple" text="process" /> <Badge type="green" text="number" />
+
+<MatchDiagram
+  title="Label the glycolysis pathway"
+  subtitle="Tap a keyword, then tap the blank it belongs in. Phase 2 happens twice per glucose."
+  :chain="[
+    { phase: 'Phase 1: Energy investment' },
+    { m: 'Glucose' },
+    { e: 'hexokinase', p: 'Phosphorylation', n: '?uses 1 ATP' },
+    { m: '?Glucose 6-phosphate' },
+    { e: '?phosphoglucose isomerase', p: 'Isomerization' },
+    { m: 'Fructose 6-phosphate' },
+    { e: 'phosphofructokinase', p: '?Phosphorylation', n: 'uses 1 ATP' },
+    { m: '?Fructose 1,6-bisphosphate' },
+    { e: 'aldolase', p: '?Splitting of sugar' },
+    { m: 'DHAP + Glyceraldehyde 3-phosphate' },
+    { e: '?triose phosphate isomerase', p: 'Isomerization' },
+    { m: '2 Glyceraldehyde 3-phosphate' },
+    { phase: 'Phase 2: Energy pay-off (each step × 2)' },
+    { e: 'glyceraldehyde 3-phosphate dehydrogenase', p: '?Oxidation and phosphorylation', n: '?makes 2 NADH + 2H⁺' },
+    { m: '?1,3-Bisphosphoglycerate' },
+    { e: '?phosphoglycerate kinase', p: 'Substrate-level phosphorylation', n: 'makes 2 ATP' },
+    { m: '3-Phosphoglycerate' },
+    { e: 'phosphoglycerate mutase', p: '?Isomerization' },
+    { m: '?2-Phosphoglycerate' },
+    { e: '?enolase', p: 'Dehydration' },
+    { m: 'Phosphoenolpyruvate (PEP)' },
+    { e: 'pyruvate kinase', p: 'Substrate-level phosphorylation', n: '?makes 2 ATP' },
+    { m: '?2 Pyruvate' }
+  ]"
+/>
+
+## Part 3: Spot the pattern
 
 Answer these from what you just saw. Tap to check.
 
@@ -67,7 +118,7 @@ Steps **2, 5 and 8**: they only **rearranged** the molecule (isomerization). Ste
 </AccordionItem>
 </Accordion>
 
-## Part 3: Can you remember the order?
+## Part 4: Can you remember the order?
 
 <OrderChallenge
   title="The 11 molecules of glycolysis"
@@ -89,7 +140,7 @@ Steps **2, 5 and 8**: they only **rearranged** the molecule (isomerization). Ste
 
 </StickyNote>
 
-## Part 4: Check yourself
+## Part 5: Check yourself
 
 <Quiz question="Which step splits the 6C sugar into two 3C sugars?" :options="['Step 2', 'Step 4', 'Step 6', 'Step 9']" :answer="1" explain="Step 4: aldolase splits fructose 1,6-bisphosphate into DHAP and glyceraldehyde 3-phosphate." />
 

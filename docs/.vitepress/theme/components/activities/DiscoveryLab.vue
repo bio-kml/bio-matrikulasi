@@ -18,6 +18,22 @@
       </div>
     </div>
 
+    <!-- phase track: which phase are we in? -->
+    <div v-if="phases.length" class="gl__phases">
+      <div
+        v-for="(ph, k) in phases"
+        :key="k"
+        class="gl__ph"
+        :class="['gl__ph--' + (k + 1), { 'is-now': phaseOf(done) === k, 'is-done': done > ph.to }]"
+      >
+        <span class="gl__ph-name">{{ ph.name }}</span>
+        <span class="gl__ph-note">{{ ph.note }}</span>
+        <span class="gl__ph-dots">
+          <i v-for="n in ph.to - ph.from + 1" :key="n" :class="{ on: ph.from + n - 1 < done }">{{ ph.from + n }}</i>
+        </span>
+      </div>
+    </div>
+
     <div class="gl__grid">
       <!-- the bench -->
       <div class="gl__bench">
@@ -75,10 +91,16 @@
         <p class="gl__label">Lab notebook</p>
         <ol class="gl__list">
           <li v-for="(s, i) in steps" :key="i" :class="{ 'is-done': i < done, 'is-now': i === done }">
+            <span v-for="(ph, k) in phases" v-show="ph.from === i" :key="'h' + k" class="gl__book-ph" :class="'gl__book-ph--' + (k + 1)">{{ ph.name }}</span>
             <span class="gl__n">{{ i + 1 }}</span>
             <span v-if="i < done" class="gl__entry">
-              <span class="gl__entry-type">{{ s.type }}</span>
-              <span class="gl__entry-enz">{{ s.enzyme }}</span>
+              <span class="gl__entry-rx">{{ s.sub || names(i) }} <b>→</b> {{ s.prod || names(i + 1) }}</span>
+              <span class="gl__entry-row"><em>process</em> {{ s.type }}</span>
+              <span class="gl__entry-row">
+                <em>enzyme</em>
+                <span class="gl__entry-enz" :class="{ 'is-atp': atpTag(s) }">{{ s.enzyme }}</span>
+                <span v-if="atpTag(s)" class="gl__atp-tag" :class="{ 'is-use': atpTag(s).startsWith('uses') }">{{ atpTag(s) }}</span>
+              </span>
             </span>
             <span v-else class="gl__blank"></span>
             <span v-if="dividers[i]" class="gl__divider">{{ dividers[i] }}</span>
@@ -107,8 +129,23 @@ const props = defineProps({
   counters: { type: Array, required: true },
   // { stepIndex: 'text' } notes shown in the notebook after a step
   dividers: { type: Object, default: () => ({}) },
-  finishedLabel: { type: String, default: 'Complete' }
+  finishedLabel: { type: String, default: 'Complete' },
+  // [{ name, note, from, to }] phases (step indexes, inclusive) shown as a track
+  phases: { type: Array, default: () => [] },
+  // ledger keys that count ATP, and how to word them in the notebook
+  atpKeys: { type: Object, default: () => ({ used: 'uses', made: 'makes', atp: 'makes' }) }
 })
+
+const phaseOf = (i) => props.phases.findIndex((ph) => i >= ph.from && i <= ph.to)
+const names = (i) => props.benches[i].mols.map((m) => m.name).join(' + ')
+// "uses 1 ATP" / "makes 2 ATP" for steps whose ledger touches ATP
+function atpTag(s) {
+  for (const [k, word] of Object.entries(props.atpKeys)) {
+    const n = s.ledger && s.ledger[k]
+    if (n) return `${word} ${n} ATP`
+  }
+  return ''
+}
 
 const done = ref(0)
 const tried = ref([])
@@ -281,8 +318,30 @@ defineExpose({ scale, reset })
 .gl__list li.is-done .gl__n { color: #fff; background: var(--c, var(--vp-c-brand-1)); border-color: var(--c, var(--vp-c-brand-1)); }
 .gl__list li.is-now .gl__n { border-width: 2.5px; border-color: var(--c, var(--vp-c-brand-1)); }
 .gl__entry { flex: 1; min-width: 0; display: flex; flex-direction: column; line-height: 1.2; animation: tok-in 0.3s ease both; }
-.gl__entry-type { font-family: var(--font-hand); font-size: 15px; font-weight: 700; }
-.gl__entry-enz { font-size: 13px; font-style: italic; color: var(--muted); }
+.gl__entry-rx { font-family: var(--font-hand); font-size: 15px; font-weight: 700; }
+.gl__entry-rx b { background: none; padding: 0; color: var(--c, var(--vp-c-brand-1)); }
+.gl__entry-row { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 6px; font-size: 13.5px; margin-top: 2px; }
+.gl__entry-row em { font-style: normal; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); min-width: 54px; }
+.gl__entry-enz { font-style: italic; }
+.gl__entry-enz.is-atp { font-weight: 700; padding: 0 3px; background: linear-gradient(transparent 22%, var(--hl) 22%, var(--hl) 92%, transparent 92%); }
+.gl__atp-tag { font-family: var(--font-hand); font-size: 12px; font-weight: 700; padding: 0 7px; border: 1.5px solid var(--ink); border-radius: 999px; background: #bfe3c9; color: #1d2b44; }
+.gl__atp-tag.is-use { background: #f6c1c1; }
+.gl__book-ph { flex-basis: 100%; margin: 8px 0 2px; padding: 2px 8px; font-family: var(--font-hand); font-size: 14px; font-weight: 700; border: 2px solid var(--ink); border-radius: 6px; color: #1d2b44; }
+.gl__book-ph--1 { background: #f6c1c1; }
+.gl__book-ph--2 { background: #bfe3c9; }
+.gl__phases { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); border-left: var(--line); border-right: var(--line); }
+.gl__ph { display: flex; flex-direction: column; gap: 2px; padding: 8px 14px; border-bottom: var(--line); opacity: 0.55; transition: opacity 0.3s ease, background-color 0.3s ease; }
+.gl__ph + .gl__ph { border-left: var(--line); }
+@media (max-width: 520px) { .gl__ph + .gl__ph { border-left: none; } }
+.gl__ph.is-now, .gl__ph.is-done { opacity: 1; }
+.gl__ph--1.is-now { background: color-mix(in srgb, #e05a5a 16%, var(--box)); }
+.gl__ph--2.is-now { background: color-mix(in srgb, #2f9e5b 16%, var(--box)); }
+.gl__ph-name { font-family: var(--font-hand); font-size: 1.05rem; font-weight: 700; color: var(--ink); }
+.gl__ph-note { font-size: 13.5px; color: var(--muted); }
+.gl__ph-dots { display: flex; gap: 4px; margin-top: 2px; }
+.gl__ph-dots i { width: 22px; height: 22px; display: grid; place-items: center; font-style: normal; font-size: 11px; font-weight: 700; border: 1.5px solid var(--ink); border-radius: 50%; color: var(--ink); }
+.gl__ph--1 .gl__ph-dots i.on { background: #f6c1c1; color: #1d2b44; }
+.gl__ph--2 .gl__ph-dots i.on { background: #bfe3c9; color: #1d2b44; }
 .gl__blank { flex: 1; height: 1px; border-bottom: 2px dotted var(--rule); }
 .gl__divider { flex-basis: 100%; padding: 6px 0 2px 30px; font-family: var(--font-hand); font-size: 13px; color: var(--c, var(--vp-c-brand-1)); }
 

@@ -36,7 +36,7 @@ Example: "add the Chapter 2 slides PDF" → the PDF iframe + Open Fullscreen but
 | Photos from the user's slides | extract with `pdfimages`, compress to JPEG (≤900 px) in `docs/public/images/ch<N>/`, show with `<Figure>` (pairs in `<div class="fig-row">`) next to the text they illustrate |
 | Chemical intermediates / a reaction step | `<Molecule c :p name>` (carbon skeleton with phosphate tags; `coa` for CoA) inside `<Reaction enzyme :ins :outs>` with `#from`/`#to` slots; always name the enzyme |
 | Memory aids | acronyms / mnemonics in a `::: tip Remember the order (acronym)` |
-| Hands-on activity | a page in `docs/activities/` (nav + sidebar + `docs/activities/index.md` card); existing: `<GlycolysisLab>`, `<KrebsLab>` (explore-and-discover, both built on `<DiscoveryLab>`), `<NumberChallenge question :answer unit hint working>` (type-a-number counting question), `<OrderChallenge :items>` (tap in order). Keep the worksheet / lab-notebook feel |
+| Hands-on activity | a page in `docs/activities/` (nav + sidebar + `docs/activities/index.md` card); existing: `<GlycolysisLab>`, `<KrebsLab>` (explore-and-discover, both built on `<DiscoveryLab>`), `<NumberChallenge question :answer unit hint working>` (type-a-number counting question), `<OrderChallenge :items>` (tap in order), `<MatchDiagram :chain>` (label-the-pathway mix and match; `?` marks a blank). Keep the worksheet / lab-notebook feel |
 | Diagram with named parts | `<LabeledDiagram src :labels>`; other images `<Figure src num caption>` (images in `docs/public/images/`) |
 | Questions / MCQs / self-check | `<Quiz question :options :answer explain>` |
 | Terms to revise | `<Flashcards :cards>` |
