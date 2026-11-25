@@ -617,7 +617,7 @@ For the **process**, both **lactate fermentation** and **lactic acid fermentatio
 Occurs in **yeast** and some **bacteria**, producing **ethanol**.
 
 1. Glucose is oxidised into 2 pyruvate in glycolysis; **2 ATP** by substrate-level phosphorylation.
-2. Pyruvate (3C) is **decarboxylated** to ethanal (2C), releasing **CO₂** (enzyme: *pyruvate decarboxylase*).
+2. **Decarboxylation**: pyruvate (3C) loses **CO₂** to form ethanal (2C) (enzyme: *pyruvate decarboxylase*).
 3. Ethanal is **reduced by NADH** to ethanol (enzyme: *alcohol dehydrogenase*); NADH is oxidised to **NAD⁺, which goes back to glycolysis**.
 
 </Tab>
