@@ -148,6 +148,105 @@ Steps **2, 5 and 8**: they only **rearranged** the molecule (isomerization). Ste
 
 <Quiz question="Where in the cell did all of this happen?" :options="['Matrix of the mitochondrion', 'Inner mitochondrial membrane', 'Cytoplasm (cytosol)', 'Nucleus']" :answer="2" explain="Glycolysis happens in the cytosol, with or without oxygen." />
 
+### Medium: steps and enzymes
+
+<Quiz question="Which pair of enzymes both USE ATP?" :options="['Hexokinase and pyruvate kinase', 'Hexokinase and phosphofructokinase', 'Phosphofructokinase and phosphoglycerate kinase', 'Aldolase and enolase']" :answer="1" explain="Hexokinase (step 1) and phosphofructokinase (step 3) each spend 1 ATP in the investment phase." />
+
+<Quiz question="Which pair of enzymes both MAKE ATP?" :options="['Phosphoglycerate kinase and pyruvate kinase', 'Hexokinase and pyruvate kinase', 'Glyceraldehyde 3-phosphate dehydrogenase and enolase', 'Phosphoglycerate mutase and phosphoglycerate kinase']" :answer="0" explain="Phosphoglycerate kinase (step 7) and pyruvate kinase (step 10) make ATP by substrate-level phosphorylation, each twice per glucose." />
+
+<Quiz question="Which step is the only redox reaction of glycolysis?" :options="['Step 1: glucose → glucose 6-phosphate', 'Step 4: fructose 1,6-bisphosphate → DHAP + G3P', 'Step 6: glyceraldehyde 3-phosphate → 1,3-bisphosphoglycerate', 'Step 9: 2-phosphoglycerate → PEP']" :answer="2" explain="In step 6 G3P is oxidised and NAD⁺ is reduced to NADH + H⁺; the energy released attaches an inorganic phosphate." />
+
+<Quiz question="Which list gives the processes of Phase 1 in the correct order?" :options="['Phosphorylation, isomerization, phosphorylation, splitting, isomerization', 'Isomerization, phosphorylation, splitting, phosphorylation, isomerization', 'Phosphorylation, phosphorylation, isomerization, isomerization, splitting', 'Phosphorylation, isomerization, splitting, phosphorylation, isomerization']" :answer="0" explain="Step 1 phosphorylation (hexokinase), 2 isomerization, 3 phosphorylation (phosphofructokinase), 4 splitting (aldolase), 5 isomerization (DHAP → G3P)." />
+
+<Quiz question="What does phosphoglycerate mutase do in step 8?" :options="['Adds a phosphate from ATP', 'Removes a water molecule', 'Moves the phosphate from carbon 3 to carbon 2', 'Gives a phosphate to ADP']" :answer="2" explain="3-phosphoglycerate is isomerized to 2-phosphoglycerate: the phosphate is relocated from carbon 3 to carbon 2." />
+
+<Quiz question="Which molecule carries TWO phosphate groups?" :options="['Glucose 6-phosphate', '1,3-Bisphosphoglycerate', 'Phosphoenolpyruvate', '3-Phosphoglycerate']" :answer="1" explain="Bis- means two: 1,3-bisphosphoglycerate has phosphates on carbons 1 and 3 (so does fructose 1,6-bisphosphate)." />
+
+### Harder: count it up
+
+Type a number and press **Check**. All answers are for glycolysis only.
+
+<NumberChallenge
+  tag="Medium"
+  question="How many ATP are <b>made</b> (not net) in glycolysis from one glucose?"
+  :answer="4"
+  unit="ATP"
+  hint="Steps 7 and 10 each make ATP, and Phase 2 happens twice."
+  working="Step 7: 2 ATP + step 10: 2 ATP = <b>4 ATP made</b> (net 2 after spending 2)."
+/>
+
+<NumberChallenge
+  tag="Medium"
+  question="Glycolysis runs on <b>3 glucose</b>. What is the <b>net</b> ATP?"
+  :answer="6"
+  unit="ATP"
+  hint="Net ATP per glucose × number of glucose."
+  working="Net 2 ATP per glucose × 3 = <b>6 ATP</b> (12 made − 6 spent)."
+/>
+
+<NumberChallenge
+  tag="Medium"
+  question="How many NADH + H⁺ come from glycolysis of <b>4 glucose</b>?"
+  :answer="8"
+  unit="NADH"
+  hint="Step 6 happens twice per glucose."
+  working="2 NADH per glucose × 4 = <b>8 NADH + 8H⁺</b>."
+/>
+
+<NumberChallenge
+  tag="Medium"
+  question="How many ATP are <b>spent</b> in Phase 1 to process <b>5 glucose</b>?"
+  :answer="10"
+  unit="ATP"
+  hint="Steps 1 and 3 each spend 1 ATP per glucose."
+  working="2 ATP per glucose × 5 = <b>10 ATP spent</b>."
+/>
+
+<NumberChallenge
+  tag="Work backwards"
+  question="A cell made a <b>net 12 ATP</b> by glycolysis alone. How many glucose molecules were used?"
+  :answer="6"
+  unit="glucose"
+  hint="Each glucose gives a net 2 ATP."
+  working="12 ÷ 2 = <b>6 glucose</b>."
+/>
+
+<NumberChallenge
+  tag="Work backwards"
+  question="Glycolysis produced <b>10 pyruvate</b>. How much ATP was <b>made</b> in total (not net)?"
+  :answer="20"
+  unit="ATP"
+  hint="First find the number of glucose (2 pyruvate each), then use 4 ATP made per glucose."
+  working="10 pyruvate ÷ 2 = 5 glucose; 5 × 4 = <b>20 ATP made</b> (net 10)."
+/>
+
+<NumberChallenge
+  tag="Hard"
+  question="How many molecules of <b>water</b> are removed by enolase when one glucose goes through glycolysis?"
+  :answer="2"
+  unit="H₂O"
+  hint="Enolase removes one water from each 2-phosphoglycerate. How many 2-phosphoglycerate are there per glucose?"
+  working="Step 9 happens twice per glucose: <b>2 H₂O</b> removed."
+/>
+
+<NumberChallenge
+  tag="Hard"
+  question="How many <b>carbon atoms</b> are there in all the pyruvate made from one glucose?"
+  :answer="6"
+  unit="C atoms"
+  hint="Pyruvate is 3C. How many pyruvate per glucose?"
+  working="2 pyruvate × 3C = <b>6 carbons</b>: every carbon of glucose (6C) ends up in pyruvate. No CO₂ is lost in glycolysis."
+/>
+
+<NumberChallenge
+  tag="Hard: think it through"
+  question="Imagine triose phosphate isomerase (step 5) did not work, so DHAP could not be used and only <b>one</b> G3P went through Phase 2. What would the <b>net</b> ATP per glucose be?"
+  :answer="0"
+  unit="ATP"
+  hint="Phase 1 still spends 2 ATP. Phase 2 now runs only once: how many ATP does one run make?"
+  working="Spent 2 ATP; one G3P makes 2 ATP (steps 7 and 10 once each). Net = 2 − 2 = <b>0 ATP</b>. That is why converting DHAP into G3P matters."
+/>
+
 </Topic>
 
 <CardGrid>
