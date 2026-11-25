@@ -1,4 +1,7 @@
 ---
+description: "Glycolysis, pyruvate oxidation, the Krebs cycle, oxidative phosphorylation and fermentation."
+icon: zap
+color: purple
 title: "Chapter 5: Cellular Respiration and Fermentation"
 outline: [2, 3]
 highlighter: true

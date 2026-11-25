@@ -1,4 +1,7 @@
 ---
+description: "Enzymes and how they work, cofactors, and inhibitors."
+icon: flask-conical
+color: red
 title: "Chapter 4: Biocatalysis"
 outline: [2, 3]
 highlighter: true

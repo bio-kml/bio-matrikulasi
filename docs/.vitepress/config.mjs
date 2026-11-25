@@ -41,57 +41,6 @@ export default defineConfig({
         ],
         activeMatch: '^/activities/'
       },
-      {
-        text: 'Course Informations',
-        items: [
-          { text: 'Schedule', link: '/course/schedule' },
-        ],
-        activeMatch: '^/course/'
-      },
-      {
-        text: 'Assessments',
-        items: [
-          { text: 'Assessments', link: '/assessments/course' },
-        ],
-        activeMatch: '^/assessments/'
-      },
-      {
-        text: 'Tutorials',
-        items: [
-          { text: 'Tutorial 1', link: '/tutorials/tutorial-01' },
-        ],
-        activeMatch: '^/tutorials/'
-      },
-      {
-        text: 'Labs',
-        items: [
-          { text: 'Lab 1', link: '/labs/lab-01' },
-        ],
-        activeMatch: '^/labs/'
-      },
-      {
-        text: 'Lectures',
-        items: [
-          { text: 'Chapter 1', link: '/lectures/chapter-01' },
-        ],
-        activeMatch: '^/lectures/'
-      },
-      {
-        text: 'Exams',
-        items: [
-          { text: 'Past Year Exams', link: '/exams/' },
-        ],
-        activeMatch: '^/exams/'
-      },
-      {
-        text: 'Guide',
-        items: [
-          { text: 'Components', link: '/guide/components' },
-          { text: 'Equations & formatting', link: '/guide/visuals' },
-          { text: 'Timeline styles', link: '/guide/timeline' },
-        ],
-        activeMatch: '^/guide/'
-      },
     ],
 
     sidebar: {
@@ -150,12 +99,6 @@ export default defineConfig({
       ]
     },
 
-    socialLinks: [
-      {
-        icon: 'github',
-        link: 'https://github.com/bio-kml/bio-matrikulasi'
-      }
-    ],
 
     search: {
       provider: 'local'

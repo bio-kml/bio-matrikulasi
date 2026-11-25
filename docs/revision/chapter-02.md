@@ -1,4 +1,7 @@
 ---
+description: "Ecosystems, energy flow, biogeochemical cycles, conservation and population ecology."
+icon: sprout
+color: teal
 title: "Chapter 2: Ecology"
 outline: [2, 3]
 highlighter: true

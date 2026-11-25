@@ -1,4 +1,7 @@
 ---
+description: "Classification, Bacteria and Archaea, Protista, Fungi, Plantae and Animalia."
+icon: leaf
+color: green
 title: "Chapter 1: Biodiversity"
 outline: [2, 3]
 highlighter: true

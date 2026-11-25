@@ -217,6 +217,7 @@ body {
 
 /* ---- Boxy components: ink outline on white paper ---- */
 body .ui-info.ui-info,
+body .vp-doc a.ui-info.ui-info,
 body .ui-stat.ui-stat,
 body .ui-quiz.ui-quiz,
 body .ui-accordion.ui-accordion,
@@ -232,6 +233,7 @@ body .ui-link-card.ui-link-card {
 }
 body .ui-st__frame.ui-st__frame { background: color-mix(in srgb, var(--c, var(--vp-c-brand-1)) 7%, var(--box)); }
 body .ui-info.is-link:hover,
+body .vp-doc a.ui-info.is-link:hover,
 body .ui-stat.ui-stat:hover,
 body .ui-link-card.ui-link-card:hover { border-color: var(--ink); }
 body .ui-info__icon.ui-info__icon { border: var(--line); }

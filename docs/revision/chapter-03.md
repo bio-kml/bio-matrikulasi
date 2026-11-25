@@ -1,4 +1,7 @@
 ---
+description: "Natural and artificial selection, the species concept, and how new species form."
+icon: dna
+color: blue
 title: "Chapter 3: Selection and Speciation"
 outline: [2, 3]
 highlighter: true

@@ -1,4 +1,7 @@
 ---
+description: "Be the cell: work out the 10 steps of glycolysis yourself, keeping track of ATP and NADH."
+icon: flask-conical
+color: yellow
 title: Discover Glycolysis
 outline: [2, 2]
 ---

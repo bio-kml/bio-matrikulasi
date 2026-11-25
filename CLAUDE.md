@@ -51,6 +51,8 @@ Live examples and exact syntax for every component: `docs/guide/components.md`, 
 Content rules:
 - Do not invent facts, marks, dates or answers. Only use what the user or their material provides.
 - Section colours are automatic: lectures green, tutorials blue, labs teal, assessments yellow, exams purple, course red. Use the matching `color` on cards for that section.
+- The top bar has only **Home, Revision Notes, Activities** (no GitHub button). Do not add other sections back unless asked.
+- New revision chapters and activities need frontmatter `description`, `icon` and `color`: the home page lists them automatically from that (`docs/.vitepress/theme/data/course.data.mjs`).
 - New pages: add them to both `nav` and `sidebar` in `docs/.vitepress/config.mjs`; file names like `chapter-02.md`, `lab-02.md`, `tutorial-02.md`. New revision chapters also go on `docs/revision/index.md` (an `<InfoCard>`).
 - Add `highlighter: true` to the frontmatter of lecture and tutorial pages (enables the study highlighter).
 
