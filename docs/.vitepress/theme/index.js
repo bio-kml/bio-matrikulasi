@@ -56,6 +56,7 @@ import InhibitionDiagram from './components/diagrams/InhibitionDiagram.vue'
 import Molecule from './components/ui/Molecule.vue'
 import Reaction from './components/ui/Reaction.vue'
 import CellRespirationMap from './components/diagrams/CellRespirationMap.vue'
+import FermentationDiagram from './components/diagrams/FermentationDiagram.vue'
 import ATPDiagram from './components/diagrams/ATPDiagram.vue'
 import KrebsCycleDiagram from './components/diagrams/KrebsCycleDiagram.vue'
 import ETCDiagram from './components/diagrams/ETCDiagram.vue'
@@ -110,7 +111,7 @@ export default {
       BodyPlanDiagram, SymmetryDiagram, GramWallDiagram, BacteriaShapes, LifeCycleDiagram,
       SelectionCurvesDiagram, LakeZonesDiagram, EnergyPyramid, PopulationGrowthDiagram, RainforestLayers,
       ActivationEnergyDiagram, InducedFitDiagram, EnzymeFactorsDiagram, InhibitionDiagram,
-      Molecule, Reaction, CellRespirationMap, ATPDiagram, KrebsCycleDiagram, ETCDiagram,
+      Molecule, Reaction, CellRespirationMap, FermentationDiagram, ATPDiagram, KrebsCycleDiagram, ETCDiagram,
       GlycolysisLab, OrderChallenge, KrebsLab, NumberChallenge, DiscoveryLab
     }
     for (const [name, comp] of Object.entries(ui)) app.component(name, comp)

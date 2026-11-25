@@ -45,6 +45,12 @@ Revision notes. Tick off each learning outcome once you can answer it without lo
   - **Active site**: the specific site (region) of an enzyme that binds to a specific substrate, in which catalysis occurs.
   - **Allosteric site**: a site on the enzyme other than the active site.
 
+<StickyNote>
+
+**Catalase**, the enzyme that breaks down hydrogen peroxide in your cells, is one of the fastest known: a single molecule can deal with **millions** of substrate molecules every second.
+
+</StickyNote>
+
 ### Six classes of enzyme (IUBMB)
 
 Based on IUBMB, the name of an enzyme must **end with "-ase"**, and enzymes are classified by the **type of reaction they catalyse**.
@@ -179,6 +185,12 @@ Pick a factor and tap the graph:
 A denatured enzyme is not "killed" (enzymes are not alive). Say the **active site changes shape**, so the **substrate can no longer fit**.
 :::
 
+<StickyNote>
+
+Bacteria living in **hot springs** have enzymes that still work at over 70 °C. One of them, *Taq* polymerase from *Thermus aquaticus*, is used in laboratories to copy DNA (PCR).
+
+</StickyNote>
+
 ### Quick check
 
 <Quiz question="Which site of an enzyme binds to a specific substrate, where catalysis occurs?" :options="['Allosteric site', 'Active site', 'Binding site of a cofactor', 'Prosthetic group']" :answer="1" explain="The active site is the specific region that binds to a specific substrate, in which catalysis occurs." />
@@ -252,6 +264,12 @@ It can bind **tightly and permanently** to the enzyme, or bind **loosely and rev
 | Nature | inorganic ion | organic molecule | organic molecule |
 | Binding | loose, temporary | loose, temporary | **tight, permanent** |
 | Example | Mg²⁺, Zn²⁺, Fe²⁺, Ca²⁺ | NAD⁺ (for dehydrogenases) | haem (for catalase) |
+
+<StickyNote>
+
+This is one reason you need **vitamins**: your body uses them to make coenzymes. **NAD⁺** is made from **niacin (vitamin B3)** and **FAD** from **riboflavin (vitamin B2)**.
+
+</StickyNote>
 
 ### Quick check
 
@@ -353,6 +371,12 @@ The substrate keeps using any unaffected enzyme, so the **same quantity of produ
 ::: warning Common mistake
 Increasing substrate concentration only helps against a **competitive** inhibitor. A non-competitive inhibitor does not compete for the active site, so more substrate does not reduce its effect.
 :::
+
+<StickyNote>
+
+The antibiotic **penicillin** is an enzyme inhibitor: it binds permanently to an enzyme bacteria need to build their cell walls, so the bacteria cannot grow.
+
+</StickyNote>
 
 ### Quick check
 

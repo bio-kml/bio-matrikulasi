@@ -58,7 +58,22 @@ $$
 
 ### Where it all happens
 
-<CellRespirationMap />
+<Figure src="/images/ch5/cell-mitochondrion.jpg" caption="A cell and its mitochondrion: the cytosol, and the outer membrane, intermembrane space, inner membrane and matrix of the mitochondrion." />
+
+| Stage | Where it happens |
+|---|---|
+| Glycolysis | **cytosol** |
+| Pyruvate oxidation | **matrix** of the mitochondrion (pyruvate enters by active transport) |
+| Krebs cycle | **matrix** of the mitochondrion |
+| Electron transport chain and chemiosmosis | **inner membrane** (cristae); H⁺ is pumped into the **intermembrane space** |
+| Fermentation | **cytosol only** (no mitochondrion needed) |
+
+<StickyNote>
+
+Mitochondria have their **own DNA**, separate from the DNA in the nucleus. You inherit your mitochondria (and their DNA) from your **mother** only.
+
+</StickyNote>
+
 
 ### ATP: what it is
 
@@ -68,6 +83,12 @@ $$
 - It consists of the sugar **ribose**, the nitrogenous base **adenine** and a chain of **3 phosphate groups**.
 - The 3 phosphate groups are negatively charged and joined by **2 high-energy bonds**; these unstable bonds can be broken by **hydrolysis** to drive endergonic reactions.
 - Hydrolysis of the end phosphate forms **ADP + Pi** and releases **31 kJ** of energy per mole of ATP.
+
+<StickyNote>
+
+You make and use roughly your **own body weight in ATP every day**, yet your body only holds a small amount at any moment. Each ATP is used and then rebuilt from ADP + Pi over and over again.
+
+</StickyNote>
 
 ### Why cells need energy
 
@@ -150,6 +171,12 @@ ATP is formed as a result of the **transfer of electrons from NADH or FADH₂ to
 ::: tip How to read the drawings
 Each green circle is a **carbon**; each orange tag is a **phosphate (P)** on that carbon. Watch the carbons go from 6 to 3, and watch the phosphates go on and come off.
 :::
+
+<StickyNote>
+
+Glycolysis happens in almost **every living organism**, from bacteria to humans, and needs no oxygen. That is why biologists think it evolved very early, before Earth's atmosphere had much oxygen.
+
+</StickyNote>
 
 ### The 10 steps, one at a time
 
@@ -394,6 +421,12 @@ Citrate · Isocitrate · α-**K**etoglutarate · **S**uccinyl CoA · **S**uccina
 Carbons: **6 → 6 → 5 → 4 → 4 → 4 → 4 → 4** (one CO₂ lost at step 3, one at step 4).
 :::
 
+<StickyNote>
+
+The cycle is named after **Hans Krebs**, who worked it out in 1937. He won the Nobel Prize for it in 1953.
+
+</StickyNote>
+
 ### Yield of the Krebs cycle
 
 <Tabs label="Krebs yield">
@@ -508,6 +541,12 @@ It refers to the flow of **H⁺ from the intermembrane space to the matrix throu
 **Complex II (succinate dehydrogenase) does not pump H⁺.** Only complexes **I, III and IV** pump. That is why FADH₂ (which enters at complex II) gives fewer ATP than NADH.
 :::
 
+<StickyNote>
+
+**ATP synthase** is a real rotating motor: H⁺ flowing through it makes part of the protein spin, a bit like water turning a water wheel, and each turn helps make ATP.
+
+</StickyNote>
+
 ### ATP from one glucose (active cells, e.g. liver and heart)
 
 - 1 NADH → **3 ATP**; 1 FADH₂ → **2 ATP**.
@@ -558,43 +597,36 @@ It refers to the flow of **H⁺ from the intermembrane space to the matrix throu
   { term: 'Reduction by NADH', note: 'When NADH gives its hydrogen to a molecule, NADH is oxidised back to NAD⁺ and the molecule is reduced.' }
 ]" />
 
-<Definition term="Fermentation">a catabolic process that makes 2 ATP from glucose without an electron transport chain and produces ethanol or lactic acid.</Definition>
+<Definition term="Fermentation">a catabolic process that makes 2 ATP from glucose without an electron transport chain and produces ethanol or lactate.</Definition>
 
 - In the **absence of oxygen**, many cells use fermentation to make ATP by **substrate-level phosphorylation** (glycolysis only).
 - **Pyruvate (or its product) acts as the electron acceptor** to oxidise NADH to NAD⁺.
 - The regenerated **NAD⁺ is reused in glycolysis**, so glycolysis can keep going.
+
+<FermentationDiagram />
+
+<Flow :steps="['No oxygen, so NADH cannot pass its electrons to the ETC', 'NAD⁺ would run out and glycolysis would stop', 'Fermentation: NADH reduces pyruvate (or ethanal) and becomes NAD⁺ again', 'NAD⁺ goes back to glycolysis, so 2 ATP per glucose keep being made']" />
+
+::: tip Quick reminder: lactate, not lactic acid
+For the **process**, both **lactate fermentation** and **lactic acid fermentation** are accepted. For the **molecule / product**, write **lactate** only.
+:::
 
 <Tabs label="Types of fermentation">
 <Tab label="Alcohol fermentation">
 
 Occurs in **yeast** and some **bacteria**, producing **ethanol**.
 
-<Reaction enzyme="pyruvate decarboxylase" :outs="['CO₂']">
-<template #from><Molecule c="3" name="Pyruvate" small /></template>
-<template #to><Molecule c="2" name="Ethanal (acetaldehyde)" small /></template>
-</Reaction>
-
-<Reaction enzyme="alcohol dehydrogenase" :ins="['NADH + H⁺']" :outs="['NAD⁺']">
-<template #from><Molecule c="2" name="Ethanal" small /></template>
-<template #to><Molecule c="2" name="Ethanol" small /></template>
-</Reaction>
-
 1. Glucose is oxidised into 2 pyruvate in glycolysis; **2 ATP** by substrate-level phosphorylation.
-2. Pyruvate (3C) is **decarboxylated** to ethanal (2C), releasing **CO₂**.
-3. Ethanal is **reduced by NADH** to ethanol; NADH is oxidised to NAD⁺.
+2. Pyruvate (3C) is **decarboxylated** to ethanal (2C), releasing **CO₂** (enzyme: *pyruvate decarboxylase*).
+3. Ethanal is **reduced by NADH** to ethanol (enzyme: *alcohol dehydrogenase*); NADH is oxidised to **NAD⁺, which goes back to glycolysis**.
 
 </Tab>
 <Tab label="Lactate fermentation">
 
-Occurs in certain **bacteria**, **fungi** and **muscle cells**, producing **lactate (lactic acid)**.
-
-<Reaction enzyme="lactate dehydrogenase" :ins="['NADH + H⁺']" :outs="['NAD⁺']">
-<template #from><Molecule c="3" name="Pyruvate" small /></template>
-<template #to><Molecule c="3" name="Lactate" small /></template>
-</Reaction>
+Occurs in certain **bacteria**, **fungi** and **muscle cells**, producing **lactate**.
 
 1. Glucose is oxidised into 2 pyruvate in glycolysis; **2 ATP** by substrate-level phosphorylation.
-2. Pyruvate is **reduced by NADH** to form lactate; NADH is oxidised to NAD⁺. **No CO₂** is released.
+2. Pyruvate is **reduced by NADH** to form lactate (enzyme: *lactate dehydrogenase*); NADH is oxidised to **NAD⁺, which goes back to glycolysis**. **No CO₂** is released.
 
 </Tab>
 </Tabs>
@@ -619,7 +651,7 @@ Occurs in certain **bacteria**, **fungi** and **muscle cells**, producing **lact
   </InfoCard>
   <InfoCard title="Cheese and yogurt" tag="Lactate fermentation" icon="layers" color="olive">
 
-  Lactic acid fermentation by certain fungi and bacteria in the dairy industry.
+  Lactate fermentation by certain fungi and bacteria in the dairy industry.
 
   </InfoCard>
   <InfoCard title="Tempoyak" tag="Lactate fermentation" icon="sprout" color="olive">
@@ -629,10 +661,22 @@ Occurs in certain **bacteria**, **fungi** and **muscle cells**, producing **lact
   </InfoCard>
   <InfoCard title="Kimchi" tag="Lactate fermentation" icon="leaf" color="olive">
 
-  Vegetables fermented by lactic acid bacteria; the lactic acid gives a sour flavour and raises acidity, making it safe to eat.
+  Vegetables fermented by lactic acid bacteria; the lactate gives a sour flavour and raises acidity, making it safe to eat.
 
   </InfoCard>
 </CardGrid>
+
+<StickyNote>
+
+The holes in bread are bubbles of **CO₂** from yeast fermentation. The ethanol is made too, but it mostly **evaporates** in the hot oven.
+
+</StickyNote>
+
+<StickyNote>
+
+Lactate from your muscles is not wasted: much of it is carried in the blood to the **liver**, which turns it back into glucose.
+
+</StickyNote>
 
 ### Aerobic respiration vs fermentation
 

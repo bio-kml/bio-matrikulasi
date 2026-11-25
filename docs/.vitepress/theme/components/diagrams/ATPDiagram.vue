@@ -3,11 +3,14 @@
     <template #controls>
       <button class="dg-btn" :class="{ 'is-on': split }" @click="split = !split">{{ split ? 'Join back (phosphorylation)' : 'Hydrolyse ATP' }}</button>
     </template>
-    <svg viewBox="0 0 600 200" role="img" :aria-label="split ? 'ADP plus Pi plus energy' : 'ATP'">
-      <!-- adenine -->
-      <polygon points="40,70 80,50 120,70 120,110 80,130 40,110" fill="#8ec5f0" stroke="var(--ink)" stroke-width="2.5" />
-      <text x="80" y="95" text-anchor="middle" font-size="15" font-weight="700">adenine</text>
-      <line x1="120" y1="90" x2="150" y2="110" stroke="var(--ink)" stroke-width="2.5" />
+    <svg viewBox="0 0 650 210" role="img" :aria-label="split ? 'ADP plus Pi plus energy' : 'ATP'">
+      <!-- adenine: a purine, so a double ring (6-membered ring fused to a 5-membered ring) -->
+      <polygon points="30,70 70,50 110,70 110,110 70,130 30,110" fill="#8ec5f0" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round" />
+      <polygon points="110,70 148,58 170,90 148,122 110,110" fill="#8ec5f0" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round" />
+      <text x="100" y="152" text-anchor="middle" font-size="15" font-weight="700">adenine</text>
+      <text x="100" y="168" text-anchor="middle" font-size="12">(purine: double ring)</text>
+      <line x1="170" y1="90" x2="196" y2="110" stroke="var(--ink)" stroke-width="2.5" />
+      <g transform="translate(45 0)">
       <!-- ribose -->
       <polygon points="150,100 190,88 215,118 195,150 155,148" fill="#f8d866" stroke="var(--ink)" stroke-width="2.5" />
       <text x="183" y="126" text-anchor="middle" font-size="14" font-weight="700">ribose</text>
@@ -22,11 +25,12 @@
         <text x="293" y="96" text-anchor="middle" font-size="18" class="atp-hi">~</text>
         <text x="355" y="96" text-anchor="middle" font-size="18" class="atp-hi">~</text>
       </g>
-      <text x="300" y="185" text-anchor="middle" font-size="16" font-weight="700">{{ split ? 'ADP' : 'ATP (adenosine triphosphate)' }}</text>
+      </g>
+      <text x="345" y="195" text-anchor="middle" font-size="16" font-weight="700">{{ split ? 'ADP' : 'ATP (adenosine triphosphate)' }}</text>
       <g v-if="split" class="atp-energy">
-        <text x="510" y="112" text-anchor="middle" font-size="16" font-weight="700">Pi</text>
-        <text x="520" y="60" text-anchor="middle" font-size="16" class="atp-hi">+ energy</text>
-        <text x="520" y="78" text-anchor="middle" font-size="13">(31 kJ per mole)</text>
+        <text x="555" y="112" text-anchor="middle" font-size="16" font-weight="700">Pi</text>
+        <text x="565" y="60" text-anchor="middle" font-size="16" class="atp-hi">+ energy</text>
+        <text x="565" y="78" text-anchor="middle" font-size="13">(31 kJ per mole)</text>
       </g>
     </svg>
   </DiagramFrame>
@@ -37,7 +41,7 @@ import { ref } from 'vue'
 import DiagramFrame from './DiagramFrame.vue'
 
 const split = ref(false)
-const before = 'ATP = <b>adenine</b> + <b>ribose</b> + a chain of <b>3 phosphate groups</b>. The phosphates are negatively charged and joined by 2 <b>high-energy bonds</b> (~). Press the button to hydrolyse it.'
+const before = 'ATP = <b>adenine</b> (a purine: double ring) + <b>ribose</b> + a chain of <b>3 phosphate groups</b>. The phosphates are negatively charged and joined by 2 <b>high-energy bonds</b> (~). Press the button to hydrolyse it.'
 const after = '<b>Hydrolysis</b>: ATP + H₂O → <b>ADP + Pi</b>, releasing about <b>31 kJ per mole</b> of ATP to drive cellular work. Respiration does the reverse: it adds the phosphate back to ADP (<b>phosphorylation</b>).'
 </script>
 
