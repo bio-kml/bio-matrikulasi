@@ -61,6 +61,9 @@ import KrebsCycleDiagram from './components/diagrams/KrebsCycleDiagram.vue'
 import ETCDiagram from './components/diagrams/ETCDiagram.vue'
 import GlycolysisLab from './components/activities/GlycolysisLab.vue'
 import OrderChallenge from './components/activities/OrderChallenge.vue'
+import KrebsLab from './components/activities/KrebsLab.vue'
+import NumberChallenge from './components/activities/NumberChallenge.vue'
+import DiscoveryLab from './components/activities/DiscoveryLab.vue'
 import ReadingProgress from './components/ReadingProgress.vue'
 
 const prefersReducedMotion = () =>
@@ -108,7 +111,7 @@ export default {
       SelectionCurvesDiagram, LakeZonesDiagram, EnergyPyramid, PopulationGrowthDiagram, RainforestLayers,
       ActivationEnergyDiagram, InducedFitDiagram, EnzymeFactorsDiagram, InhibitionDiagram,
       Molecule, Reaction, CellRespirationMap, ATPDiagram, KrebsCycleDiagram, ETCDiagram,
-      GlycolysisLab, OrderChallenge
+      GlycolysisLab, OrderChallenge, KrebsLab, NumberChallenge, DiscoveryLab
     }
     for (const [name, comp] of Object.entries(ui)) app.component(name, comp)
   },

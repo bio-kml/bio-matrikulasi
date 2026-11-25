@@ -19,6 +19,11 @@ Revision notes. Tick off each learning outcome once you can answer it without lo
   Be the cell: work out each of the 10 steps yourself, then come back to these notes.
 
   </InfoCard>
+  <InfoCard title="Discover the Krebs Cycle" tag="Activity" icon="refresh-cw" color="purple" link="/activities/krebs">
+
+  Run one turn, then count products per pyruvate and per glucose with tricky questions.
+
+  </InfoCard>
 </CardGrid>
 
 <Topic color="teal">
@@ -278,7 +283,7 @@ Hexokinase · Phosphoglucose isomerase · Phosphofructokinase · Aldolase · Tri
 
 <StatGrid>
   <StatCard value="2" label="ATP (net)" icon="zap" color="green" note="4 made − 2 spent" />
-  <StatCard value="2" label="NADH + H⁺" icon="droplets" color="green" note="from step 6" />
+  <StatCard value="2" label="NADH" icon="droplets" color="green" note="2 NADH + 2H⁺, from step 6" />
   <StatCard value="2" label="Pyruvate (3C)" icon="atom" color="green" note="from 1 glucose (6C)" />
 </StatGrid>
 
@@ -338,7 +343,7 @@ The **link** between glycolysis and the Krebs cycle. On entering the **matrix** 
 </Steps>
 
 ::: tip Per glucose
-This happens **twice** (2 pyruvate): **2 CO₂**, **2 NADH + H⁺**, **2 acetyl CoA**, and **no ATP**.
+This happens **twice** (2 pyruvate): **2 CO₂**, **2 NADH + 2H⁺**, **2 acetyl CoA**, and **no ATP**.
 :::
 
 ### Quick check
@@ -395,7 +400,7 @@ Carbons: **6 → 6 → 5 → 4 → 4 → 4 → 4 → 4** (one CO₂ lost at step
 <Tab label="Per acetyl CoA (1 turn)">
 
 <StatGrid>
-  <StatCard value="3" label="NADH + H⁺" color="purple" />
+  <StatCard value="3" label="NADH" color="purple" note="3 NADH + 3H⁺" />
   <StatCard value="1" label="FADH₂" color="purple" />
   <StatCard value="1" label="ATP" color="purple" />
   <StatCard value="2" label="CO₂" color="purple" />
@@ -405,7 +410,7 @@ Carbons: **6 → 6 → 5 → 4 → 4 → 4 → 4 → 4** (one CO₂ lost at step
 <Tab label="Per glucose (2 turns)">
 
 <StatGrid>
-  <StatCard value="6" label="NADH + H⁺" color="purple" />
+  <StatCard value="6" label="NADH" color="purple" note="6 NADH + 6H⁺" />
   <StatCard value="2" label="FADH₂" color="purple" />
   <StatCard value="2" label="ATP" color="purple" />
   <StatCard value="4" label="CO₂" color="purple" />
@@ -664,7 +669,7 @@ Occurs in certain **bacteria**, **fungi** and **muscle cells**, producing **lact
 Click a card to flip it; use the arrows to move on.
 
 <Flashcards :cards="[
-  { front: 'Glycolysis: where and yield', back: 'Cytoplasm; net 2 ATP, 2 NADH + H⁺, 2 pyruvate per glucose.' },
+  { front: 'Glycolysis: where and yield', back: 'Cytoplasm; net 2 ATP, 2 NADH + 2H⁺, 2 pyruvate per glucose.' },
   { front: 'Substrate-level phosphorylation', back: 'An enzyme transfers a phosphate group from a substrate to ADP, forming ATP.' },
   { front: 'Oxidative phosphorylation', back: 'ATP made when electrons from NADH or FADH₂ pass to O₂ through carriers; on the inner membrane; about 90% of ATP.' },
   { front: 'Pyruvate → acetyl CoA', back: 'In the matrix: decarboxylation (CO₂ out), oxidation (NAD⁺ → NADH), CoA attached. Enzyme: pyruvate dehydrogenase complex.' },

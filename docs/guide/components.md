@@ -510,6 +510,14 @@ Draw an intermediate as a carbon skeleton: green circles are carbons, orange tag
 <OrderChallenge title="Stages of aerobic respiration" :items="['Glycolysis', 'Pyruvate oxidation', 'Krebs cycle', 'Oxidative phosphorylation']" />
 ```
 
+## Number challenge
+
+<NumberChallenge question="How many turns of the Krebs cycle does <b>one glucose</b> give?" :answer="2" unit="turns" hint="How many pyruvate does one glucose make?" working="1 glucose → 2 pyruvate → 2 acetyl CoA → <b>2 turns</b>." />
+
+```md
+<NumberChallenge question="How many turns of the Krebs cycle does <b>one glucose</b> give?" :answer="2" unit="turns" hint="How many pyruvate does one glucose make?" working="1 glucose → 2 pyruvate → 2 acetyl CoA → <b>2 turns</b>." />
+```
+
 Photos side by side: wrap `<Figure>`s in `<div class="fig-row">`. Put chapter images in `docs/public/images/ch<N>/`.
 
 <BodyPlanDiagram />

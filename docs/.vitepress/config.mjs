@@ -38,6 +38,7 @@ export default defineConfig({
         items: [
           { text: 'All activities', link: '/activities/' },
           { text: 'Discover Glycolysis', link: '/activities/glycolysis' },
+          { text: 'Discover the Krebs Cycle', link: '/activities/krebs' },
         ],
         activeMatch: '^/activities/'
       },
@@ -64,6 +65,7 @@ export default defineConfig({
           link: '/activities/',
           items: [
             { text: 'Discover Glycolysis', link: '/activities/glycolysis' },
+            { text: 'Discover the Krebs Cycle', link: '/activities/krebs' },
           ]
         }
       ],
