@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Biology",
-  description: "Course and Labs Informations",
+  title: "Biology Matrics",
+  description: "Biology Matrics SB025",
   base: '/bio-matrikulasi/',
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/bio-matrikulasi/favicon.png' }]

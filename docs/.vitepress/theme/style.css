@@ -269,6 +269,19 @@ body .ui-st__card-body.ui-st__card-body { font-size: 17px; }
 .vp-doc .ui-figure__frame img { max-width: 100%; }
 
 /* ---- Home hero ---- */
+/* Hand-drawn moss background (Miss A.'s drawing) */
+.VPHome .VPHero {
+    background: url('/images/home-bg.jpg') center bottom / cover no-repeat;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 120px !important;
+}
+.dark .VPHome .VPHero {
+    background-image: linear-gradient(rgba(23, 32, 49, 0.72), rgba(23, 32, 49, 0.72)), url('/images/home-bg.jpg');
+}
+.VPHero .tagline .hero-by { display: inline-block; margin-top: 6px; font-size: 0.85em; font-style: italic; }
+@media (min-width: 960px) {
+    .VPHome .VPHero { padding-bottom: 200px !important; }
+}
 .VPHero .name .clip {
     background: none;
     -webkit-background-clip: border-box;

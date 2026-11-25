@@ -4,9 +4,8 @@ layout: home
 title: Home
 
 hero:
-  name: "Biology"
-  text: "Matrikulasi"
-  tagline: SB025 revision notes and activities, written like a notebook.
+  name: "Biology Matrics"
+  tagline: "Biology Matrics SB025<br><em class=\"hero-by\">by Miss A.</em>"
   actions:
     - theme: brand
       text: Revision Notes
