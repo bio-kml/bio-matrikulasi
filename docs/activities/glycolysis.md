@@ -148,8 +148,6 @@ Steps **2, 5 and 8**: they only **rearranged** the molecule (isomerization). Ste
 
 <Quiz question="Where in the cell did all of this happen?" :options="['Matrix of the mitochondrion', 'Inner mitochondrial membrane', 'Cytoplasm (cytosol)', 'Nucleus']" :answer="2" explain="Glycolysis happens in the cytosol, with or without oxygen." />
 
-### Medium: steps and enzymes
-
 <Quiz question="Which pair of enzymes both USE ATP?" :options="['Hexokinase and pyruvate kinase', 'Hexokinase and phosphofructokinase', 'Phosphofructokinase and phosphoglycerate kinase', 'Aldolase and enolase']" :answer="1" explain="Hexokinase (step 1) and phosphofructokinase (step 3) each spend 1 ATP in the investment phase." />
 
 <Quiz question="Which pair of enzymes both MAKE ATP?" :options="['Phosphoglycerate kinase and pyruvate kinase', 'Hexokinase and pyruvate kinase', 'Glyceraldehyde 3-phosphate dehydrogenase and enolase', 'Phosphoglycerate mutase and phosphoglycerate kinase']" :answer="0" explain="Phosphoglycerate kinase (step 7) and pyruvate kinase (step 10) make ATP by substrate-level phosphorylation, each twice per glucose." />
@@ -162,12 +160,12 @@ Steps **2, 5 and 8**: they only **rearranged** the molecule (isomerization). Ste
 
 <Quiz question="Which molecule carries TWO phosphate groups?" :options="['Glucose 6-phosphate', '1,3-Bisphosphoglycerate', 'Phosphoenolpyruvate', '3-Phosphoglycerate']" :answer="1" explain="Bis- means two: 1,3-bisphosphoglycerate has phosphates on carbons 1 and 3 (so does fructose 1,6-bisphosphate)." />
 
-### Harder: count it up
+### Count it up
 
 Type a number and press **Check**. All answers are for glycolysis only.
 
 <NumberChallenge
-  tag="Medium"
+  tag="Warming up"
   question="How many ATP are <b>made</b> (not net) in glycolysis from one glucose?"
   :answer="4"
   unit="ATP"
@@ -176,7 +174,7 @@ Type a number and press **Check**. All answers are for glycolysis only.
 />
 
 <NumberChallenge
-  tag="Medium"
+  tag="Warming up"
   question="Glycolysis runs on <b>3 glucose</b>. What is the <b>net</b> ATP?"
   :answer="6"
   unit="ATP"
@@ -185,7 +183,7 @@ Type a number and press **Check**. All answers are for glycolysis only.
 />
 
 <NumberChallenge
-  tag="Medium"
+  tag="Warming up"
   question="How many NADH + H⁺ come from glycolysis of <b>4 glucose</b>?"
   :answer="8"
   unit="NADH"
@@ -194,7 +192,7 @@ Type a number and press **Check**. All answers are for glycolysis only.
 />
 
 <NumberChallenge
-  tag="Medium"
+  tag="Warming up"
   question="How many ATP are <b>spent</b> in Phase 1 to process <b>5 glucose</b>?"
   :answer="10"
   unit="ATP"
@@ -203,7 +201,7 @@ Type a number and press **Check**. All answers are for glycolysis only.
 />
 
 <NumberChallenge
-  tag="Work backwards"
+  tag="Work it backwards"
   question="A cell made a <b>net 12 ATP</b> by glycolysis alone. How many glucose molecules were used?"
   :answer="6"
   unit="glucose"
@@ -212,7 +210,7 @@ Type a number and press **Check**. All answers are for glycolysis only.
 />
 
 <NumberChallenge
-  tag="Work backwards"
+  tag="Work it backwards"
   question="Glycolysis produced <b>10 pyruvate</b>. How much ATP was <b>made</b> in total (not net)?"
   :answer="20"
   unit="ATP"
@@ -221,7 +219,7 @@ Type a number and press **Check**. All answers are for glycolysis only.
 />
 
 <NumberChallenge
-  tag="Hard"
+  tag="Think harder"
   question="How many molecules of <b>water</b> are removed by enolase when one glucose goes through glycolysis?"
   :answer="2"
   unit="H₂O"
@@ -230,7 +228,7 @@ Type a number and press **Check**. All answers are for glycolysis only.
 />
 
 <NumberChallenge
-  tag="Hard"
+  tag="Think harder"
   question="How many <b>carbon atoms</b> are there in all the pyruvate made from one glucose?"
   :answer="6"
   unit="C atoms"
@@ -239,7 +237,7 @@ Type a number and press **Check**. All answers are for glycolysis only.
 />
 
 <NumberChallenge
-  tag="Hard: think it through"
+  tag="Brain teaser"
   question="Imagine triose phosphate isomerase (step 5) did not work, so DHAP could not be used and only <b>one</b> G3P went through Phase 2. What would the <b>net</b> ATP per glucose be?"
   :answer="0"
   unit="ATP"

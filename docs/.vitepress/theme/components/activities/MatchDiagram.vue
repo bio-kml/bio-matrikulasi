@@ -22,27 +22,34 @@
     </div>
     <p class="md__help">{{ helpText }}</p>
 
-    <!-- the pathway -->
-    <ol class="md__path">
-      <li v-for="(n, i) in parts" :key="i" :class="'md__li-' + n.type">
-        <template v-if="n.type === 'phase'">
-          <span class="md__phase" :class="'md__phase--' + n.k">{{ n.text }}</span>
-        </template>
+    <!-- the pathway: one column, or a loop (two columns joined top and bottom) -->
+    <div class="md__board" :class="{ 'is-cycle': cols.length > 1 }">
+      <span v-if="cols.length > 1" class="md__turn md__turn--top"><span>{{ loopLabel }}</span></span>
+      <div class="md__cols">
+        <ol v-for="(col, c) in cols" :key="c" class="md__path" :class="{ 'md__path--up': c === 1 }">
+          <li v-for="(n, i) in col" :key="i" :class="'md__li-' + n.type">
+            <template v-if="n.type === 'phase'">
+              <span class="md__phase" :class="'md__phase--' + n.k">{{ n.text }}</span>
+            </template>
 
-        <template v-else-if="n.type === 'mol'">
-          <Slot :f="n.f" @pick="pickSlot" />
-        </template>
+            <template v-else-if="n.type === 'mol'">
+              <Slot :f="n.f" @pick="pickSlot" />
+            </template>
 
-        <template v-else>
-          <span class="md__arrow" aria-hidden="true"></span>
-          <span class="md__info">
-            <span v-if="n.e" class="md__row"><em>enzyme</em><Slot :f="n.e" :atp="n.atp" @pick="pickSlot" /></span>
-            <span v-if="n.p" class="md__row"><em>process</em><Slot :f="n.p" @pick="pickSlot" /></span>
-            <span v-if="n.n" class="md__row"><em>gives</em><Slot :f="n.n" @pick="pickSlot" /></span>
-          </span>
-        </template>
-      </li>
-    </ol>
+            <template v-else>
+              <span class="md__arrow" aria-hidden="true"></span>
+              <span class="md__info">
+                <span v-if="n.e" class="md__row"><em>enzyme</em><Slot :f="n.e" :atp="n.atp" @pick="pickSlot" /></span>
+                <span v-if="n.p" class="md__row"><em>process</em><Slot :f="n.p" @pick="pickSlot" /></span>
+                <span v-if="n.n" class="md__row"><em>gives</em><Slot :f="n.n" @pick="pickSlot" /></span>
+              </span>
+            </template>
+          </li>
+        </ol>
+      </div>
+      <span v-if="cols.length > 1" class="md__turn md__turn--bottom"></span>
+      <p v-if="cols.length > 1" class="md__loopnote">↺ {{ loopLabel }}</p>
+    </div>
   </section>
 </template>
 
@@ -55,7 +62,9 @@ const props = defineProps({
   // [{ m: 'Glucose' } | { e: 'enzyme', p: 'process', n: '+2 ATP' } | { phase: 'text' }]
   chain: { type: Array, required: true },
   title: { type: String, default: 'Mix and match' },
-  subtitle: { type: String, default: 'Tap a keyword, then tap the blank it belongs in.' }
+  subtitle: { type: String, default: 'Tap a keyword, then tap the blank it belongs in.' },
+  // for a cycle: put { turn: true } in the chain where the loop turns the corner
+  loopLabel: { type: String, default: 'back to the start: the cycle repeats' }
 })
 
 let uid = 0
@@ -69,11 +78,15 @@ function field(raw, kind) {
 }
 let phaseK = 0
 const parts = props.chain.map((c) => {
+  if (c.turn) return { type: 'turn' }
   if (c.phase) return { type: 'phase', text: c.phase, k: ++phaseK }
   if (c.m) return { type: 'mol', f: field(c.m, 'mol') }
   const n = c.n ? field(c.n, 'num') : null
   return { type: 'step', e: field(c.e, 'enz'), p: field(c.p, 'proc'), n, atp: !!(c.n && /ATP/.test(c.n)) }
 })
+
+const turnAt = parts.findIndex((p) => p.type === 'turn')
+const cols = turnAt < 0 ? [parts] : [parts.slice(0, turnAt), parts.slice(turnAt + 1)]
 
 const picked = ref(null)
 const pickedSlot = ref(null)
@@ -153,6 +166,7 @@ Slot.emits = ['pick']
 
 .md__bank { position: sticky; top: calc(var(--vp-nav-height, 64px) + 8px); z-index: 2; display: flex; flex-wrap: wrap; gap: 6px; padding: 12px 16px; background: var(--box); border-bottom: 2px dashed var(--rule); }
 @media (max-width: 959px) { .md__bank { top: calc(var(--vp-nav-height, 64px) + 40px); } }
+@media (max-width: 640px) { .md__bank { max-height: 34vh; overflow-y: auto; } }
 .md__chip { padding: 3px 11px; font-family: var(--font-hand); font-size: 15px; font-weight: 700; color: #1d2b44; border: 2px solid var(--ink); border-radius: 999px; cursor: pointer; transition: transform 0.15s ease; }
 .md__chip--mol { background: #fff6cf; }
 .md__chip--enz { background: #cfe5f7; font-style: italic; }
@@ -164,6 +178,26 @@ Slot.emits = ['pick']
 .vp-doc .md__help, .md__help { margin: 8px 16px 0; font-size: 13.5px; color: var(--muted); }
 
 .vp-doc .md__path, .md__path { list-style: none; margin: 0; padding: 10px 16px 18px; }
+
+/* cycle: stacked on narrow screens, a loop when there is room */
+.md__board { container-type: inline-size; position: relative; }
+.md__turn { display: none; }
+.vp-doc .md__loopnote, .md__loopnote { margin: -8px 16px 16px; font-family: var(--font-hand); font-size: 15px; font-weight: 700; color: var(--c, var(--vp-c-brand-1)); }
+.md__board.is-cycle .md__path:first-child { padding-bottom: 0; }
+@container (min-width: 600px) {
+  .is-cycle .md__cols { display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; padding: 58px 16px 30px; }
+  .vp-doc .is-cycle .md__path, .is-cycle .md__path { padding: 0; }
+  .is-cycle .md__path--up { display: flex; flex-direction: column-reverse; justify-content: flex-start; }
+  .is-cycle .md__path--up .md__arrow { transform: rotate(180deg); }
+  .is-cycle .md__loopnote { display: none; }
+  /* the two bends of the loop: line centres sit on the arrow shafts (13.5px into each column) */
+  .is-cycle .md__turn { display: block; position: absolute; left: 28px; right: calc(50% - 27px); height: 22px; border: 3px solid var(--ink); }
+  .is-cycle .md__turn--top { top: 27px; border-bottom: none; border-radius: 10px 10px 0 0; }
+  .is-cycle .md__turn--bottom { bottom: 8px; border-top: none; border-radius: 0 0 10px 10px; }
+  .is-cycle .md__turn--top::after { content: ''; position: absolute; left: -9px; bottom: -10px; border: 7.5px solid transparent; border-top: 9px solid var(--ink); border-bottom: none; }
+  .is-cycle .md__turn--bottom::after { content: ''; position: absolute; right: -9px; top: -10px; border: 7.5px solid transparent; border-bottom: 9px solid var(--ink); border-top: none; }
+  .is-cycle .md__turn--top span { position: absolute; left: 50%; transform: translateX(-50%); top: -26px; white-space: nowrap; font-family: var(--font-hand); font-size: 14px; font-weight: 700; color: var(--c, var(--vp-c-brand-1)); }
+}
 .vp-doc .md__path li, .md__path li { margin: 0; padding: 0; }
 .md__li-mol { display: flex; }
 .md__li-step { display: flex; align-items: stretch; gap: 12px; min-height: 64px; }

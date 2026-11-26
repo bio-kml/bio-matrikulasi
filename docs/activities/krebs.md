@@ -41,7 +41,36 @@ Choose an action card for each step. A wrong choice is crossed out and you get a
 
 <KrebsLab />
 
-## Part 2: Spot the pattern
+## Part 2: Mix and match
+
+Fill in the cycle from memory. Keywords are colour-coded: <Badge type="yellow" text="intermediate" /> <Badge type="blue" text="enzyme" /> <Badge type="purple" text="process" /> <Badge type="green" text="product" />
+
+<MatchDiagram
+  title="Label the Krebs cycle"
+  subtitle="Tap a keyword, then tap the blank it belongs in. Follow the arrows round the loop."
+  loop-label="back to oxaloacetate: ready for the next acetyl CoA"
+  :chain="[
+    { m: 'Acetyl CoA (2C) + Oxaloacetate (4C)' },
+    { e: '?citrate synthase', p: 'Acetyl group joins oxaloacetate', n: 'CoA released' },
+    { m: '?Citrate (6C)' },
+    { e: 'aconitase', p: '?Isomerization' },
+    { m: 'Isocitrate (6C)' },
+    { e: '?isocitrate dehydrogenase', p: 'Oxidative decarboxylation', n: '?NADH + CO₂' },
+    { m: '?α-Ketoglutarate (5C)' },
+    { e: 'α-ketoglutarate dehydrogenase', p: '?Oxidative decarboxylation', n: 'NADH + CO₂' },
+    { turn: true },
+    { m: '?Succinyl CoA (4C)' },
+    { e: '?succinyl CoA synthetase', p: 'Substrate-level phosphorylation', n: '?1 ATP (via GTP)' },
+    { m: 'Succinate (4C)' },
+    { e: 'succinate dehydrogenase', p: 'Oxidation by FAD', n: '?FADH₂' },
+    { m: '?Fumarate (4C)' },
+    { e: '?fumarase', p: '?Hydration' },
+    { m: 'Malate (4C)' },
+    { e: '?malate dehydrogenase', p: 'Oxidation by NAD⁺', n: 'NADH' }
+  ]"
+/>
+
+## Part 3: Spot the pattern
 
 <Accordion>
 <AccordionItem title="1. The carbon count went 6 → 6 → 5 → 4 → 4 → 4 → 4 → 4. Where did the two carbons go?">
@@ -66,7 +95,7 @@ The last product, **oxaloacetate**, is the molecule that accepts the next acetyl
 </AccordionItem>
 </Accordion>
 
-## Part 3: Count it up (the tricky part)
+## Part 4: Count it up (the tricky part)
 
 Type a number and press **Check**. Think in this order: **glucose → pyruvate → acetyl CoA → turns → products**.
 
@@ -170,7 +199,7 @@ Type a number and press **Check**. Think in this order: **glucose → pyruvate �
   working="<b>None.</b> Oxaloacetate joins acetyl CoA at step 1 but is <b>regenerated</b> at step 8, so it is reused every turn."
 />
 
-## Part 4: Think harder
+## Part 5: Think harder
 
 <Quiz question="A student says: one glucose = one turn of the Krebs cycle, so 3 NADH per glucose. What is wrong?" :options="['Nothing, that is correct', 'One glucose gives 2 acetyl CoA, so 2 turns and 6 NADH', 'One glucose gives 6 turns, one per carbon', 'The Krebs cycle makes FADH₂, not NADH']" :answer="1" explain="1 glucose → 2 pyruvate → 2 acetyl CoA → 2 turns: 6 NADH + 6H⁺ from the cycle." />
 
@@ -180,7 +209,7 @@ Type a number and press **Check**. Think in this order: **glucose → pyruvate �
 
 <Quiz question="Per glucose, how many ATP does the Krebs cycle make directly, by substrate-level phosphorylation?" :options="['1', '2', '4', '38']" :answer="1" explain="1 ATP per turn (step 5) × 2 turns = 2 ATP. Most of the energy leaves as NADH and FADH₂ instead." />
 
-## Part 5: Can you remember the order?
+## Part 6: Can you remember the order?
 
 <OrderChallenge
   title="The 8 intermediates"

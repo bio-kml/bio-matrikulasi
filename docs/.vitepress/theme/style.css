@@ -385,3 +385,8 @@ html[data-section="assessments"],
 html[data-section="activities"] { --sec: var(--c-yellow); }
 html[data-section="exams"] { --sec: var(--c-purple); }
 html[data-section="course"] { --sec: var(--c-red); }
+
+/* Number every quiz question: Q1, Q2 … (restarts at each heading) */
+.vp-doc h2, .vp-doc h3 { counter-reset: qnum; }
+.vp-doc .ui-quiz { counter-increment: qnum; }
+.vp-doc .ui-quiz__label::before { content: "Q" counter(qnum) " · "; }
