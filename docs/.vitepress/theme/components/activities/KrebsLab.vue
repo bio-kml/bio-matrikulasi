@@ -7,6 +7,8 @@
     :counters="counters"
     :dividers="{ 7: '↺ back to oxaloacetate' }"
     finished-label="One turn complete"
+    :highlight-enzymes="false"
+    enzyme-label="enzyme (extra)"
   >
     <template #end>
       <template v-if="!turns2">

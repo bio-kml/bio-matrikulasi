@@ -402,6 +402,10 @@ This happens **twice** (2 pyruvate): **2 CO₂**, **2 NADH + 2H⁺**, **2 acetyl
 - Most of the energy goes to **NAD⁺ → NADH** and **FAD → FADH₂**, which carry high-energy electrons to the electron transport chain.
 - **8 steps**, each catalysed by a specific enzyme.
 
+::: info Enzymes are extra information
+The Krebs cycle enzymes (in the diagram and table below) are given for **extra information only**. You do not need to memorise them.
+:::
+
 <KrebsCycleDiagram />
 
 | Step | What happens | Product | Enzyme | Gives |

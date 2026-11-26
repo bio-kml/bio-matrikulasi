@@ -39,7 +39,7 @@
             <template v-else>
               <span class="md__arrow" aria-hidden="true"></span>
               <span class="md__info">
-                <span v-if="n.e" class="md__row"><em>enzyme</em><Slot :f="n.e" :atp="n.atp" @pick="pickSlot" /></span>
+                <span v-if="n.e" class="md__row"><em>{{ enzymeLabel }}</em><Slot :f="n.e" :atp="highlightEnzymes && n.atp" @pick="pickSlot" /></span>
                 <span v-if="n.p" class="md__row"><em>process</em><Slot :f="n.p" @pick="pickSlot" /></span>
                 <span v-if="n.n" class="md__row"><em>gives</em><Slot :f="n.n" @pick="pickSlot" /></span>
               </span>
@@ -64,7 +64,10 @@ const props = defineProps({
   title: { type: String, default: 'Mix and match' },
   subtitle: { type: String, default: 'Tap a keyword, then tap the blank it belongs in.' },
   // for a cycle: put { turn: true } in the chain where the loop turns the corner
-  loopLabel: { type: String, default: 'back to the start: the cycle repeats' }
+  loopLabel: { type: String, default: 'back to the start: the cycle repeats' },
+  // highlight enzymes of ATP steps (off when enzymes are only extra info)
+  highlightEnzymes: { type: Boolean, default: true },
+  enzymeLabel: { type: String, default: 'enzyme' }
 })
 
 let uid = 0

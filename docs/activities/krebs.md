@@ -19,7 +19,6 @@ An acetyl CoA has just arrived in the **matrix** from pyruvate oxidation. Your j
 <Checklist title="By the end you should be able to">
 
 - Name the 8 intermediates of the Krebs cycle and their number of carbons.
-- Name the enzyme for each step.
 - Say which steps make NADH, FADH₂, ATP and CO₂.
 - Work out the products for **one turn**, **one pyruvate** and **one glucose**, and work backwards from a number of products.
 
@@ -43,30 +42,32 @@ Choose an action card for each step. A wrong choice is crossed out and you get a
 
 ## Part 2: Mix and match
 
-Fill in the cycle from memory. Keywords are colour-coded: <Badge type="yellow" text="intermediate" /> <Badge type="blue" text="enzyme" /> <Badge type="purple" text="process" /> <Badge type="green" text="product" />
+Fill in the cycle from memory. The enzymes are shown as extra information only; you do not need to memorise them. Keywords are colour-coded: <Badge type="yellow" text="intermediate" /> <Badge type="purple" text="process" /> <Badge type="green" text="product" />
 
 <MatchDiagram
   title="Label the Krebs cycle"
   subtitle="Tap a keyword, then tap the blank it belongs in. Follow the arrows round the loop."
+  :highlight-enzymes="false"
+  enzyme-label="enzyme (extra)"
   loop-label="back to oxaloacetate: ready for the next acetyl CoA"
   :chain="[
     { m: 'Acetyl CoA (2C) + Oxaloacetate (4C)' },
-    { e: '?citrate synthase', p: 'Acetyl group joins oxaloacetate', n: 'CoA released' },
+    { e: 'citrate synthase', p: 'Acetyl group joins oxaloacetate', n: 'CoA released' },
     { m: '?Citrate (6C)' },
     { e: 'aconitase', p: '?Isomerization' },
-    { m: 'Isocitrate (6C)' },
-    { e: '?isocitrate dehydrogenase', p: 'Oxidative decarboxylation', n: '?NADH + CO₂' },
+    { m: '?Isocitrate (6C)' },
+    { e: 'isocitrate dehydrogenase', p: 'Oxidative decarboxylation', n: '?NADH + CO₂' },
     { m: '?α-Ketoglutarate (5C)' },
     { e: 'α-ketoglutarate dehydrogenase', p: '?Oxidative decarboxylation', n: 'NADH + CO₂' },
     { turn: true },
     { m: '?Succinyl CoA (4C)' },
-    { e: '?succinyl CoA synthetase', p: 'Substrate-level phosphorylation', n: '?1 ATP (via GTP)' },
-    { m: 'Succinate (4C)' },
-    { e: 'succinate dehydrogenase', p: 'Oxidation by FAD', n: '?FADH₂' },
+    { e: 'succinyl CoA synthetase', p: 'Substrate-level phosphorylation', n: '?1 ATP (via GTP)' },
+    { m: '?Succinate (4C)' },
+    { e: 'succinate dehydrogenase', p: '?Oxidation by FAD', n: '?FADH₂' },
     { m: '?Fumarate (4C)' },
-    { e: '?fumarase', p: '?Hydration' },
-    { m: 'Malate (4C)' },
-    { e: '?malate dehydrogenase', p: 'Oxidation by NAD⁺', n: 'NADH' }
+    { e: 'fumarase', p: '?Hydration' },
+    { m: '?Malate (4C)' },
+    { e: 'malate dehydrogenase', p: '?Oxidation by NAD⁺', n: '?NADH' }
   ]"
 />
 
@@ -217,11 +218,6 @@ Type a number and press **Check**. Think in this order: **glucose → pyruvate �
   :items="['Citrate', 'Isocitrate', 'α-Ketoglutarate', 'Succinyl CoA', 'Succinate', 'Fumarate', 'Malate', 'Oxaloacetate']"
 />
 
-<OrderChallenge
-  title="The 8 enzymes"
-  subtitle="Tap the enzymes in the order of the steps they catalyse."
-  :items="['Citrate synthase', 'Aconitase', 'Isocitrate dehydrogenase', 'α-Ketoglutarate dehydrogenase', 'Succinyl CoA synthetase', 'Succinate dehydrogenase', 'Fumarase', 'Malate dehydrogenase']"
-/>
 
 <StickyNote title="Stuck? Use the acronym">
 

@@ -74,7 +74,7 @@
           <div v-if="last" :key="'f' + done" class="gl__found">
             <span class="gl__found-tag">You discovered step {{ done }}</span>
             <span class="gl__found-name">{{ last.type }}</span>
-            <span class="gl__found-enz">enzyme: <i>{{ last.enzyme }}</i></span>
+            <span class="gl__found-enz">{{ enzymeLabel }}: <i>{{ last.enzyme }}</i></span>
             <span class="gl__found-why" v-html="last.why"></span>
           </div>
         </Transition>
@@ -97,8 +97,8 @@
               <span class="gl__entry-rx">{{ s.sub || names(i) }} <b>→</b> {{ s.prod || names(i + 1) }}</span>
               <span class="gl__entry-row"><em>process</em> {{ s.type }}</span>
               <span class="gl__entry-row">
-                <em>enzyme</em>
-                <span class="gl__entry-enz" :class="{ 'is-atp': atpTag(s) }">{{ s.enzyme }}</span>
+                <em>{{ enzymeLabel }}</em>
+                <span class="gl__entry-enz" :class="{ 'is-atp': highlightEnzymes && atpTag(s) }">{{ s.enzyme }}</span>
                 <span v-if="atpTag(s)" class="gl__atp-tag" :class="{ 'is-use': atpTag(s).startsWith('uses') }">{{ atpTag(s) }}</span>
               </span>
             </span>
@@ -133,7 +133,10 @@ const props = defineProps({
   // [{ name, note, from, to }] phases (step indexes, inclusive) shown as a track
   phases: { type: Array, default: () => [] },
   // ledger keys that count ATP, and how to word them in the notebook
-  atpKeys: { type: Object, default: () => ({ used: 'uses', made: 'makes', atp: 'makes' }) }
+  atpKeys: { type: Object, default: () => ({ used: 'uses', made: 'makes', atp: 'makes' }) },
+  // highlight the enzymes of steps that use or make ATP (off when enzymes are only extra info)
+  highlightEnzymes: { type: Boolean, default: true },
+  enzymeLabel: { type: String, default: 'enzyme' }
 })
 
 const phaseOf = (i) => props.phases.findIndex((ph) => i >= ph.from && i <= ph.to)
